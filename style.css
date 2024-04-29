@@ -2,7 +2,11 @@
 {
     margin: 0;
     padding: 0;
-   /* font-family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans);  */
+
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 
 body
@@ -44,21 +48,23 @@ body
 
 .heading
 {
-    padding-top: 6vh;
+    padding-top: 10vh;
     padding-right: 10vw;
-    margin-bottom: 2vh;
+    margin-bottom: 2.5vh;
+    letter-spacing: 12px;
+    line-height: 60px;
 }
 
 .heading h1
 {
-    font-size: 5vh;
+    font-size: 8vh;
     font-weight: 300;
     color: hsl(0, 36%, 70%);
 }
 
 .heading h2
 {
-    font-size: 4vh;
+    font-size: 8vh;
     font-weight: 600;
     color: hsl(0, 6%, 24%);
 }
@@ -77,14 +83,13 @@ body
     font-size:16px;
     font-weight: 600;
     color: hsl(0, 6%, 24%);
-    margin-top: 5vh;
+    margin-top: 6vh;
     padding-left: 32px;
-    height: 8vh;
-    width: 30vw;
+    height: 7.8vh;
+    width: 28vw;
     outline: none;
-    border: 3px solid hsla(0, 6%, 24%, 0.562);
-    border-radius: 50px
-    
+    border: 2px solid hsla(0, 6%, 24%, 0.562);
+    border-radius: 50px  
 }
 
 .hero_content .emailInput:focus
@@ -94,7 +99,7 @@ body
 
 .hero_content .btn_container
 {
-    transform: translateX(24vw) translateY(-7.5vh);
+    transform: translateX(24vw) translateY(-7.25vh);
     height: 9vh;
     width: 25vw;
 }
@@ -120,19 +125,19 @@ body
 .hero_content .err
 {
     margin-top: 5px;
-    margin-left: -310px;
+    margin-left: -20vw;
     font-weight: 600;
     color: hsl(0, 74%, 74%);
 }
 
 .hero_content .emb_btn
 { 
-    transform: translateY(-0.85vh);
+    transform: translateY(-1.25vh); 
     background: linear-gradient( to right, hsl(0, 80%, 86%), hsl(0, 74%, 74%) ) ; 
     box-shadow: 0px 10px 30px -5px hsl(0, 80%, 80%);   
-    margin-left: 1vw;
+    margin-left: 2vw;
     height: 8.5vh;
-    width: 9vw;
+    width: 35%;
     border:none;
     border-radius: 50px;
 }
@@ -141,10 +146,9 @@ body
 { 
     background: linear-gradient( to right, hsl(0, 80%, 94%), hsl(0, 80%, 86%) ) ;    
     box-shadow: 0px 10px 30px -5px hsl(0, 74%, 74%);
-    margin-left: 2px;
+    margin-left: 1.5px;
 }
 
-/*************************************/
 footer
 {
     position:absolute;
@@ -152,8 +156,8 @@ footer
     bottom: 0;
     left: 0;
     width: 50%;
+    height: 16px;
     padding-left: 5vw;
-    background-color:black;
 }
 
 .attribution 
@@ -195,7 +199,7 @@ footer
         background-size: cover;
         top:0;
         width: 100%;
-        height: 30%;
+        height: 50%;
     }
 
     .hero_content
@@ -209,7 +213,9 @@ footer
     {
         position:relative;
         margin-top: 100%;
+        padding-top:64px;
         width: 100%;
+        letter-spacing: 10px;
     }
 
     .heading h1
@@ -235,7 +241,7 @@ footer
 
     .hero_content .btn_container
     {
-        transform: translateX(40vw) translateY(-7.5vh);
+        transform: translateX(42vw) translateY(-7.5vh);
         height: 9vh;
         width: 50vw;
     }
@@ -248,12 +254,18 @@ footer
         width: 25vw; 
     }
 
+    .hero_content .err
+    {        
+        margin-left: -80vw;     
+        font-size: 14px;
+    }
+
     footer
     {   
         position: fixed;
-        height: fit-content;
-        bottom: -10px;
+        bottom: -8px;
         width: 90%;
+        height: 16px;
         padding: 5vw;
     }
 }
