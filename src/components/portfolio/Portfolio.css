@@ -1,0 +1,259 @@
+.portfolio-container
+{
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    
+}
+  
+.main-content 
+{
+  /* margin-left: 14%;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 500%; /* Adjust based on the number of sections
+  overflow-x: scroll;
+  scroll-behavior: smooth;  */
+}
+  
+.content-section 
+{
+  position: sticky;
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  color: white;
+}
+  
+#about 
+{
+  background-color: transparent;
+  margin-top: 48px;
+  text-align: justify;
+}
+
+@keyframes about_appears
+{
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to{
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.about-me-layer
+{
+  animation: about_appears 2s linear
+}
+
+#education
+{
+  background-color: transparent;
+
+}
+
+#education #additional-training p
+{
+  text-align: end;
+}
+
+@keyframes edu_appears
+{
+  from {
+    opacity: 0;
+    scale: 0.5;
+    transform: translate(-500px);
+  }
+  to{
+    opacity: 1;
+    scale: 1;
+    transform: translate(0);
+  }
+}
+
+.description-container
+{
+  animation: edu_appears linear;
+  animation-timeline: view();
+  animation-range: entry 0 ;
+}
+
+
+#work 
+{
+  background-color: #00000000;
+}
+
+#contacts
+{
+  background-color: #00000000;
+}
+
+
+
+@media (max-width: 1024px) 
+{
+  .content-section 
+  {
+    padding: 0;
+    margin: 0;
+  }
+}  
+
+@media (max-width: 868px) 
+{
+  .about-info h2
+  {
+    font-size: 28px;
+  }
+  .about-info h3
+  {
+    font-size: 20px;
+  }
+
+  .shadow-text
+  {
+    font-size: 46px;
+    color: magenta;
+    text-shadow: magenta 1px 1px 8px;
+    top: px; /* This creates the top offset */
+    left: 19px;
+    margin-left: -4px;
+  }
+  
+  .highlight-text 
+  {
+    font-size: 48px;
+    font-weight: 700;
+    color: cyan;
+    top: 0; /* This is the base position */
+    left: -8px;
+    margin-right: -8px;
+  }
+
+  .content-section#about
+  {    
+    padding: 4%;
+    display: flex;   
+  }
+  #about .about-info .name, .smry
+  {
+    /* background: rgba(0, 0, 0, 0.753); */
+    text-shadow: black 0 0 16px;
+    padding: 0 8px;
+  }
+  #about .about-info .smry
+  {
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.226);
+    text-shadow: rgb(8, 0, 78) 0 0 16px;
+    padding: 0 8px;
+  }
+  #about .about-info h1
+  {
+    font-size: 32px;
+  }
+
+  #about .mid-layer
+  {
+    position: absolute;
+    /* inset: 0; */
+    top: 4%;
+    right: -16%;
+    background: transparent;
+  }
+
+  .content-section#education
+  {
+    padding: 4%;
+    padding-bottom: 64px;
+    display: flex;
+    align-items: start;
+    justify-content:center;
+  }
+  #education .top-layer
+  {
+    width: 100%;
+  }
+  #education .top-layer p
+  {
+    margin-top: 64px;
+    font-size: 28px;
+  }
+  #education .edu-bg-container .timeline-content
+  {
+    padding: 0;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+
+  .timeline-content .description-container
+  {
+    padding: 0;
+    margin: 0;
+    width: 100%; 
+  } 
+  .description-container img
+  {
+    width: 128px;
+    height: 128px;
+  }
+  .description-details
+  {
+    background: rgba(0, 0, 0, 0.87);
+    padding: 4px 0;
+  }
+
+  #tertiary ul li:nth-of-type(2) img 
+  {
+    /* width: 86px; */
+    height: 32px;
+  }
+  #tertiary ul li:nth-of-type(2) .description-details
+  {
+    background: rgba(255, 255, 255, 0.87);
+  }
+  
+  #education #additional-training p
+  {
+    text-align: start;
+  }
+  #education #additional-training .description-container
+  {
+    width: 100%;
+  }
+  #additional-training .description-container .info
+  {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .description-container small
+  {
+    font-size: 11px;
+  }
+
+  .description-container p
+  {
+    font-size: 14px;
+  }
+
+  #education #additional-training img
+  {
+    height: 48px;
+  }   
+
+  .content-section#skills .top-layer p
+  {
+    margin-top: 86px;
+    font-size: 28px;
+  } 
+
+}

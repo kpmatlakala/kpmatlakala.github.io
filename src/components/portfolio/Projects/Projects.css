@@ -1,0 +1,242 @@
+.projects-container 
+{
+    width: 100%;
+    max-width: 900px;
+    height: 80vh;
+    margin: 0;
+    padding: 1rem;
+    /* background-color: #00102062; */
+    border-radius: 8px;
+    /* box-shadow: 0 4px 12px rgba(0, 174, 255, 0.1); */
+    overflow: hidden;
+}
+
+.projects-title 
+{
+    margin-left: 16px;
+    text-align: start;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(247, 247, 247, 0.541) 0 0 8px;
+}
+
+.projects-title span
+{
+    color: rgb(137 198 3);
+    text-shadow: rgba(136, 198, 3, 0.541) 0 0 8px;
+}
+  
+.projects-list 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 91%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+  
+.project-card 
+{
+    margin: 8px;
+    /* width: 98%; */
+    background-color: #070911;
+    padding: 1rem;
+
+    border-radius: 8px;
+    border: rgba(136, 198, 3, 0.541) solid 1px;
+    box-shadow: 0 2px 8px rgba(136, 198, 3, 0.541);
+    cursor: pointer;
+}
+
+.project-card:hover 
+{
+    background-color: #f0f0f0;
+}
+  
+.project-title 
+{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: #fff 0 0 8px;
+
+    border-bottom: rgb(136, 198, 3) solid 1px;
+    box-shadow: 0 8px 8px -8px rgba(136, 198, 3, 0.541);
+}
+  
+.project-description 
+{
+    font-size: 1rem;
+    color: #ffffff;
+    margin: 0.5rem 0;
+
+    border-left: rgb(136, 198, 3) solid 1px;
+    box-shadow:  -8px 0 8px -8px rgba(136, 198, 3, 0.541);
+}
+  
+.project-technologies,
+.project-duration
+{
+    text-align: center;
+    font-size: 1rem;
+    color: rgb(146, 214, 0);
+
+    border-left: rgb(136, 198, 3) solid 1px;
+    box-shadow:  -8px 0 8px -8px rgba(136, 198, 3, 0.541);
+}
+  
+.project-technologies strong,
+.project-duration strong 
+{
+    color: #dddddd; 
+    text-shadow: #ffffff77 0 0 8px;   
+}  
+  
+.project-features,
+.project-challenges
+{
+    margin-top: 1rem;
+    padding: 4px 16px;
+    text-align: start;
+    font-size: 1rem;
+    color: #fff;
+    border-left: rgb(136, 198, 3) solid 1px;
+    box-shadow:  -8px 0 8px -8px rgba(136, 198, 3, 0.541);
+
+}
+
+.project-features h4,
+.project-challenges h4 
+{
+    font-weight: 600;
+    color: rgb(136, 198, 3);
+    text-shadow: rgba(136, 198, 3, 0.5) 0 0 8px;}
+
+.project-features ul,
+.project-challenges ul 
+{
+    list-style-type: disc;
+    padding-left: 20px;
+}
+  
+.project-actions .preview-btn 
+{
+   
+    background: transparent;
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid rgb(136, 198, 3);
+    box-shadow: 0 0 4px rgb(136, 198, 3);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 1s;
+}
+  
+.project-actions .preview-btn:hover 
+{
+    background: rgb(136, 198, 3);
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0 0 4px rgb(255, 255, 255);
+    color: black;
+    font-weight: 600;
+}
+
+.project-image 
+{
+    justify-self: center;
+    margin-top: 1rem;
+    text-align: center;
+    width: 127px;
+    max-height: 200px;
+}
+  
+.project-preview-img 
+{
+    width: 127px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgb(136, 198, 3);
+    box-shadow: 0 2px 6px rgb(136, 198, 3);
+}
+
+.project-preview-img:hover
+{
+    
+}  
+  
+.game-modal 
+{
+    position: fixed;
+    top: 2%;
+    left: 0;
+    width: 100%;
+    height: 98vh;
+    background: black;
+}
+  
+.game-modal button 
+{
+    position: absolute;
+    top: 86px;
+    right: 32px;
+    padding: 4px;
+    border: solid 2px rgb(0, 53, 102);
+    font-weight: 700;
+}
+
+.game-modal button:hover 
+{
+    padding: 6px;
+    font-weight: 800;
+    background: #979797;
+    color: #202020;
+    border: solid 2px rgb(0, 0, 0);
+}
+
+.game-modal.go-back 
+{
+    display: none;
+    transform: translateZ(-500px); /* Moves the modal back in the Z-axis */
+    z-index: 999;
+}
+
+.project-modal 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content 
+  {
+    background-color: #fff;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .close-modal 
+  {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  

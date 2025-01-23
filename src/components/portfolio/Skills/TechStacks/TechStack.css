@@ -1,0 +1,56 @@
+/* Container for the tech stack */
+.tech-stack-container
+{
+    position: absolute;
+    bottom: 0;
+    left: 7%;
+    width: 86%;
+    overflow: hidden;
+    /*background-color: #222;*/
+    padding: 16px 0;
+    text-align: center;
+    border-radius:64px;
+}
+
+/* Main container that holds all tech items */
+.tech-stack
+{
+    display: flex;
+    flex-wrap: nowrap; /* Don't wrap the items to the next line */
+    animation: scroll-right-to-left 20s linear infinite; /* Apply scrolling animation */
+}
+
+/* Individual tech item */
+.tech-item {
+
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    margin-right: 40px; /* Space between items */
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+/* Define the scroll animation */
+@keyframes scroll-right-to-left {
+    0%
+    {
+        opacity: 0.05;
+        transform: translateX(100%); /* Start position: off-screen right */
+
+    }
+    5%
+    {
+        opacity: 0.75;
+    }
+
+    95%
+    {
+        opacity: 0.75;
+    }
+    100%
+    {
+        opacity: 0.55;
+        transform: translateX(-100%); /* End position: off-screen left */
+    }
+}

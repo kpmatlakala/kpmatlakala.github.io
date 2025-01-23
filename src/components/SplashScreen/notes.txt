@@ -1,0 +1,441 @@
+<div class="intro-section">
+  <h2>About De-Light-Plus Chat</h2>
+  <p>De-Light-Plus (DLP) Chat is your friendly assistant, here to guide you through the portfolio. It helps you explore sections, learn about my projects, and answer any questions you have along the way.</p>
+  <p>Just type your questions or commands, and DLP will provide the information you need in a conversational style. Let's get started!</p>
+  <button onclick="startChat()">Start Chat</button>
+</div>
+
+
+//////////////
+import React, { useState, useEffect } from "react";
+import "./SplashScreen.css";
+
+const SplashScreen = ({ onFinish }) => {
+  const [messages, setMessages] = useState([]);
+  const [userInput, setUserInput] = useState("");
+  const [isComplete, setIsComplete] = useState(false);
+  const [typingMessage, setTypingMessage] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+  const [isInit, setIsInit] = useState(false); // Preventing double init
+  const [countdown, setCountdown] = useState(10);
+  const [finalMessageShown, setFinalMessageShown] = useState(false);
+
+  // Define questions and Table of Contents
+  const questions = [
+    "Hello, I'm De-Light-Plus, but you can call me DLP! What's your name?",
+    "How are you feeling today?",
+    "What brings you here to my creator's portfolio?",
+  ];
+
+  const tableOfContents = [
+    "1. Personal Introduction",
+    "2. Resume",
+    "3. Skills Matrix",
+    "4. Individual Projects",
+    "5. Group Projects",
+    "6. Assessments",
+    "7. Feedback and Reflections",
+    "8. Post-Program Goals",
+  ];
+
+  // Load saved state on initial render
+  useEffect(() => {
+    loadSavedMessages();
+  }, []);
+
+  // Sync messages with localStorage
+  useEffect(() => {
+    // console.log("getMessages", messages); // Uncomment to see saved messages
+  }, [messages]);
+
+  // Countdown timer and final message logic
+  useEffect(() => {
+    if (isComplete && countdown > 0) {
+      const timer = setInterval(() => setCountdown((prev) => prev - 1), 1000);
+      return () => clearInterval(timer);
+    }
+
+    if (countdown <= 0 && !finalMessageShown) {
+      showFinalMessage();
+    }
+  }, [isComplete, countdown]);
+
+  const loadSavedMessages = () => {
+    const savedMessages = JSON.parse(localStorage.getItem("chatMessages")) || [];
+    setMessages(savedMessages);
+
+    // Check if there are no saved messages, and it's not initialized already
+    if (savedMessages.length === 0 && !isInit) {
+      setIsInit(true);
+      initFirstMessage();      
+    }
+  };
+
+  const initFirstMessage = () => {
+    // Trigger typing of the first message
+    typeText(questions[0]);
+  };
+
+  const typeText = (text) => {
+    setIsTyping(true);
+    let index = 0;
+    setTypingMessage("");
+
+    const interval = setInterval(() => {
+      if (index < text.length) {
+        setTypingMessage((prev) => prev + text.charAt(index));
+        index++;
+      } else {
+        clearInterval(interval);
+        // Update the messages state only after typing is complete
+        setMessages((prev) => [...prev, { text, from: "DLP" }]);
+        setTypingMessage("");
+        setIsTyping(false);
+      }
+    }, 50);
+  };
+
+  const handleUserInput = (e) => {
+    if (e.key === "Enter" && userInput.trim() && !isTyping) {
+      setMessages((prev) => [...prev, { text: userInput, from: "User" }]);
+      setUserInput("");
+
+      const nextMessage = getNextQuestion();
+      if (nextMessage) {
+        setTimeout(() => typeText(nextMessage), 500);
+      } else {
+        setIsComplete(true);
+        localStorage.setItem("user", JSON.stringify({ sess_complete: true }));
+      }
+    }
+  };
+
+  const getNextQuestion = () => {
+    const userMessages = messages.filter((msg) => msg.from === "User").length;
+    return questions[userMessages + 1] || null;
+  };
+
+  const showFinalMessage = () => {
+    setFinalMessageShown(true);
+    setTimeout(() => {
+      setMessages((prev) => [
+        ...prev,
+        { text: "I will be hanging around in the chat section, ready when you need me! 😄", from: "DLP" },
+      ]);
+
+      setTimeout(() => {
+        alert("I will be hanging around in the chat section, ready when you need me! 😄");
+        onFinish();
+      }, 2000);
+    }, 1000);
+  };
+
+  return (
+    <div className="splash-container">
+      <div className="welcome-header">
+        <h3>{isComplete ? "" : "Welcome to"}</h3>
+        <div className="logo-section">
+          <p>*******************************************************</p>
+          <h1>K.P Matlakala</h1>
+          <p>*******************************************************</p>
+          <h3>Portfolio of Evidence</h3>
+        </div>
+      </div>
+
+      {/* Intro Section */}
+      <div className="intro-section">
+        <div className="portfolio-details">
+          <ul>
+            <li><strong>Full Name:</strong> Kabelo Peter Matlakala</li>
+            <li><strong>CodeTribe Location:</strong> Limpopo, Polokwane</li>
+            <li><strong>Program Enrolled:</strong> Web and Mobile Development</li>
+            <li><strong>Contact Information:</strong>
+              <ul>
+                <li>Email: <a href="mailto:matlakalakabelo1@gmail.com">matlakalakabelo1@gmail.com</a></li>
+                <li>Linkedin: <a href="https://linkedin.com/in/kabelo-matlakala">kabelo-matlakala</a></li>
+                <li>GitHub: <a href="https://github.com/kabelo-matlakala">kabelo-matlakala</a></li>
+                <li>Phone: <a href="tel:+27727138367">+27 72 713 8367</a></li>
+              </ul>
+            </li>
+            <li><strong>Date:</strong> 20/12/2024</li>
+          </ul>
+        </div>
+        <br />
+        <p>De-Light-Plus (DLP) Chat is your personal assistant here to help you explore my creator's portfolio.</p>
+        <p>Let's start with a few quick questions to help guide you through the experience.</p>
+      </div>
+
+      {/* Messages */}
+      <div className="splash-messages">
+        {messages.map((msg, index) => (
+          <p key={index} className={msg.from === "DLP" ? "DLP" : "user"}>
+            {msg.from === "DLP" ? "DLP: " : "You: "} {msg.text}
+          </p>
+        ))}
+        {isTyping && (
+          <p className="eliza typing">
+            DLP: {typingMessage}
+            <span className="cursor">|</span>
+          </p>
+        )}
+      </div>
+
+      {/* User Input */}
+      {!isComplete && (
+        <input
+          type="text"
+          className="input-box"
+          placeholder="Type here and press Enter..."
+          value={userInput}
+          onChange={(e) => setUserInput(e.target.value)}
+          onKeyDown={handleUserInput}
+          disabled={isTyping}
+        />
+      )}
+
+      {/* Automatically show Table of Contents */}
+      {isComplete && !finalMessageShown && (
+        <div className="table-of-contents">
+          <h3>Table of Contents</h3>
+          <ul>
+            {tableOfContents.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* Progress Bar with Continue Button */}
+      {isComplete && finalMessageShown && (
+        <div className="progress-container">
+          <button className="continue-btn" onClick={onFinish}>
+            Continue ({countdown}s)
+          </button>
+          <div className="progress-bar" style={{ width: `${countdown * 10}%` }} />
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default SplashScreen;
+
+
+/////////////////////////////////////////
+import React, { useState, useEffect } from "react";
+import "./SplashScreen.css";
+
+const SplashScreen = ({ onFinish }) => {
+  const [messages, setMessages] = useState([]);
+  const [userInput, setUserInput] = useState("");
+  const [isComplete, setIsComplete] = useState(false);
+  const [typingMessage, setTypingMessage] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+  const [countdown, setCountdown] = useState(10);
+  const [finalMessageShown, setFinalMessageShown] = useState(false);
+  const [userName, setUserName] = useState(localStorage.getItem("userName") || "");
+
+  // Define questions and Table of Contents
+  const questions = [
+    "Hello, I'm De-Light-Plus, but you can call me DLP! What's your name?",
+    "How are you feeling today?",
+    "What brings you here to my creator's portfolio?",
+  ];
+
+  const tableOfContents = [
+    "1. Personal Introduction",
+    "2. Resume",
+    "3. Skills Matrix",
+    "4. Individual Projects",
+    "5. Group Projects",
+    "6. Assessments",
+    "7. Feedback and Reflections",
+    "8. Post-Program Goals",
+  ];
+
+  // Load saved state on initial render
+  useEffect(() => {
+    loadSavedMessages();
+    // Check if "firstMessageShown" is in localStorage to determine if we should display the first message
+    if (!localStorage.getItem("firstMessageShown") && !localStorage.getItem("user")) {
+      initFirstMessage();
+    }
+  }, []); // Empty dependency ensures this runs once on mount
+
+  // Countdown timer and final message logic
+  useEffect(() => {
+    if (isComplete && countdown > 0) {
+      const timer = setInterval(() => setCountdown((prev) => prev - 1), 1000);
+      return () => clearInterval(timer);
+    }
+
+    if (countdown <= 0 && !finalMessageShown) {
+      showFinalMessage();
+    }
+  }, [isComplete, countdown]);
+
+  const loadSavedMessages = () => {
+    const savedMessages = JSON.parse(localStorage.getItem("chatMessages")) || [];
+    setMessages(savedMessages);
+  };
+
+  const initFirstMessage = () => {
+    // Set a flag in localStorage to ensure the first message is only triggered once
+    localStorage.setItem("firstMessageShown", "true");
+
+    // Trigger typing of the first message
+    typeText(questions[0]);
+  };
+
+  const typeText = (text) => {
+    setIsTyping(true);
+    let index = 0;
+    setTypingMessage("");
+
+    const interval = setInterval(() => {
+      if (index < text.length) {
+        setTypingMessage((prev) => prev + text.charAt(index));
+        index++;
+      } else {
+        clearInterval(interval);
+        // Update the messages state only after typing is complete
+        setMessages((prev) => [...prev, { text, from: "DLP" }]);
+        setTypingMessage("");
+        setIsTyping(false);
+      }
+    }, 50);
+  };
+
+  const handleUserInput = (e) => {
+    if (e.key === "Enter" && userInput.trim() && !isTyping) {
+      setMessages((prev) => [...prev, { text: userInput, from: "User" }]);
+      const trimmedInput = userInput.trim();
+
+      // Check if the user has answered the "What's your name?" question
+      if (questions[0] === messages[messages.length - 1]?.text) {
+        setUserName(trimmedInput);
+        localStorage.setItem("userName", trimmedInput);  // Store name in localStorage for persistence
+      }
+
+      setUserInput("");
+
+      const nextMessage = getNextQuestion();
+      if (nextMessage) {
+        setTimeout(() => typeText(nextMessage), 500);
+      } else {
+        setIsComplete(true);
+        localStorage.setItem("user", JSON.stringify({ sess_complete: true }));
+      }
+    }
+  };
+
+  const getNextQuestion = () => {
+    const userMessages = messages.filter((msg) => msg.from === "User").length;
+    return questions[userMessages + 1] || null;
+  };
+
+  const showFinalMessage = () => {
+    setFinalMessageShown(true);
+    setTimeout(() => {
+      setMessages((prev) => [
+        ...prev,
+        { text: `I will be hanging around in the chat section, ready when you need me, ${userName}! 😄`, from: "DLP" },
+      ]);
+
+      setTimeout(() => {
+        alert(`I will be hanging around in the chat section, ready when you need me, ${userName}! 😄`);
+        onFinish();
+      }, 2000);
+    }, 1000);
+  };
+
+  return (
+    <div className="splash-container">
+      <div className="welcome-header">
+        <h3>{isComplete ? "" : "Welcome to"}</h3>
+        <div className="logo-section">
+          <p>*******************************************************</p>
+          <h1>K.P Matlakala</h1>
+          <p>*******************************************************</p>
+          <h3>Portfolio of Evidence</h3>
+        </div>
+      </div>
+
+      {/* Intro Section */}
+      <div className="intro-section">
+        <div className="portfolio-details">
+          <ul>
+            <li><strong>Full Name:</strong> Kabelo Peter Matlakala</li>
+            <li><strong>CodeTribe Location:</strong> Limpopo, Polokwane</li>
+            <li><strong>Program Enrolled:</strong> Web and Mobile Development</li>
+            <li><strong>Contact Information:</strong>
+              <ul>
+                <li>Email: <a href="mailto:matlakalakabelo1@gmail.com">matlakalakabelo1@gmail.com</a></li>
+                <li>Linkedin: <a href="https://linkedin.com/in/kabelo-matlakala">kabelo-matlakala</a></li>
+                <li>GitHub: <a href="https://github.com/kabelo-matlakala">kabelo-matlakala</a></li>
+                <li>Phone: <a href="tel:+27727138367">+27 72 713 8367</a></li>
+              </ul>
+            </li>
+            <li><strong>Date:</strong> 20/12/2024</li>
+          </ul>
+        </div>
+        <br />
+        <p>De-Light-Plus (DLP) Chat is your personal assistant here to help you explore my creator's portfolio.</p>
+        <p>Let's start with a few quick questions to help guide you through the experience.</p>
+      </div>
+
+      {/* Messages */}
+      <div className="splash-messages">
+        {messages.map((msg, index) => (
+          <p key={index} className={msg.from === "DLP" ? "DLP" : "user"}>
+            {msg.from === "DLP" ? "DLP: " : "You: "} {msg.text}
+          </p>
+        ))}
+        {isTyping && (
+          <p className="eliza typing">
+            DLP: {typingMessage}
+            <span className="cursor">|</span>
+          </p>
+        )}
+      </div>
+
+      {/* User Input */}
+      {!isComplete && (
+        <input
+          type="text"
+          className="input-box"
+          placeholder="Type here and press Enter..."
+          value={userInput}
+          onChange={(e) => setUserInput(e.target.value)}
+          onKeyDown={handleUserInput}
+          disabled={isTyping}
+        />
+      )}
+
+      {/* Automatically show Table of Contents */}
+      {isComplete && !finalMessageShown && (
+        <div className="table-of-contents">
+          <h3>Table of Contents</h3>
+          <ul>
+            {tableOfContents.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* Progress Bar with Continue Button */}
+      {isComplete && finalMessageShown && (
+        <div className="progress-container">
+          <button className="continue-btn" onClick={onFinish}>
+            Continue ({countdown}s)
+          </button>
+          <div className="progress-bar" style={{ width: `${countdown * 10}%` }} />
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default SplashScreen;
+

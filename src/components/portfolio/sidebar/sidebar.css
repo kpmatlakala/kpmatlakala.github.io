@@ -1,0 +1,207 @@
+.fixed-menu
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width:6.5%;
+  height: 100vh;
+  background-color: #171717;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* transform-origin: top left; */
+  /* transform: rotate(90deg) translateY(-100vh); */
+  /* padding: 20px; */
+  z-index: 10;
+}  
+.fixed-menu.open 
+{
+  left: 0; /* Slide in the sidebar */ 
+}
+
+.hamburger-icon 
+{
+  display: none; /* Initially hide the hamburger icon */
+  font-size: 30px;
+  cursor: pointer;
+  padding: 0 8px;
+  background-color: #0a0a0a;
+  color: rgb(255, 255, 255);
+  position: fixed;
+  top: 32px;
+  left: 10px;
+  z-index: 150; /* Make sure it stays above other elements */
+}
+
+
+.fixed-menu .logo 
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold; 
+  background: black; 
+  width: 100%;
+  height: 186px;
+}
+.logo .logo-actual
+{
+  /* position: relative;   */
+  display: inline-block;  
+}
+.fstLetter 
+{
+  position: absolute;
+  top: -8px;
+  left: 16%;
+  font-size: 86px; 
+  color: cyan;
+}
+.sndLetter
+{
+  position: absolute;
+  top: -8px;
+  left: calc(16% + 10px);
+  font-size: 86px; 
+  color: magenta;
+}
+
+
+.nameNstack
+{
+  position: relative;
+  margin-top: 86px;
+  text-align: center;
+}
+.nameNstack .name
+{
+  font-size: 24px;
+}
+
+.nameNstack .description
+{
+  color: #666;
+  font-size: 10px;
+}
+
+.nameNstack .status
+{
+  font-size: 8px;
+}
+
+.menu 
+{
+  width: 100%;
+  /* text-align: center;  */
+  left: 0; 
+}
+  
+.fixed-menu .menu ul 
+{
+  /* width: 100%; */
+  list-style: none;
+  padding: 0;
+}
+  
+.fixed-menu .menu li 
+{
+  padding: 6px 0;
+  margin: 10px 0;
+  cursor: pointer;
+  /* background: #000000; */
+  /* width: 100%; */
+  border-bottom: #666 solid 1px;
+  text-align: center;
+}
+
+.fixed-menu .menu li.active
+{
+  text-shadow: cyan 1px 1px 5px;
+  font-weight: 700;
+  /* border-bottom: cyan solid 1px; */
+  box-shadow: rgba(0, 255, 255, 0.075) -4px 10px 16px 1px;
+}
+
+.fixed-menu .menu li:hover
+{
+  text-shadow: rgb(255, 139, 255) 1px 1px 8px;
+  font-weight: 700;
+  box-shadow: rgba(255, 0, 225, 0.075) -4px 10px 16px 1px;
+
+}
+
+.resume-btn
+{
+  padding: 4px;
+  background: whitesmoke;
+  color: black;
+  font-weight: 600;
+}
+  
+.fixed-menu .social-icons
+{
+  display: flex;
+  justify-content:space-evenly;
+  padding: 8px;
+  width: 100%;
+  height: 16%;
+  background: #000000;
+}
+
+.fixed-menu .social-icons div 
+{
+  margin: 10px 0;
+  font-size: 21px;    
+}
+
+/* Media Query for Tablet and Mobile (max-width: 1024px) */
+@media (max-width: 1024px) 
+{
+  .hamburger-icon 
+  {
+    display: block; /* Show hamburger icon on mobile/tablet */
+    background-color: transparent;
+  }
+
+  .hamburger-icon.open
+  {
+    top:40px
+  }
+
+  .fixed-menu
+  {      
+    width: 86px;
+    /* background: transparent; */
+    left: -250px; /* Sidebar starts off-screen */
+  }
+  .fixed-menu.open
+  {
+    left: 0;
+  }
+
+  .fixed-menu.open > .hamburger-icon 
+  {
+    top: 86px;
+  } 
+
+  .menu li
+  {
+    /* background: #131313c7; */
+  }
+
+  .social-icons
+  {
+    justify-self: flex-end;
+  }
+}
+
+/* Media Query for Mobile (max-width: 768px) */
+@media (max-width: 868px) 
+{
+  
+}

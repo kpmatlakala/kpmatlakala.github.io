@@ -1,0 +1,127 @@
+
+#skills 
+{
+  background: #00000000;
+}
+
+.skills-matrix 
+{
+    width: 100%;
+    max-width: 900px;
+    height: 86vh;
+    margin: 0 auto;
+    padding: 1rem;
+    /* background-color: #f4f7fa; */
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+  
+.skills-title 
+{
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+  
+.skills-table 
+{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.skills-table th,
+.skills-table td 
+{
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.skills-table th 
+{
+  background-color: black;
+  color: cyan;
+  border: rgba(0, 255, 255, 0.144) 1px solid;
+  box-shadow: cyan 0 2px 8px;
+  font-weight: 600;
+  position: sticky;
+  top: -14px; /* Sticks to the top when scrolling */
+  z-index: 1;
+}
+
+.skills-table td 
+{
+  background-color: #ffffff0e;
+  color: whitesmoke;
+}
+
+.proficiency-bar 
+{
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bar
+{
+  height: 100%;
+  border-radius: 5px;
+}
+
+.bar.beginner 
+{
+  background-color: rgb(255, 208, 0);
+}
+
+.bar.intermediate 
+{
+  background-color: cyan;
+}
+
+.bar.advanced 
+{
+  background-color: magenta;
+}  
+.skills-table tr:hover 
+{
+  background-color: #f1f1f1;   
+  font-weight: bold;
+}
+
+.skills-table tr:hover td
+{
+  color: black;
+}
+
+.skills-table tbody tr
+{
+  animation: skill_appears linear;
+  animation-timeline: view();
+  animation-range: entry 40% cover 17%;
+}
+
+@keyframes skill_appears
+{
+  from 
+  {
+    opacity: 0;
+    scale: 0.5;
+    transform: translate(-120px, 50px);
+  }
+  to
+  {
+    opacity: 1;
+    scale: 1;
+    transform: translate(0);
+  }
+}
+
