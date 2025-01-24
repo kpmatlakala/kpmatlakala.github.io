@@ -4,18 +4,17 @@ import React from 'react';
 import {
     FaLinkedinIn,
     FaInstagram,
-    FaGithub,  
+    FaGithub,
+    FaDownload,  
   } from '../../../utils/icons';
   
 import { useState } from "react";
    
-   const SideBar = () => 
-   {
-     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+const SideBar = () => 
+{
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-     const toggleSidebar = () => {
-      setIsSidebarOpen(!isSidebarOpen);
-    };
+    const toggleSidebar = () => { setIsSidebarOpen(!isSidebarOpen); }
     
     return (
       <>
@@ -44,7 +43,9 @@ import { useState } from "react";
           <div className="menu">
             <ul>
               <li className="">About</li>
-              <li className="">Skills</li>            
+              <li className="">Education</li>            
+              <li className="">Skills</li>       
+              <li className="">Experience</li>  
               <li className="active">Projects</li>
               <li className="">Contacts</li>
             </ul>
@@ -52,7 +53,10 @@ import { useState } from "react";
 
           <div>
             <a href="src/assets/Mr-Kabelo-Peter-Matlakala-Resume-20241024.pdf" download="KP_Matlakala_Resume">
-              <button className="resume-btn">⬇ Resume</button>
+              <button className="resume-btn">
+                <FaDownload size={10} />
+                Resume
+              </button>
             </a>
           </div>
       

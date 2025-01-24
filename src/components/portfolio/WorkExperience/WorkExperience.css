@@ -1,0 +1,118 @@
+/* App.css */
+
+/* Card container */
+.card {
+    width: 340px;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  
+  /* Card Header (Top section with Avatar, Name, and Follow button) */
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+  
+  .header-left {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+  }
+  
+  .username {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+  }
+  
+  .follow-btn 
+  {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+  }
+  
+  .follow-btn.follow {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .follow-btn.unfollow {
+    background-color: transparent;
+    border: 1px solid #d1d5db;
+    color: #333;
+  }
+  
+  .follow-btn:hover {
+    opacity: 0.8;
+  }
+  
+  /* Card Body (Description Section) */
+  .card-body {
+    padding: 0 15px;
+    font-size: 0.875rem;
+    color: #6b7280;    
+  }
+  
+  .hashtag {
+    display: block;
+    margin-top: 8px;
+    color: #3b82f6;
+  }
+  
+  .emoji {
+    margin-left: 5px;
+  }
+  
+  /* Card Footer (Following & Followers) */
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .footer-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .footer-number {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .footer-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+  

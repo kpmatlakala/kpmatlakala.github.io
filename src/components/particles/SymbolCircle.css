@@ -1,7 +1,7 @@
 /* src/SymbolCircle.css */
 .circle-container 
 {
-   position: absolute;
+  position: absolute;
   top: 50%;
   left: 40%;
   transform: translate(-25%, -50%); 
@@ -16,8 +16,6 @@
 
 }
 
-
-
 .symbol-circle {
   position: absolute;
   display: flex;
@@ -27,9 +25,11 @@
   opacity: 0.8;
   border: 2px solid #3f3f3f25;
   animation-timing-function: linear;
+  color: rgba(105, 105, 105, 0.363);
 }
 
-.symbol {
+.symbol 
+{
   position: absolute;
   font-size: 28px;
   font-family:'Courier New', Courier, monospace;

@@ -1,7 +1,7 @@
 // src/utils/icons.ts
 
 // Importing icons from different icon sets
-import { FaLinkedinIn, FaFacebookF, FaInstagram, FaGithub } from 'react-icons/fa'; // FontAwesome
+import { FaLinkedinIn, FaFacebookF, FaInstagram, FaGithub, FaDownload } from 'react-icons/fa'; // FontAwesome
 import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md'; // Material Design
 import { FiGithub } from 'react-icons/fi'; // Feather Icons
 import { GiGamepad } from 'react-icons/gi'; // Game Icons
@@ -12,11 +12,13 @@ export {
   FaFacebookF,
   FaInstagram,
   FaGithub,
+  FaDownload,
   MdEmail,
   MdPhone,
   MdLocationOn,
   FiGithub,
   GiGamepad
+
 };
 
 // [

@@ -10,7 +10,7 @@ const techStack = [
     'MongoDB',
     'Git',
     'Firebase',
-    'GraphQL',
+    'TailWind',
     'TypeScript',
     'Express',
 ];

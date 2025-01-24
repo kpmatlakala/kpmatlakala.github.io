@@ -1,0 +1,86 @@
+/* Container for the Card */
+.card 
+{
+    background-color: rgb(221, 221, 221);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px;
+    width: 100%;
+}
+  
+  .max-width 
+  {
+    max-width: 400px;
+  }
+  
+  /* Flexbox for the card header */
+  .card-header 
+  {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    gap: 12px;
+  }
+  
+  .image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 32px;
+    background: #6c757d2f;
+  }
+  
+  .text-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .sub-title {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin: 0;
+  }
+  
+  /* Divider styles */
+  .divider {
+    border-top: 1px solid #f0f0f0;
+  }
+  
+  /* Card body styles */
+  .card-body {
+    padding: 16px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Card footer styles */
+  .card-footer {
+    padding: 8px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
+  .link::after {
+    content: " →";
+    font-size: 1rem;
+  }
+  

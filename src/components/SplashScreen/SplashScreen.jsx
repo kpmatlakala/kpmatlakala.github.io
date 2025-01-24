@@ -210,7 +210,7 @@ const SplashScreen  = ({ onFinish }) => {
       )}
 
       <div className="welcome-header">
-        <h3>Welcome to <strong><u>De_Light_plus</u></strong> chat</h3>
+        <h3>Welcome to <strong><u>De Light Plus</u></strong> chat</h3>
         <div className="logo-section">
           <p>*******************************************************</p>
           <h1>K.P Matlakala</h1>
@@ -228,8 +228,8 @@ const SplashScreen  = ({ onFinish }) => {
             <li><strong><u>Contact Information:</u></strong>
               <ul>
                 <li>Email: <a href="mailto:matlakalakabelo1@gmail.com">matlakalakabelo1@gmail.com</a></li>
-                <li>Linkedin: <a href="https://linkedin.com/in/kabelo-matlakala">kabelo-matlakala</a></li>
-                <li>GitHub: <a href="https://github.com/kabelo-matlakala">kabelo-matlakala</a></li>
+                <li>Linkedin: <a href="https://linkedin.com/in/kabelo-matlakala-704349273">Kabelo Matlakala</a></li>
+                <li>GitHub: <a href="https://github.com/DeLightPlus">DeLightPlus@github</a></li>
                 <li>Phone: <a href="tel:+27727138367">+27 72 713 8367</a></li>
               </ul>
             </li>
@@ -296,7 +296,7 @@ const SplashScreen  = ({ onFinish }) => {
       {isComplete && finalMessageShown && (
         <div className="progress-container">
           <button className="continue-btn" onClick={handleContinue}>
-            Continue
+            » continue ▸
           </button>
         </div>
       )}

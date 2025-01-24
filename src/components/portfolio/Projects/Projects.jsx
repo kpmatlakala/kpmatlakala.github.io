@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import './Projects.css';
+import React, { useState } from "react";
+import "./Projects.css";
 
 // Data for the projects
 const projects = [
@@ -8,52 +8,51 @@ const projects = [
     description: 'A weather forecasting app that fetches real-time weather data using the OpenWeatherMap API.',
     technologies: ['React', 'OpenWeatherMap API', 'CSS'],
     duration: 'July 2024 – October 2024',
-    previewImage: 'path/to/weather-app-image.jpg', 
+    previewImage: 'path/to/weather-app-image.jpg',
     livePreviewLink: 'https://weather-app-demo-link.com',
     keyFeatures: [
       'Real-time weather data fetching',
       'Location search functionality',
-      'Temperature unit conversion (Celsius/Fahrenheit)'
+      'Temperature unit conversion (Celsius/Fahrenheit)',
     ],
     challenges: [
       'Handling asynchronous nature of fetching data: Used async/await to handle API calls.',
-      'Managing user input errors: Implemented input validation for city name errors to avoid crashes.'
-    ]
+      'Managing user input errors: Implemented input validation for city name errors to avoid crashes.',
+    ],
   },
   {
     title: 'ShoppingList App (Redux Toolkit)',
     description: 'A shopping list app that allows users to add, remove, and manage items, using Redux Toolkit for state management.',
     technologies: ['React', 'Redux Toolkit', 'CSS'],
-    duration: 'July 2024 – October 2024',    
+    duration: 'July 2024 – October 2024',
     keyFeatures: [
       'State management with Redux Toolkit',
       'Add, remove, and edit shopping list items',
-      'Data persistence using localStorage'
+      'Data persistence using localStorage',
     ],
     challenges: [
       'Managing complex state transitions: Used Redux Toolkit\'s createSlice for better state handling.',
-      'Persisting data across app restarts: Implemented localStorage to keep shopping list data intact.'
+      'Persisting data across app restarts: Implemented localStorage to keep shopping list data intact.',
     ],
-    previewImage: 'path/to/shoppinglist-app-image.jpg', 
+    previewImage: 'path/to/shoppinglist-app-image.jpg',
     livePreviewLink: 'https://shoppinglist-app-demo-link.com',
   },
   {
     title: 'TodoList App (SQLite3)',
     description: 'A simple todo list app where users can add, remove, and edit tasks, with SQLite3 as the local database.',
     technologies: ['React', 'SQLite3', 'CSS'],
-    duration: 'July 2024 – October 2024',   
+    duration: 'July 2024 – October 2024',
     keyFeatures: [
       'Local database with SQLite3 for task management',
       'CRUD functionality for tasks (Create, Read, Update, Delete)',
-      'Task filtering by completion status'
+      'Task filtering by completion status',
     ],
     challenges: [
       'Integrating SQLite3 with React: Used async functions to interact with the database without blocking the main thread.',
-      'Ensuring data persistence: Designed the SQLite schema to persist tasks even after app restarts.'
+      'Ensuring data persistence: Designed the SQLite schema to persist tasks even after app restarts.',
     ],
-    previewImage: '', 
-    livePreviewLink: '', 
-
+    previewImage: '',
+    livePreviewLink: '',
   },
 ];
 
@@ -86,157 +85,86 @@ const Projects = () => {
     );
   };
 
-  
   return (
+
+    
     <div className="projects-container">
-      <h2 className="projects-title"><span>m</span>lab <span>Code</span>Tribe <small>(June 2024-Present)</small></h2>
-      <div className="projects-list">
-
-        {/* Memory Game Project */}
-        <div className="project-card" onClick={() => openModal(-1)}>
-          <h3 className="project-title">Memory Game</h3>
-          <p className="project-description">
-            A fun and interactive card-guessing game that challenges your memory. 
-            <br /> Built with DOM manipulation, this game allows players to match pairs of cards within a time limit.
-          </p>
-          <p className="project-technologies">
-            <strong>Technologies Used:</strong> HTML, CSS, JavaScript
-          </p>
+      <div className="project-card">
+        <div className="project-header">
+          <p className="project-subtitle">React, CSS, OpenWeatherMAp API</p>
+          <h4 className="project-title">Weather App </h4>
         </div>
+        <img
+          className="project-image"
+          src="https://heroui.com/images/card-example-4.jpeg"
+          alt="Card background"
+        />
+      </div>
 
-        {
-          isModalOpen && currentProjectIndex != null &&
-          <div className="project-modal"> 
-          <h3 className="project-title">Memory Game</h3>
-          <p className="project-description">
-            A fun and interactive card-guessing game that challenges your memory. 
-            <br /> Built with DOM manipulation, this game allows players to match pairs of cards within a time limit.
-          </p>
-          <p className="project-technologies">
-            <strong>Technologies Used:</strong> HTML, CSS, JavaScript
-          </p>
-          {/* Key Features Section */}
-          <div className="project-features">
-            <h4>Key Features:</h4>
-            <ul>
-              <li>Interactive card matching gameplay</li>
-              <li>Timed challenge to improve memory</li>
-              <li>Dynamic card shuffling and pair matching</li>
-            </ul>
-          </div>          
+      <div className="project-card">
+        <div className="project-header">
+          <p className="project-subtitle">React, CSS, Redux Toolkit, JSON-Server</p>
+          <h4 className="project-title">ShoppingList App</h4>
+        </div>
+        <img
+          className="project-image"
+          src="src/assets/screenshots/shoppingList/home-page-removebg-preview.png"
+          alt="Card background"
+        />
+      </div>
 
-          {/* Challenges Faced and Solutions */}
-          <div className="project-challenges">
-            <h4>Challenges Faced and Solutions:</h4>
-            <ul>
-              <li>Challenge: Managing state of cards and match detection.<br />
-                Solution: Used an array to track card states and compare matched pairs effectively with JavaScript.
-              </li>
-              <li>Challenge: Synchronizing time limit and game over condition.<br />
-                Solution: Set up a countdown timer that halts the game when time runs out or all pairs are matched.
-              </li>
-            </ul>
-          </div>
-          {/* <hr/> */}
+      <div className="project-card">
+        <div className="project-header">
+          <p className="project-subtitle">React, CSS, SQLite3</p>
+          <h4 className="project-title">Todo-List App</h4>
+        </div>
+        <img
+          className="project-image"
+          src="src/assets/todoList/login-capture-removebg-preview.png"
+          alt="Card background"
+        />
+      </div>
 
-          {/* Preview Button and Modal */}
-          <div className="project-actions">
-            <button className="preview-btn" onClick={toggleModal}>
-              Try a Preview 
-            </button>
-          </div>
+      <div className="project-card project-with-footer">
+        <div className="project-header">
+          <p className="project-subtitle">HTML, CSS, JavaScript</p>
+          <h4 className="project-title">Card Guessing Game</h4>
+        </div>
+        <img
+          className="project-image"
+          src="https://heroui.com/images/card-example-6.jpeg"
+          alt="Card example background"
+        />
+        <div className="project-footer">
+          <p className="footer-text">Available soon. Get notified.</p>
+          <button className="notify-btn">Notify Me</button>
+        </div>
+      </div>
 
-          {/* Project Image Preview */}
-          <div className="project-image">
-            <img src="src/assets/screenshots/memorygame_Ss.PNG" alt="Memory Game Preview" className="project-preview-img" />
-          </div> 
-
-          {/* Modal for Preview */}
-          <div className={`game-modal ${!isOpen ? 'go-back' : ''}`}>
-            <button onClick={toggleModal}> ◀ Close The Game</button>
-            <iframe 
-              src={"src/components/portfolio/Projects/memory-game/index.html"} // Path to your HTML file in the public folder
-              width="100%"
-              height="100%"
-              title="Memory Game Preview"
-              style={{ border: 'none' }}
+      <div className="project-card project-with-footer">
+        <div className="project-header">
+          <p className="project-subtitle">HTML, CSS</p>
+          <h4 className="project-title">Base Apparel</h4>
+        </div>
+        <img
+          className="project-image"
+          src="https://heroui.com/images/card-example-5.jpeg"
+          alt="Relaxing app background"
+        />
+        <div className="project-footer">
+          <div className="footer-left">
+            <img
+              className="footer-icon"
+              src="https://heroui.com/images/breathing-app-icon.jpeg"
+              alt="Breathing app icon"
             />
+            <div className="footer-info">
+              <p>Breathing App</p>
+              <p>Get a good night's sleep.</p>
+            </div>
           </div>
-          </div>
-        }
-
- 
-        {projects.map((project, index) => (
-          <>
-            <div key={index} className="project-card" onClick={() => openModal(index)}>
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-description">{project.description}</p>
-              <p className="project-technologies">
-                <strong>Technologies:</strong> {project.technologies.join(', ')}
-              </p>
-            
-              {/* <div className="project-image">
-                <img src={project.previewImage} alt={project.title} className="project-preview-img" />
-              </div> */}
-
-              {/* Live Preview Link */}
-              <div className="project-actions">
-                <a href={project.livePreviewLink} target="_blank" rel="noopener noreferrer">
-                  <button className="preview-btn">View Live Demo</button>
-                </a>
-              </div>
-            </div> 
-          
-            { isModalOpen && currentProjectIndex != null && (
-              <div className="project-modal">                
-                <div className="modal-content">
-                  <button className="close-modal" onClick={closeModal}>×</button>
-                  <h3 className="project-title">{project.title}</h3>
-                  <p className="project-description">{project.description}</p>
-                  <p className="project-technologies">
-                    <strong>Technologies:</strong> {project.technologies.join(', ')}
-                  </p>
-
-                  {/* Key Features Section */}
-                  <div className="project-features">
-                    <h4>Key Features:</h4>
-                    <ul>
-                      {project.keyFeatures.map((feature, index) => (
-                        <li key={index}>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Challenges Faced Section */}
-                  <div className="project-challenges">
-                    <h4>Challenges Faced and Solutions:</h4>
-                    <ul>
-                      {project.challenges.map((challenge, index) => (
-                        <li key={index}>{challenge}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Project Image Preview */}
-                  <div className="project-image">
-                    <img src={project.previewImage} alt={project.title} className="project-preview-img" />
-                  </div>
-
-                  {/* Live Preview Link */}
-                  <div className="project-actions">
-                    <a href={project.livePreviewLink} target="_blank" rel="noopener noreferrer">
-                      <button className="preview-btn">View Live Demo</button>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            )}
-          </>         
-        ))
-        
-        }
-
-        
+          <button className="get-app-btn">Get App</button>
+        </div>
       </div>
     </div>
   );
