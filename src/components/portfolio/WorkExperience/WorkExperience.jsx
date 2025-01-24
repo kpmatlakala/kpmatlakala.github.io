@@ -43,7 +43,7 @@ const WorkExperience = () => {
                         gaining valuable insights into research, project development, and scientific presentations.
                     </p>
                     <span className="hashtag">
-                    #DiscoverYourFurure
+                    #Discover_Your_Future
                     <span role="img" aria-label="computer" className="emoji">
                         💻
                     </span>
@@ -97,7 +97,7 @@ const WorkExperience = () => {
                         helped with software installations, and maintained hardware systems.
                     </p>
                     <span className="hashtag">
-                    #DiscoverYourFurure
+                    #Finding_Solution_For_Africa
                     <span role="img" aria-label="computer" className="emoji">
                         💻
                     </span>
@@ -162,7 +162,7 @@ const WorkExperience = () => {
                         and soft skills for career development.
                     </p>
                     <span className="hashtag">
-                    #DiscoverYourFurure
+                    #CodeTribe
                     <span role="img" aria-label="computer" className="emoji">
                         💻
                     </span>
