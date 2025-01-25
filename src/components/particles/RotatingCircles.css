@@ -20,8 +20,8 @@
 
 .atom-container.onEduPage
 {
-  top:24%;
-  left: 118%;
+  top:-10%;
+  left: 94%;
 
   transition: all 5s;
 }
@@ -98,13 +98,7 @@
 .atom-container.onEduPage
 .orbit-inner {
   width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border-bottom: 10px solid greenyellow;
-  border-top: 10px solid greenyellow;
-  filter: drop-shadow(0 0 10px greenyellow);
-  animation: rotateInner 500ms linear infinite;
-  /* transform: rotateX(20deg); */
+  height: 90px; 
 }
 
 

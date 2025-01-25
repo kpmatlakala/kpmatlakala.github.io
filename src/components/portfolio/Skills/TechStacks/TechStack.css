@@ -2,12 +2,13 @@
 .tech-stack-container
 {
     position: absolute;
-    bottom: 0;
+    bottom: 4px;
     left: 7%;
     width: 86%;
+    height: 45px;
     overflow: hidden;
-    /*background-color: #222;*/
-    padding: 16px 0;
+    /* background-color: #222; */
+    padding: 4px ;
     text-align: center;
     border-radius:64px;
 }
@@ -21,14 +22,25 @@
 }
 
 /* Individual tech item */
-.tech-item {
-
+.tech-item
+{ 
+    display: flex;   
+    flex-direction: row;
+    align-items: center;
     background-color: #333;
     color: white;
-    padding: 10px 20px;
-    margin-right: 40px; /* Space between items */
-    border-radius: 5px;
-    font-size: 18px;
+    padding: 4px 16px;
+    margin-right: 8px; /* Space between items */
+    border-radius: 32px;
+    font-size: 12px;
+    width: 128px;
+    gap:4px;
+}
+
+.tech-icon 
+{
+    width: 24px;
+    height: 24px;
 }
 
 /* Define the scroll animation */

@@ -6,7 +6,7 @@
 
   width:6.5%;
   height: 100vh;
-  background-color: #171717;
+  background-color: #111111;
   color: white;
   display: flex;
   flex-direction: column;
@@ -47,7 +47,7 @@
   font-weight: bold; 
   background: black; 
   width: 100%;
-  height: 186px;
+  height: 158px;
 }
 .logo .logo-actual
 {
@@ -57,7 +57,7 @@
 .fstLetter 
 {
   position: absolute;
-  top: -8px;
+  top: -16px;
   left: 16%;
   font-size: 86px; 
   color: cyan;
@@ -65,27 +65,27 @@
 .sndLetter
 {
   position: absolute;
-  top: -8px;
+  top: -16px;
   left: calc(16% + 10px);
   font-size: 86px; 
   color: magenta;
 }
-
-
 .nameNstack
 {
   position: relative;
-  margin-top: 86px;
+  margin-top: 78px;
   text-align: center;
 }
 .nameNstack .name
 {
   font-size: 24px;
+  color: #8a8a8a;
+
 }
 
 .nameNstack .description
 {
-  color: #666;
+  color: #666666;
   font-size: 10px;
 }
 
@@ -110,9 +110,10 @@
   
 .fixed-menu .menu li 
 {
-  padding: 6px 0;
-  margin: 10px 0;
+  padding: 4px 0;
+  margin: 8px 0;
   cursor: pointer;
+  font-size: 12px;
   /* background: #000000; */
   /* width: 100%; */
   border-bottom: #666 solid 1px;
@@ -125,6 +126,8 @@
   font-weight: 700;
   /* border-bottom: cyan solid 1px; */
   box-shadow: rgba(0, 255, 255, 0.075) -4px 10px 16px 1px;
+  animation: shakeTxt 0.1s infinite ease;
+
 }
 
 .fixed-menu .menu li:hover
@@ -132,15 +135,60 @@
   text-shadow: rgb(255, 139, 255) 1px 1px 8px;
   font-weight: 700;
   box-shadow: rgba(255, 0, 225, 0.075) -4px 10px 16px 1px;
+  animation: shakeTxt 0.025s infinite ease;
+}
 
+@keyframes shakeTxt {
+  0% {     
+    text-shadow: 1px 0px magenta, -1px -1px cyan;
+    transform: translateX(-1);
+  } 
+  50% {
+    text-shadow: 0px 1px rgb(0, 0, 0), -1px -1px whitesmoke;
+    transform: translateX(1);
+  }
+  100% { 
+    text-shadow: 1px 1px cyan, -1px -1px magenta;
+    transform: translateX(0);
+  } 
 }
 
 .resume-btn
 {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   padding: 4px;
   background: whitesmoke;
   color: black;
   font-weight: 600;
+}
+.resume-btn:hover
+{
+  background: #000000;
+  color: white;
+  border: none;
+  padding: 6px;
+  animation: shake_Btn 0.05s infinite ease;
+}
+
+@keyframes shake_Btn {
+  0% {     
+    box-shadow: 1px 0px magenta, -1px -1px cyan;
+    transform: translateX(-1);
+    padding: 4px;
+  } 
+  50% {
+    box-shadow: 0px 1px rgb(0, 0, 0), -1px -1px whitesmoke;
+    transform: translateX(1);
+    padding: 5px;
+  }
+  100% { 
+    box-shadow: 1px 1px cyan, -1px -1px magenta;
+    transform: translateX(0);
+    padding: 6px;
+
+  }  
 }
   
 .fixed-menu .social-icons

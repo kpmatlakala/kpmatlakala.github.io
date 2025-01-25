@@ -10,7 +10,7 @@ import {
   
 import { useState } from "react";
    
-const SideBar = () => 
+const SideBar = ({ activeSection, onScrollToSection }) => 
 {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -42,19 +42,23 @@ const SideBar = () =>
       
           <div className="menu">
             <ul>
-              <li className="">About</li>
-              <li className="">Education</li>            
-              <li className="">Skills</li>       
-              <li className="">Experience</li>  
-              <li className="active">Projects</li>
-              <li className="">Contacts</li>
+              {["about", "education", "skills", "experience", "projects", "contacts"]
+              .map((section) => (
+                <li
+                  key={section}
+                  className={activeSection === section ? "active" : ""}
+                  onClick={() => onScrollToSection(section)}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
             <a href="src/assets/Mr-Kabelo-Peter-Matlakala-Resume-20241024.pdf" download="KP_Matlakala_Resume">
               <button className="resume-btn">
-                <FaDownload size={10} />
+                <FaDownload size={10} /> 
                 Resume
               </button>
             </a>

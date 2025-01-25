@@ -8,14 +8,15 @@
 {
     width: 100%;
     max-width: 900px;
-    height: 86vh;
+    height: 80vh;
     margin: 0 auto;
     padding: 1rem;
     /* background-color: #f4f7fa; */
     color: #333;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
+    overflow: hidden;
+    overflow-y: auto;   
     scrollbar-width: none;
     scroll-behavior: smooth;
 }
@@ -38,9 +39,9 @@
 .skills-table th,
 .skills-table td 
 {
-  padding: 12px;
+  padding: 16px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ff95f60e; */
   font-size: 1rem;
 }
 
@@ -54,12 +55,24 @@
   position: sticky;
   top: -14px; /* Sticks to the top when scrolling */
   z-index: 1;
+  
 }
 
 .skills-table td 
 {
   background-color: #ffffff0e;
   color: whitesmoke;
+}
+
+.skill-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .proficiency-bar 
@@ -74,7 +87,7 @@
 .bar
 {
   height: 100%;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 .bar.beginner 
@@ -95,18 +108,22 @@
 {
   background-color: #f1f1f1;   
   font-weight: bold;
+  animation: shakeRow 0.05s infinite ease-in-out;
 }
-
 .skills-table tr:hover td
 {
   color: black;
 }
 
+.skills-table tr:hover .proficiency-bar
+{
+  animation: shakeRow 0.05s infinite ease-in-out;  
+}
 .skills-table tbody tr
 {
-  animation: skill_appears linear;
+  animation: skill_appears 5s linear, skill_fadeout linear;
   animation-timeline: view();
-  animation-range: entry 40% cover 17%;
+  animation-range: entry 50% cover 17%, exit 0% cover 100%;
 }
 
 @keyframes skill_appears
@@ -114,8 +131,9 @@
   from 
   {
     opacity: 0;
-    scale: 0.5;
-    transform: translate(-120px, 50px);
+    scale: 0.5;    
+    transform: translate(-120px, 50px);    
+    box-shadow: #f1f1f1 0 -16px 48px 16px;
   }
   to
   {
@@ -124,4 +142,41 @@
     transform: translate(0);
   }
 }
+
+@keyframes skill_fadeout
+{
+  from 
+  {
+    opacity: 1;
+    scale: 1;    
+    transform: translate(0);
+  }
+  to
+  {
+    opacity: 0;
+    scale: 0;
+    transform: translate(0px, 50px);    
+    box-shadow: magenta 0 -16px 32px 8px;
+  
+  }
+}
+
+@keyframes shakeRow {
+  0% {     
+    box-shadow: 1px 0px magenta, -1px -1px cyan;
+    transform: translateX(-1);
+  } 
+  50% {
+    box-shadow: 0px 1px rgb(199, 186, 0), -1px -1px whitesmoke;
+    transform: translateX(1);
+
+  }
+  100% { 
+    box-shadow: 1px 1px cyan, -1px -1px magenta;
+    transform: translateX(0);
+
+  }
+}
+
+
 

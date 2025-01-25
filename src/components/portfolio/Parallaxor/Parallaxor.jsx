@@ -43,7 +43,7 @@ const Parallaxor = () => {
                     <div className="intro-layer">
                         <p className="tags">{'< >'} </p>
                             <div className="about-info">
-                                <h1><span>H</span>ello</h1>
+                                <h1><span>Hello</span></h1>
                                 <h2 className="name">I'm
                                     <span className="shadow-text">P</span>
                                     <span className="highlight-text">P</span>eter,
@@ -90,7 +90,7 @@ const Parallaxor = () => {
                     
                 </section>
 
-                <section className="content-section" id="work">
+                <section className="content-section" id="experience">
                     <div className="top-layer">
                         <p className="section-title">Professional Work Experience</p>
                     </div>               
@@ -105,7 +105,7 @@ const Parallaxor = () => {
                 </section>
 
                 <section className="content-section" id="contacts">
-                <Contact/>                
+                    <Contact/>                
                 </section>
                 
                 

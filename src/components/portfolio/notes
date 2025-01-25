@@ -251,3 +251,35 @@ const Projects = () => {
 };
 
 export default Projects;
+
+3. [
+  "nodeJs": 'https://img.icons8.com/?size=100&id=54087&format=png&color=000000',
+  "Redux": "https://img.icons8.com/?size=100&id=jD-fJzVguBmw&format=png&color=000000",
+  "JSON": "https://img.icons8.com/?size=100&id=22448&format=png&color=000000",
+  "npm": "https://img.icons8.com/?size=100&id=24895&format=png&color=000000",
+  "mongodb": "https://img.icons8.com/?size=100&id=bosfpvRzNOG8&format=png&color=000000",
+  "figma": "https://img.icons8.com/?size=100&id=W0YEwBDDfTeu&format=png&color=000000",
+  "php": "https://img.icons8.com/?size=100&id=pKaVdzbCJGgA&format=png&color=000000",
+  "MySQL": "https://img.icons8.com/?size=100&id=9nLaR5KFGjN0&format=png&color=000000",
+  "SQLite": "https://img.icons8.com/?size=100&id=VMRAbKfEzssG&format=png&color=000000",
+  "angular": "https://img.icons8.com/?size=100&id=j9DnICNnlhGk&format=png&color=000000",
+  "Wordpress": "https://img.icons8.com/?size=100&id=v9uZbuVoWleB&format=png&color=000000",
+  "Vuetify": "https://img.icons8.com/?size=100&id=rY6agKizO9eb&format=png&color=000000",
+  "github": "https://img.icons8.com/?size=100&id=62856&format=png&color=000000",
+  "Canva": "https://img.icons8.com/?size=100&id=iWw83PVcBpLw&format=png&color=000000",
+  "scrum|sprint++" : "https://img.icons8.com/?size=100&id=d9MaqNTok1pu&format=png&color=000000"
+]
+{ name: 'HTML', icon: 'https://img.icons8.com/?size=100&id=20909&format=png&color=000000' },
+{ name: 'CSS', icon: 'https://img.icons8.com/?size=100&id=21278&format=png&color=000000' },
+{ name: 'JavaScript', icon: 'https://img.icons8.com/?size=100&id=108784&format=png&color=000000' },
+
+{ name: 'MongoDB', icon: 'https://img.icons8.com/?size=100&id=74402&format=png&color=000000' },
+{ name: 'Express.Js', icon: 'https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=000000' },
+{ name: 'React', icon: 'https://img.icons8.com/?size=100&id=123603&format=png&color=000000' },
+{ name: 'Node.js', icon: 'https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000' },
+
+{ name: 'TypeScript', icon: 'https://img.icons8.com/?size=100&id=wpZmKzk11AzJ&format=png&color=000000' },
+{ name: 'Git', icon: 'https://img.icons8.com/?size=100&id=20906&format=png&color=000000' },
+{ name: 'Firebase', icon: 'https://img.icons8.com/?size=100&id=62452&format=png&color=000000' },
+{ name: 'Tailwind', icon: 'https://img.icons8.com/?size=100&id=4PiNHtUJVbLs&format=png&color=000000' },
+,
