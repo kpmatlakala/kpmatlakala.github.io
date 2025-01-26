@@ -15,7 +15,7 @@ const WorkExperience = () => {
                 Participated in the Eskom Expo for Young Scientists mentorship program, gaining valuable insights into research, project development, and scientific presentations.
                 </p>
             </div> */}
-            <div className="card">
+            <div className="work-card">
                 <div className="card-header">
                     <div className="header-left">
                     <img
@@ -70,7 +70,7 @@ const WorkExperience = () => {
                 Assisted students and staff with technical support in the computer lab, helped with software installations, and maintained hardware systems.
                 </p>
             </div> */}
-            <div className="card">
+            <div className="work-card">
                 <div className="card-header">
                     <div className="header-left">
                     <img
@@ -131,7 +131,7 @@ const WorkExperience = () => {
                 </p>
             </div> */}
 
-            <div className="card">
+            <div className="work-card">
                 <div className="card-header">
                     <div className="header-left">
                     <img

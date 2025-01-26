@@ -72,39 +72,59 @@ const Parallaxor = () => {
                     <SymbolCircle />
                 </div> 
 
-
                 <section className="content-section" id="education">                
                     <div ref={edu_Ref} className="top-layer">
-                        <p>Educational Background</p>                    
+                        <h1 className="section-title">Educational Background</h1>
+                        <p className="subtitle">
+                            Explore the foundation that has shaped my expertise and knowledge.
+                        </p>
+                        <hr/>                    
                     </div>
                     <Background />                
                 </section>
-
                 
                 <section className="content-section" id="skills">
-                    
-                    <div className="top-layer">
-                        <p>Skills Matrix</p>                    
+                    <div className="top-layer">                  
+                        <h1 className="section-title">Skills Matrix</h1>
+                        <p className="subtitle">
+                            From programming languages to frameworks, here's a snapshot of my skills.
+                        </p>
+                        <hr/>
                     </div>
-                    <SkillsMatrix />
-                    
+                    <SkillsMatrix />                    
                 </section>
 
                 <section className="content-section" id="experience">
                     <div className="top-layer">
-                        <p className="section-title">Professional Work Experience</p>
-                    </div>               
+                        <h1 className="section-title">Professional Work Experience</h1>
+                        <p className="subtitle">
+                            Insights into my professional journey and the impact I've made in various roles.
+                        </p>
+                        <hr/>
+                    </div>   
+
                     <WorkExperience />
                 </section>
 
                 <section className="content-section" id="projects">
                     <div className="top-layer">
-                        <p className="section-title">Projects</p>
+                        <h1 className="section-title">Projects</h1>
+                        <p className="subtitle">
+                            Here are some of the projects that showcase my skills and creativity.
+                        </p>
+                        <hr/>
                     </div>  
                     <Projects />
                 </section>
 
                 <section className="content-section" id="contacts">
+                    <div className="top-layer">
+                        <h1 className="section-title">Contact Me</h1>
+                        <p className="subtitle">
+                            Get in touch with me through any of the channels below or send a direct message!
+                        </p>
+                        <hr/>
+                    </div> 
                     <Contact/>                
                 </section>
                 

@@ -8,9 +8,8 @@
 {
     width: 100%;
     max-width: 900px;
-    height: 80vh;
-    margin: 0 auto;
-    padding: 1rem;
+    height: 80vh;  
+    padding: 0.25rem;
     /* background-color: #f4f7fa; */
     color: #333;
     border-radius: 8px;
@@ -19,17 +18,8 @@
     overflow-y: auto;   
     scrollbar-width: none;
     scroll-behavior: smooth;
-}
-  
-.skills-title 
-{
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 1.5rem;
-}
-  
+}  
+ 
 .skills-table 
 {
   width: 100%;
@@ -113,11 +103,12 @@
 .skills-table tr:hover td
 {
   color: black;
+  animation: shakeTxt 0.05s infinite ease;
 }
 
 .skills-table tr:hover .proficiency-bar
 {
-  animation: shakeRow 0.05s infinite ease-in-out;  
+  animation: shakeRow 0.025s infinite ease-in-out;  
 }
 .skills-table tbody tr
 {
@@ -176,6 +167,24 @@
     transform: translateX(0);
 
   }
+}
+
+@keyframes shakeTxt {
+  0% 
+  {     
+    text-shadow: 1px 0px magenta, -1px -1px cyan;
+    transform: translateX(-1);
+  } 
+  50% 
+  {
+    text-shadow: 0px 1px rgb(0, 0, 0), -1px -1px whitesmoke;
+    transform: translateX(1);
+  }
+  100% 
+  { 
+    text-shadow: 1px 1px cyan, -1px -1px magenta;
+    transform: translateX(0);
+  } 
 }
 
 

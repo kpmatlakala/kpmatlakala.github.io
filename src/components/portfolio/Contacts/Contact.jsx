@@ -24,16 +24,7 @@ const Contact = () => {
 
   return (
     <div className="contact-container">
-
-
-      <section className="contact-header">     
-        <h2 className="contact-title">Contact Me</h2>  
-        <p className="contact-subtitle">
-          Get in touch with me through any of the channels below or send a direct message!
-        </p>
-        <hr/>
-      </section>      
-
+      
       <section className="contact-details">
 
         <div className="card max-width">

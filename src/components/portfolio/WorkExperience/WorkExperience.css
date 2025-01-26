@@ -1,36 +1,41 @@
 /* App.css */
 
 /* Card container */
-.card {
-    width: 340px;
+.work-card 
+{
+    width: 64%;
     border-radius: 0.75rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: -1px 2px 6px rgba(255, 0, 242, 0.5), 2px -2px 4px rgb(0, 183, 255, 0.5);
     overflow: hidden;
     background-color: white;
     border: 1px solid #e5e7eb;
     margin: 20px auto;
     padding: 10px;
-  }
+}
   
   /* Card Header (Top section with Avatar, Name, and Follow button) */
-  .card-header {
+  .card-header 
+  {
     display: flex;
     justify-content: space-between;
     align-items: start;
   }
   
-  .header-left {
+  .header-left 
+  {
     display: flex;
     gap: 15px;
   }
   
-  .avatar {
+  .avatar 
+  {
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
   }
   
-  .user-info {
+  .user-info 
+  {
     display: flex;
     flex-direction: column;
     justify-content: center;

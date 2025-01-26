@@ -24,7 +24,7 @@
   scroll-behavior:smooth;
   scroll-snap-type: both mandatory;
   scroll-snap-stop: always;
-  /* scrollbar-width: none; */
+  scrollbar-width: none;
 
 }
 
@@ -45,25 +45,27 @@
   height: 100vh;
   transform-style: preserve-3d;
   scroll-snap-align: start;
-
-  padding-top: 36px;
 }
 
 .content-section .top-layer
-{
-  padding: 0;
-  margin: 0;
-  text-shadow: rgba(0, 255, 255, 0.356) 1px 0px 8px;
-  /* background: grey; */
+{   
   width: 75%;
   text-align: center;
+  margin-top: 16px;
+}
+
+.content-section .top-layer h1
+{
+  text-shadow: rgb(0, 255, 255) 1px 0px 8px, rgb(255, 0, 200) -1px 0px 8px;
+  font-size: 36px;
+  font-weight: 700;
 }
 
 .content-section .top-layer p
 {
-  font-size: 38px;
-  font-weight: 600;
-
+  text-shadow: rgb(0, 255, 255, 0.5) 1px 0px, rgba(255, 0, 200, 0.5) -1px 0px;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .content-section#about
@@ -84,7 +86,6 @@
   justify-content:center;  
   z-index: 1;
 }
-
 .base-layer
 {
   position: absolute;
@@ -100,8 +101,6 @@
   right: -92%;
   transition: all 1.5s;
 }
-
-
 .mid-layer
 {
   position: absolute;
@@ -119,12 +118,10 @@
   right: -40%;
   transition: all 2s;
 }
-
 .mid-layer img
 {
   width:860px
 }
-
 #about .about-info
 {
   margin-left: 8%;
@@ -133,7 +130,6 @@
   align-items: start;
   justify-content:center;
 }
-
 .about-info h1 span
 {
   color: whitesmoke;
@@ -141,8 +137,7 @@
   text-shadow: 2px 2px magenta, -1px -1px cyan;
   animation: shake 0.025s infinite alternate ease-in-out;
 
- }
-
+}
 .about-info h1 span:hover
 {
   color:black;
@@ -165,7 +160,6 @@
 
   }
 }
-
 
 .about-info h2
 {
@@ -204,27 +198,17 @@ span
 
 .content-section#education
 {
-  /* background: rgb(0, 62, 87); */
-  padding-left: 16%;
-  padding-top: 36px;
-  display: flex;
-  /* align-items: start; */
-
 }
-
-.content-section#education .top-layer p
+/* .content-section#education .top-layer p
 {
-  font-size: 32px;
-}
+  font-size: 36px;
+} */
 
 #education .edu-bg-container
 {
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
-
-  margin-top: 12px;
-  /* background: grey; */
+  margin-top: 4px;
   width: 94%;
   height: 86vh;
   overflow: scroll;
@@ -232,19 +216,14 @@ span
   scrollbar-width: none;
  align-items: flex-end;
 }
-
 .edu-bg-container .timeline-content
 {
   text-align: start;
-  /* background: grey; */
-    padding-bottom: 16px;
   max-height: 512px;
   height: max-content;
-  /* border: cyan solid 1px; */
-  padding: 16px;
+  padding: 8px;
   justify-self: flex-end;
 }
-
 .description-container {
   display: flex;
   gap: 8px;
@@ -255,20 +234,16 @@ span
   width: max-content;
   border-radius: 8px;
 }
-
 .description-container hr
 {
   border-color: grey;
 }
-
 #tertiary ul
 {
   margin: 0;
   list-style: none;
   /* display: block; */
 }
-
-
 #tertiary ul li:nth-of-type(2)
 .description-container
 {  
@@ -279,26 +254,21 @@ span
   margin-top: 64px;
   justify-self: flex-end;
 }
-
 #tertiary ul li:nth-of-type(2)
 .description-details
 {
   text-align: end;
   margin: 8px;
 }
-
-
 .timeline-content#additional-training 
 {
   margin-bottom: 48px;
 }
-
 #additional-training .description-container
 {
   background: rgba(32, 32, 32, 0.322);
   /* flex-direction: column; */
   box-shadow: 1px 1px 1px rgba(0, 255, 255, 0.356), -1px -1px 1px rgb(137 198 3);
-
 
   padding: 0px 8px 8px 8px;
   width: 75%;
@@ -309,7 +279,6 @@ span
 {
   color:rgb(137 198 3) ;
 }
-
 #additional-training .info 
 {
   /* background: lightgray; */
@@ -319,111 +288,40 @@ span
 
 .content-section#skills
 {
-  /* background: rgb(0, 62, 87); */
 }
-
 .content-section#skills .top-layer
-{
-  /* background: rgb(0, 62, 87); */
-  /* text-align: start; */
-}
-
-.content-section#skills .top-layer p
-{
-  font-size: 32px;
+{ 
 }
 
 .content-section#work 
 {
-  justify-content: flex-start;
-  padding: 8px;
-  /* padding-top: 78px; */
-  padding-top: 38px;  
+  
 }
-
-
-.content-section#work .top-layer p
+.content-section#work .top-layer
 {
-  font-size: 32px;
+ 
 }
 
 .work-experience-container 
 {
   display: flex;
-  flex-wrap: wrap; /* Prevent wrapping to the next line */
+  flex-wrap: wrap; 
   
   gap: 1.25rem; /* Add some space between items */
   justify-content: center;
   max-width: 900px;
-  height: 82%;
+  height: 75%;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 1.25rem;
   background: linear-gradient(0deg,#202020af, transparent);
   /* border-radius: 8px; */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 16px 32px -16px rgba(255, 0, 255, 0.466), 8px 10px 16px -8px rgba(0, 204, 255, 0.466);;
 
   overflow: auto; 
   scrollbar-width: none;
   scroll-behavior: smooth;
 }
 
-.section-title 
-{
-  text-align: center;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1rem;
-}
-
-.work-item {
-  max-width: 400px;
-  /* height: max-content; */
-  background-color: #ffffff;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-  transition: padding 0.5s;
-
-}
-
-.work-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #0073e6;
-}
-
-.work-item hr
-{
-  border-color: #0073e6; 
-}
-
-.work-description {
-  font-size: 1rem;
-  color: #333;
-}
-
-.work-description span
-{
-  font-weight: bold;
-  color: #0073e6;
-}
-
-.work-item:hover 
-{
-  background-color: #f1f1f1;
-  padding: 1.25rem;
-
-  transition: padding 0.5s;
-  cursor: pointer;
-}
-
-.work-item p 
-{
-  margin: 0.5rem 0;
-  color: #202020;
-}
 
 .work-item#codetribe
 {
@@ -453,18 +351,15 @@ span
 
 
 .content-section#contacts
-{
-  justify-content: flex-start;
-  padding: 8px;
-  padding-top: 48px;  
+{  
+
 }
 
 
-.content-section#contacts .top-layer p
+/* .content-section#contacts .top-layer p
 {
-  font-size: 42px;
-  /* text-align: start; */
-}
+  font-size: 18px;
+} */
 
 .contact-container 
 {
