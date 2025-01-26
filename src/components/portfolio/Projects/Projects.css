@@ -3,11 +3,14 @@
 {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 2rem;
-    padding: 2rem;
-    padding-bottom: 32px;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    padding-bottom: 64px;
     width: 96%;
-    margin-left: 86px;
+    height: 100vh;
+    margin-left: 128px;
+
+    overflow-y: scroll;
     
   }
   
@@ -15,7 +18,9 @@
   .project-card 
   {
     position: relative;
-    height: 256px;
+    max-height: 256px;
+    max-width: 680px;
+    height: 258px;
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;

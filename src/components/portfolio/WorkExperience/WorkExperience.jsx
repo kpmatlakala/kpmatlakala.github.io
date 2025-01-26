@@ -52,8 +52,8 @@ const WorkExperience = () => {
 
                 <div className="card-footer">
                     <div className="footer-item">
-                    <p className="footer-number">4</p>
-                    <p className="footer-label">Following</p>
+                        <p className="footer-number">4</p>
+                        <p className="footer-label">Following</p>
                     </div>
                     <div className="footer-item">
                     <p className="footer-number">97.1K</p>

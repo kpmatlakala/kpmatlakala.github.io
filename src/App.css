@@ -209,12 +209,13 @@ span
   display: flex;
   flex-direction: column;
   margin-top: 4px;
+  padding-bottom: 8px;
   width: 94%;
-  height: 86vh;
+  height: 80vh;
   overflow: scroll;
   scroll-behavior: smooth;
   scrollbar-width: none;
- align-items: flex-end;
+  align-items: flex-end;
 }
 .edu-bg-container .timeline-content
 {

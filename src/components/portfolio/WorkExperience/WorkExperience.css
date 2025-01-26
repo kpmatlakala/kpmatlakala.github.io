@@ -3,121 +3,209 @@
 /* Card container */
 .work-card 
 {
-    width: 64%;
-    border-radius: 0.75rem;
-    box-shadow: -1px 2px 6px rgba(255, 0, 242, 0.5), 2px -2px 4px rgb(0, 183, 255, 0.5);
-    overflow: hidden;
-    background-color: white;
-    border: 1px solid #e5e7eb;
-    margin: 20px auto;
-    padding: 10px;
+  width: 64%;
+  border-radius: 0.75rem;
+  box-shadow: -1px 2px 6px rgba(255, 0, 242, 0.5), 2px -2px 4px rgb(0, 183, 255, 0.5);
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  margin: 20px auto;
+  padding: 10px;
+
+  /* animation: shakeCard 0.05s infinite ease-in-out; */
+  animation: card_appears linear, card_fadeout linear;
+  animation-timeline: view();
+  animation-range: entry 16% cover 38%, exit 0% cover 100%;
+
+}
+
+.work-card:hover
+{
+  animation: shakeCard 0.05s infinite ease;
+}
+
+@keyframes card_appears
+{
+  from 
+  {
+    opacity: 0;
+    scale: 0.25;    
+    transform: translate(0px, 64px);    
+    box-shadow: #f1f1f1 0 -16px 48px 16px;
+  }
+  to
+  {
+    opacity: 1;
+    scale: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes card_fadeout
+{
+  from 
+  {
+    opacity: 1;
+    scale: 1;    
+    transform: translate(0);
+  }
+  to
+  {
+    opacity: 0;
+    scale: 0;
+    transform: translate(0px, 50px);    
+    box-shadow: magenta 0 -16px 32px 8px;
+  
+  }
+}
+
+@keyframes shakeCard {
+  0% {     
+    box-shadow: 1px 0px magenta, -0px -1px cyan;
+    transform: translateX(-1);
+  } 
+  50% {
+    box-shadow: 0px 1px rgb(199, 186, 0), -2px -1px whitesmoke;
+    transform: translateX(1);
+
+  }
+  100% { 
+    box-shadow: 1px 2px cyan, -1px -1px magenta;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shakeTxt {
+  0% 
+  {     
+    text-shadow: 1px 0px magenta, -1px -1px cyan;
+    transform: translateX(-1);
+  } 
+  50% 
+  {
+    text-shadow: 0px 1px rgb(0, 0, 0), -1px -1px whitesmoke;
+    transform: translateX(1);
+  }
+  100% 
+  { 
+    text-shadow: 1px 1px cyan, -1px -1px magenta;
+    transform: translateX(0);
+  } 
+}
+
+  
+/* Card Header (Top section with Avatar, Name, and Follow button) */
+.card-header 
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.header-left 
+{
+  display: flex;
+  gap: 15px;
+}
+
+.avatar 
+{
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+
+.user-info 
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.username {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.follow-btn 
+{
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+}
+
+.follow-btn.follow {
+  background-color: #3b82f6;
+  color: white;
+}
+.follow-btn.unfollow {
+  background-color: transparent;
+  border: 1px solid #d1d5db;
+  color: #333;
+}
+
+.follow-btn:hover 
+{
+  opacity: 0.8; 
+  background-color: #bc3be4;
+
+  animation: 
+    shakeCard 0.025s infinite ease,
+    shakeTxt 0.05s infinite ease;
+}
+
+/* Card Body (Description Section) */
+.card-body {
+  padding: 0 15px;
+  font-size: 0.875rem;
+  color: #6b7280;    
+}
+
+.hashtag {
+  display: block;
+  margin-top: 8px;
+  color: #3b82f6;
+}
+
+.emoji {
+  margin-left: 5px;
+}
+
+/* Card Footer (Following & Followers) */
+.card-footer 
+{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  padding-left: 15px;
+  padding-right: 15px;
+  gap: 8px;
 }
   
-  /* Card Header (Top section with Avatar, Name, and Follow button) */
-  .card-header 
-  {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-  }
-  
-  .header-left 
-  {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .avatar 
-  {
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-  }
-  
-  .user-info 
-  {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .name {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #333;
-    margin: 0;
-  }
-  
-  .username {
-    font-size: 0.875rem;
-    color: #6b7280;
-    margin: 0;
-  }
-  
-  .follow-btn 
-  {
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    cursor: pointer;
-    border: none;
-    transition: all 0.3s;
-  }
-  
-  .follow-btn.follow {
-    background-color: #3b82f6;
-    color: white;
-  }
-  
-  .follow-btn.unfollow {
-    background-color: transparent;
-    border: 1px solid #d1d5db;
-    color: #333;
-  }
-  
-  .follow-btn:hover {
-    opacity: 0.8;
-  }
-  
-  /* Card Body (Description Section) */
-  .card-body {
-    padding: 0 15px;
-    font-size: 0.875rem;
-    color: #6b7280;    
-  }
-  
-  .hashtag {
-    display: block;
-    margin-top: 8px;
-    color: #3b82f6;
-  }
-  
-  .emoji {
-    margin-left: 5px;
-  }
-  
-  /* Card Footer (Following & Followers) */
-  .card-footer {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 12px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  
-  .footer-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  
-  .footer-number {
-    font-weight: 600;
-    color: #333;
-  }
-  
-  .footer-label {
-    font-size: 0.875rem;
-    color: #6b7280;
-  }
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer-number {
+  font-weight: 600;
+  color: #333;
+}
+
+.footer-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
   

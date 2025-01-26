@@ -132,7 +132,7 @@ const Projects = () => {
         </div>
         <img
           className="project-image"
-          src="https://heroui.com/images/card-example-6.jpeg"
+          src="projects/base-apparel/screenshot/237shots_so.png"
           alt="Card example background"
         />
         <div className="project-footer">
@@ -148,7 +148,8 @@ const Projects = () => {
         </div>
         <img
           className="project-image"
-          src="https://heroui.com/images/card-example-5.jpeg"
+          src="projects/base-apparel/screenshot/584shots_so.png"
+
           alt="Relaxing app background"
         />
         <div className="project-footer">
@@ -158,13 +159,50 @@ const Projects = () => {
               src="https://heroui.com/images/breathing-app-icon.jpeg"
               alt="Breathing app icon"
             />
+
             <div className="footer-info">
               <p>Breathing App</p>
               <p>Get a good night's sleep.</p>
             </div>
           </div>
-          <button className="get-app-btn">Get App</button>
+          <button className="get-app-btn">Preview</button>
         </div>
+      </div>
+
+      <div className="project-card">
+        <div className="project-header">
+          <p className="project-subtitle">React, CSS, OpenWeatherMAp API</p>
+          <h4 className="project-title">Weather App </h4>
+        </div>
+        <img
+          className="project-image"
+          src="https://heroui.com/images/card-example-4.jpeg"
+          alt="Card background"
+        />
+      </div>
+
+      <div className="project-card">
+        <div className="project-header">
+          <p className="project-subtitle">React, CSS, Redux Toolkit, JSON-Server</p>
+          <h4 className="project-title">ShoppingList App</h4>
+        </div>
+        <img
+          className="project-image"
+          src="src/assets/screenshots/shoppingList/home-page-removebg-preview.png"
+          alt="Card background"
+        />
+      </div>
+
+      <div className="project-card">
+        <div className="project-header">
+          <p className="project-subtitle">React, CSS, SQLite3</p>
+          <h4 className="project-title">Todo-List App</h4>
+        </div>
+        <img
+          className="project-image"
+          src="src/assets/todoList/login-capture-removebg-preview.png"
+          alt="Card background"
+        />
       </div>
     </div>
   );
