@@ -396,11 +396,15 @@ span
 
 .contact-container 
 {
-  width: 80%;
+  width: 86%;
   margin: 0 auto;
-  padding: 2rem 0;
-  overflow: auto;
+  padding: 1rem 0;
+  margin-left: 128px;
+  display: flex;
+  justify-content: space-between;
+  overflow-y: auto;
   scrollbar-width: none;
+
 }
 
 .contact-header 
@@ -476,7 +480,7 @@ span
 
 .contact-form 
 {
-  margin-top: 3rem;
+  margin-top: 0.1rem;
 }
 
 .contact-form h3 
@@ -509,6 +513,7 @@ span
 .form-group textarea 
 {
   height: 150px;
+  min-width: 256px;
 }
 
 .submit-btn 
@@ -522,31 +527,7 @@ span
   cursor: pointer;
 }
 
-.submit-btn:hover {
+.submit-btn:hover 
+{
   background-color: #005bb5;
 }
-
-
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-/* Reset and Styles */
-h2 {
-  font-size: 2rem;
-  color: white;
-}
-
-

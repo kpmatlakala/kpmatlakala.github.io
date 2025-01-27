@@ -54,37 +54,25 @@ function App()
   return (
 
     <>
-    {
-      showSplash ? (
-        <SplashScreen onFinish={handleSplashFinish} />  
-      ):(
-        <>
-          {
-            chatMinimized && (
-              <button className="minimized-chat"
-                onClick={handleChatToggle}> Chat 🤖
-              </button>
-            )
-          }
-
-          {
-            !chatMinimized && (
-              <ChatModal  
-                chatMaximized={ chatMaximized } 
-                handleChatMaximize={ handleChatMaximize }
-                handleChatToggle={ handleChatToggle } 
-                handleChatRestore={ handleChatRestore }
-              />
-            )
-          }
-
-          <Portfolio />     
-        </>
-      )
-    }   
+      {
+        chatMinimized ? (
+          <button className="minimized-chat"
+            onClick={handleChatToggle}> Chat 🤖
+          </button>
+        ):(
+          <ChatModal  
+            chatMaximized={ chatMaximized } 
+            handleChatMaximize={ handleChatMaximize }
+            handleChatToggle={ handleChatToggle } 
+            handleChatRestore={ handleChatRestore }
+          />
+        )
+      }
+      <Portfolio />
     </>
+  )
     
-  );
+
 }
 
 export default App;

@@ -27,6 +27,7 @@ const Contact = () => {
       
       <section className="contact-details">
 
+        {/* Phone */}
         <div className="card max-width">
           <div className="card-header flex">
             {/* <img
@@ -42,21 +43,22 @@ const Contact = () => {
           </div>
           <div className="divider"></div>
           <div className="card-body">
-            <p>+27 72 713 8367</p>
+            <p><strong>CellPhone:</strong> +27 72 713 8367</p>
           </div>
           <div className="divider"></div>
           <div className="card-footer">
-            <a
+            {/* <a
               className="link"
               href="https://github.com/heroui-inc/heroui"
               target="_blank"
               rel="noopener noreferrer"
             >
               Visit source code on GitHub.
-            </a>
+            </a> */}
           </div>
         </div>
 
+        {/* Emails */}
         <div className="card max-width">
           <div className="card-header flex">
             {/* <img
@@ -79,17 +81,18 @@ const Contact = () => {
           </div>
           <div className="divider"></div>
           <div className="card-footer">
-            <a
+            {/* <a
               className="link"
               href="https://github.com/heroui-inc/heroui"
               target="_blank"
               rel="noopener noreferrer"
             >
               Visit source code on GitHub.
-            </a>
+            </a> */}
           </div>
         </div>
 
+        {/* Socials */}
         <div className="card max-width">
           <div className="card-header flex">
             {/* <img
@@ -108,19 +111,19 @@ const Contact = () => {
             <ul>
               <li><strong>LinkedIn:</strong> <a href="https://za.linkedin.com/in/kabelo-matlakala-704349273?trk=people-guest_people_search-card" target="_blank" rel="noopener noreferrer">Kabelo Matlakala</a></li>
               <li><strong>GitHub:</strong> <a href="https://github.com/delightplus" target="_blank" rel="noopener noreferrer">@De_Light_Plus</a></li>
-              <li><strong>Instagram:</strong> <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">@yourprofile</a></li>
+              <li><strong>Instagram:</strong> <a href="https://instagram.com/ebullientheory30?igsh=YzljYTk1ODg3Zg==" target="_blank" rel="noopener noreferrer">@ebullientheory30</a></li>
             </ul>
           </div>
           <div className="divider"></div>
           <div className="card-footer">
-            <a
+            {/* <a
               className="link"
               href="https://github.com/heroui-inc/heroui"
               target="_blank"
               rel="noopener noreferrer"
             >
               Visit source code on GitHub.
-            </a>
+            </a> */}
           </div>
         </div>
 
@@ -143,14 +146,14 @@ const Contact = () => {
           </div>
           <div className="divider"></div>
           <div className="card-footer">
-            <a
+            {/* <a
               className="link"
               href="https://github.com/heroui-inc/heroui"
               target="_blank"
               rel="noopener noreferrer"
             >
               ...
-            </a>
+            </a> */}
           </div>
         </div>
       
