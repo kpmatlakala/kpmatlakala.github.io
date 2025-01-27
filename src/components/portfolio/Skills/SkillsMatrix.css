@@ -9,8 +9,8 @@
     width: 100%;
     max-width: 900px;
     height: 80vh;  
-    padding: 0.25rem;
-    /* background-color: #f4f7fa; */
+    margin-top: 0.75rem;
+    padding: 0.2rem;
     color: #333;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);

@@ -312,7 +312,7 @@ span
   justify-content: center;
   max-width: 900px;
   height: 75%;
-  margin: 0 auto;
+  margin: 1.25rem auto;
   padding: 1.25rem;
   background: linear-gradient(0deg,#202020af, transparent);
   /* border-radius: 8px; */

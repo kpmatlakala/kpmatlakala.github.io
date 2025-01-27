@@ -21,7 +21,7 @@ const WorkExperience = () => {
                     <img
                         className="avatar"
                         alt="EXPO"
-                        src="src/assets/logos/Expo2.jpg"
+                        src="src/assets/Expo2.jpg"
                     />
                     <div className="user-info">
                         <h4 className="name">Mentorship Program </h4>
@@ -76,7 +76,7 @@ const WorkExperience = () => {
                     <img
                         className="avatar"
                         alt="ICT"
-                        src="src/assets/logos/ul-logo.jpg"                        
+                        src="src/assets/ul-logo.jpg"                        
                     />
                     <div className="user-info">
                         <h4 className="name">Computer Laboratory Student Assistant</h4>
@@ -137,7 +137,7 @@ const WorkExperience = () => {
                     <img
                         className="avatar"
                         alt="mlab"
-                        src="src/assets/logos/codetribe.png"
+                        src="src/assets/codetribe.png"
                     />
                     <div className="user-info">
                         <h4 className="name">Web & Mobile Development <br/>
