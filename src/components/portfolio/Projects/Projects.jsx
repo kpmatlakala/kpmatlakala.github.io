@@ -91,12 +91,12 @@ const Projects = () => {
     <div className="projects-container">
       <div className="project-card">
         <div className="project-header">
-          <p className="project-subtitle">React, CSS, OpenWeatherMAp API</p>
+          <p className="project-subtitle">React, CSS, OpenWeatherMap API</p>
           <h4 className="project-title">Weather App </h4>
         </div>
         <img
           className="project-image"
-          src="https://heroui.com/images/card-example-4.jpeg"
+          src="https://img.freepik.com/free-vector/app-weather-elements_1051-392.jpg?t=st=1738043795~exp=1738047395~hmac=d7d39ccb60fd2c0bb05f2716f4853a16fad7acac456fe8a607baf02e0c953fbf&w=826"
           alt="Card background"
         />
       </div>
@@ -108,7 +108,7 @@ const Projects = () => {
         </div>
         <img
           className="project-image"
-          src="src/assets/screenshots/home-page-removebg-preview.png"
+          src="https://img.freepik.com/premium-photo/buy-vegetable-online-concept_121826-1377.jpg?ga=GA1.1.1866478789.1730715331&semt=ais_hybrid"
           alt="Card background"
         />
       </div>
@@ -120,24 +120,24 @@ const Projects = () => {
         </div>
         <img
           className="project-image"
-          src="src/assets/login-capture-removebg-preview.png"
+          src="https://img.freepik.com/free-photo/digital-business-list-app-interface_53876-15287.jpg?ga=GA1.1.1866478789.1730715331&semt=ais_hybrid"
           alt="Card background"
         />
       </div>
 
       <div className="project-card project-with-footer">
         <div className="project-header">
-          <p className="project-subtitle">HTML, CSS, JavaScript</p>
+          <p className="project-subtitle">HTML, CSS, JavaScript, Node.Js, ejs</p>
           <h4 className="project-title">Card Guessing Game</h4>
         </div>
         <img
           className="project-image"
-          src="projects/base-apparel/screenshot/237shots_so.png"
+          src="projects/memory-game/screenshots/237shots_so.png"
           alt="Card example background"
         />
         <div className="project-footer">
           <p className="footer-text">Available soon. Get notified.</p>
-          <button className="notify-btn">Notify Me</button>
+          <button className="notify-btn">Preview</button>
         </div>
       </div>
 
@@ -148,7 +148,7 @@ const Projects = () => {
         </div>
         <img
           className="project-image"
-          src="public/projects/base-apparel/screenshot/584shots_so.png"
+          src="projects/base-apparel/screenshot/584shots_so.png"
 
           alt="Relaxing app background"
         />
@@ -171,36 +171,37 @@ const Projects = () => {
 
       <div className="project-card">
         <div className="project-header">
-          <p className="project-subtitle">React, CSS, OpenWeatherMAp API</p>
-          <h4 className="project-title">Weather App </h4>
+          <p className="project-subtitle"> React, CSS</p>
+          <h4 className="project-title"> E-Commerce App </h4>
+          <h5 className="project-title2"> React UI/UX Challenge </h5>
         </div>
         <img
           className="project-image"
-          src="https://heroui.com/images/card-example-4.jpeg"
+          src="src/assets/514_1x_shots_so.png"
           alt="Card background"
         />
       </div>
 
       <div className="project-card">
         <div className="project-header">
-          <p className="project-subtitle">React, CSS, Redux Toolkit, JSON-Server</p>
-          <h4 className="project-title">ShoppingList App</h4>
+          <p className="project-subtitle">React, CSS, ...</p>
+          <h4 className="project-title">Online Recipe App</h4>
         </div>
         <img
           className="project-image"
-          src="src/assets/screenshots/shoppingList/home-page-removebg-preview.png"
+          src="https://img.freepik.com/premium-psd/close-up-person-preparing-family-recipes_23-2149292561.jpg?ga=GA1.1.1866478789.1730715331&semt=ais_hybrid"
           alt="Card background"
         />
       </div>
 
       <div className="project-card">
         <div className="project-header">
-          <p className="project-subtitle">React, CSS, SQLite3</p>
-          <h4 className="project-title">Todo-List App</h4>
+          <p className="project-subtitle">React, CSS, ...</p>
+          <h4 className="project-title">... App</h4>
         </div>
         <img
           className="project-image"
-          src="src/assets/todoList/login-capture-removebg-preview.png"
+          src="src/assets/hotelapp_x_shots_so.png"
           alt="Card background"
         />
       </div>

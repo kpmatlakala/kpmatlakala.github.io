@@ -36,6 +36,7 @@
     color: white;
     background: rgba(0, 0, 0, 0.726);
     padding: 8px;
+    text-align: start;
   }
   
   .project-subtitle 
@@ -51,6 +52,11 @@
     font-size: 1.25rem;
     font-weight: 500;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  }
+
+  .project-title2
+  {
+    font-size: 0.75rem;
   }
   
   /* Project Image */
