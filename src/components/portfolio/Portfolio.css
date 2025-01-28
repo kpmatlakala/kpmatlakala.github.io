@@ -139,8 +139,6 @@
   background-color: #00000000;
 }
 
-
-
 @media (max-width: 1024px) 
 {
   .content-section 
@@ -152,14 +150,44 @@
 
 @media (max-width: 868px) 
 {
-  .about-info h2
+  .app 
   {
-    font-size: 28px;
+    /* position: absolute; */
+    background-color: rgb(129, 125, 168);
+    height: 100vh;
+    width: 100vw;
+    transform-origin: none;
+    transform: rotate(0) translateX(0);
+    overflow: auto;
+    scroll-behavior:smooth;
+    scroll-snap-type:none;
+    scroll-snap-stop: always;
+    scrollbar-width: none;
+
   }
-  .about-info h3
+
+  .container /*parallex-wrapper*/
   {
-    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transform-origin: none;
+    transform: rotate(0) translateY(0);
+    background: black;
+    perspective: 300px;
+  } 
+
+  #about .intro-layer
+  {
+    width: 100%;
   }
+
+  #about .about-me-layer,
+  #about .about-me-layer .about-me-container
+  {
+    height: max-content;
+    text-align: center;
+  } 
 
   .shadow-text
   {
@@ -183,9 +211,37 @@
 
   .content-section#about
   {    
-    padding: 4%;
-    display: flex;   
+    padding: 32px;
+    display: flex;  
+    min-height: 100vh;
   }
+
+  .about-info h1, 
+  .about-info h2, 
+  .about-info .name, 
+  .about-info .smry
+  {
+    width: 100%;
+    text-align: right;
+    z-index: 1;
+  }
+  
+  .about-info h1 span
+  {
+   
+    font-size: 3rem;
+    text-align: right;
+  }
+
+  .about-info h2
+  {
+    font-size: 28px;
+  }
+  .about-info h3
+  {
+    font-size: 20px;
+  }
+
   #about .about-info .name, .smry
   {
     /* background: rgba(0, 0, 0, 0.753); */
@@ -204,13 +260,12 @@
     font-size: 32px;
   }
 
-  #about .mid-layer
+  .mid-layer
   {
-    position: absolute;
-    /* inset: 0; */
-    top: 4%;
-    right: -16%;
+    position: absolute;  
+    top: 0; 
     background: transparent;
+    z-index: -1;
   }
 
   .content-section#education
@@ -297,5 +352,12 @@
     margin-top: 86px;
     font-size: 28px;
   } 
+
+  .contact-container 
+  {
+    /* background-color: aliceblue; */
+    flex-direction: column;
+    margin: 0;
+  }
 
 }

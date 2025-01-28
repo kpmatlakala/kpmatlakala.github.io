@@ -137,7 +137,7 @@ const Projects = () => {
         />
         <div className="project-footer">
           <p className="footer-text">Available soon. Get notified.</p>
-          <button className="notify-btn">Preview</button>
+          <button className="notify-btn"> 👁 Preview </button>
         </div>
       </div>
 
@@ -165,7 +165,7 @@ const Projects = () => {
               <p>Get a good night's sleep.</p>
             </div>
           </div>
-          <button className="get-app-btn">Preview</button>
+          <button className="get-app-btn"> 👁 Preview </button>
         </div>
       </div>
 
@@ -177,7 +177,8 @@ const Projects = () => {
         </div>
         <img
           className="project-image"
-          src="src/assets/514_1x_shots_so.png"
+          src="src/assets/ecommerce_x_shots_so.png
+          "
           alt="Card background"
         />
       </div>

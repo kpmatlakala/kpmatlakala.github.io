@@ -398,10 +398,10 @@ span
 {
   display: flex;
   justify-content: space-between;
-  width: 86%;
+  width: 90%;
   margin: 0 auto;
   padding: 1rem 2rem;
-  margin-left: 128px;
+  margin-left: 100px;
   
   overflow-y: auto;
   scrollbar-width: none;
