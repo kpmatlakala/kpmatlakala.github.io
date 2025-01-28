@@ -108,7 +108,7 @@ const Projects = () => {
         </div>
         <img
           className="project-image"
-          src="src/assets/screenshots/shoppingList/home-page-removebg-preview.png"
+          src="src/assets/screenshots/home-page-removebg-preview.png"
           alt="Card background"
         />
       </div>
@@ -120,7 +120,7 @@ const Projects = () => {
         </div>
         <img
           className="project-image"
-          src="src/assets/todoList/login-capture-removebg-preview.png"
+          src="src/assets/login-capture-removebg-preview.png"
           alt="Card background"
         />
       </div>
@@ -148,7 +148,7 @@ const Projects = () => {
         </div>
         <img
           className="project-image"
-          src="projects/base-apparel/screenshot/584shots_so.png"
+          src="public/projects/base-apparel/screenshot/584shots_so.png"
 
           alt="Relaxing app background"
         />
