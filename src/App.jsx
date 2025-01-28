@@ -18,25 +18,25 @@ function App()
       window.location.reload();
   }
 
-  useEffect(() => {
-    const userName = localStorage.getItem("userName");
-    const sess_complete = localStorage.getItem("session_complete");
+  // useEffect(() => {
+  //   const userName = localStorage.getItem("userName");
+  //   const sess_complete = localStorage.getItem("session_complete");
 
-      if(userName)
-      {
-        if(sess_complete)
-        {
-          setShowSplash(false);
-          setChatMinimized(true);
-        }        
-      }
-      else
-      {
-          setShowSplash(true);
-          setChatMinimized(false);
-      }
+  //     if(userName)
+  //     {
+  //       if(sess_complete)
+  //       {
+  //         setShowSplash(false);
+  //         setChatMinimized(true);
+  //       }        
+  //     }
+  //     else
+  //     {
+  //         setShowSplash(true);
+  //         setChatMinimized(false);
+  //     }
     
-  }, [])
+  // }, [])
   
   const handleSplashFinish = () => {
     setShowSplash(false);
@@ -68,6 +68,7 @@ function App()
           />
         )
       }
+
       <Portfolio />
     </>
   )
