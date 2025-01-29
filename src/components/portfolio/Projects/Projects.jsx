@@ -4,11 +4,11 @@ import "./Projects.css";
 // Data for the projects
 const projects = [
   {
-    title: 'Weather App (OpenWeatherMap API)',
+    title: 'Weather App ',
     description: 'A weather forecasting app that fetches real-time weather data using the OpenWeatherMap API.',
-    technologies: ['React', 'OpenWeatherMap API', 'CSS'],
+    technologies: ['React', 'CSS', 'OpenWeatherMap API'],
     duration: 'July 2024 – October 2024',
-    previewImage: 'path/to/weather-app-image.jpg',
+    previewImage: 'https://img.freepik.com/free-vector/app-weather-elements_1051-392.jpg?t=st=1738043795~exp=1738047395~hmac=d7d39ccb60fd2c0bb05f2716f4853a16fad7acac456fe8a607baf02e0c953fbf&w=826',
     livePreviewLink: 'https://weather-app-demo-link.com',
     keyFeatures: [
       'Real-time weather data fetching',
@@ -21,7 +21,7 @@ const projects = [
     ],
   },
   {
-    title: 'ShoppingList App (Redux Toolkit)',
+    title: 'ShoppingList App',
     description: 'A shopping list app that allows users to add, remove, and manage items, using Redux Toolkit for state management.',
     technologies: ['React', 'Redux Toolkit', 'CSS'],
     duration: 'July 2024 – October 2024',
@@ -34,13 +34,13 @@ const projects = [
       'Managing complex state transitions: Used Redux Toolkit\'s createSlice for better state handling.',
       'Persisting data across app restarts: Implemented localStorage to keep shopping list data intact.',
     ],
-    previewImage: 'path/to/shoppinglist-app-image.jpg',
+    previewImage: 'https://img.freepik.com/premium-photo/buy-vegetable-online-concept_121826-1377.jpg?ga=GA1.1.1866478789.1730715331&semt=ais_hybrid',
     livePreviewLink: 'https://shoppinglist-app-demo-link.com',
   },
   {
-    title: 'TodoList App (SQLite3)',
+    title: 'TodoList App',
     description: 'A simple todo list app where users can add, remove, and edit tasks, with SQLite3 as the local database.',
-    technologies: ['React', 'SQLite3', 'CSS'],
+    technologies: ['React', 'CSS', 'SQLite3'],
     duration: 'July 2024 – October 2024',
     keyFeatures: [
       'Local database with SQLite3 for task management',
@@ -51,7 +51,7 @@ const projects = [
       'Integrating SQLite3 with React: Used async functions to interact with the database without blocking the main thread.',
       'Ensuring data persistence: Designed the SQLite schema to persist tasks even after app restarts.',
     ],
-    previewImage: '',
+    previewImage: 'https://img.freepik.com/free-photo/digital-business-list-app-interface_53876-15287.jpg?ga=GA1.1.1866478789.1730715331&semt=ais_hybrid',
     livePreviewLink: '',
   },
 ];
@@ -89,42 +89,29 @@ const Projects = () => {
 
     
     <div className="projects-container">
-      <div className="project-card">
-        <div className="project-header">
-          <p className="project-subtitle">React, CSS, OpenWeatherMap API</p>
-          <h4 className="project-title">Weather App </h4>
+      {projects.map((project, index) => (
+        <div className="project-card" key={index}>
+          <div className="project-header">
+            <p className="project-subtitle">{project.technologies.join(", ")}</p>
+            <h4 className="project-title">{project.title}</h4>
+          </div>
+          <img
+            className="project-image"
+            src={project.previewImage || "default-image.jpg"} // Use default image if no preview image is provided
+            alt={`${project.title} background`}
+          />
+          <div className="project-footer">
+            <p className="footer-text">
+              {project.description}
+            </p>
+            <button className="notify-btn" onClick={() => openModal(index)}>
+              👁 Preview
+            </button>
+          </div>
         </div>
-        <img
-          className="project-image"
-          src="https://img.freepik.com/free-vector/app-weather-elements_1051-392.jpg?t=st=1738043795~exp=1738047395~hmac=d7d39ccb60fd2c0bb05f2716f4853a16fad7acac456fe8a607baf02e0c953fbf&w=826"
-          alt="Card background"
-        />
-      </div>
+      ))}
 
-      <div className="project-card">
-        <div className="project-header">
-          <p className="project-subtitle">React, CSS, Redux Toolkit, JSON-Server</p>
-          <h4 className="project-title">ShoppingList App</h4>
-        </div>
-        <img
-          className="project-image"
-          src="https://img.freepik.com/premium-photo/buy-vegetable-online-concept_121826-1377.jpg?ga=GA1.1.1866478789.1730715331&semt=ais_hybrid"
-          alt="Card background"
-        />
-      </div>
-
-      <div className="project-card">
-        <div className="project-header">
-          <p className="project-subtitle">React, CSS, SQLite3</p>
-          <h4 className="project-title">Todo-List App</h4>
-        </div>
-        <img
-          className="project-image"
-          src="https://img.freepik.com/free-photo/digital-business-list-app-interface_53876-15287.jpg?ga=GA1.1.1866478789.1730715331&semt=ais_hybrid"
-          alt="Card background"
-        />
-      </div>
-
+      {/* Memory Game */}
       <div className="project-card project-with-footer">
         <div className="project-header">
           <p className="project-subtitle">HTML, CSS, JavaScript, Node.Js, ejs</p>
@@ -136,11 +123,16 @@ const Projects = () => {
           alt="Card example background"
         />
         <div className="project-footer">
-          <p className="footer-text">Available soon. Get notified.</p>
+          <p className="footer-text"> 
+            A fun and interactive card-guessing game that challenges your memory. 
+            <br/>Built with DOM manipulation, this game allows players to match pairs of cards 
+            {/* within a time limit.  */}
+          </p>
           <button className="notify-btn"> 👁 Preview </button>
         </div>
       </div>
 
+      {/* Base Apparel */}
       <div className="project-card project-with-footer">
         <div className="project-header">
           <p className="project-subtitle">HTML, CSS</p>
@@ -161,14 +153,15 @@ const Projects = () => {
             />
 
             <div className="footer-info">
-              <p>Breathing App</p>
-              <p>Get a good night's sleep.</p>
+              <p>Base Apparel</p>
+              <p>Where style meets comfort. Coming soon!</p>
             </div>
           </div>
           <button className="get-app-btn"> 👁 Preview </button>
         </div>
       </div>
 
+      {/* Ecommerce */}
       <div className="project-card">
         <div className="project-header">
           <p className="project-subtitle"> React, CSS</p>
@@ -185,7 +178,7 @@ const Projects = () => {
 
       <div className="project-card">
         <div className="project-header">
-          <p className="project-subtitle">React, CSS, ...</p>
+          <p className="project-subtitle">React, CSS, Json Server</p>
           <h4 className="project-title">Online Recipe App</h4>
         </div>
         <img
@@ -197,8 +190,8 @@ const Projects = () => {
 
       <div className="project-card">
         <div className="project-header">
-          <p className="project-subtitle">React, CSS, ...</p>
-          <h4 className="project-title">... App</h4>
+          <p className="project-subtitle">React, CSS, Redux, Firebase, Node.Js</p>
+          <h4 className="project-title">Hotel Booking App</h4>
         </div>
         <img
           className="project-image"
