@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Projects.css";
+import ProjectModal from "./ProjectModal";
 
 // Data for the projects
 const projects = [
@@ -67,6 +68,8 @@ const Projects = () => {
   };
 
   const openModal = (index) => {
+    alert("open modal");
+    
     setCurrentProjectIndex(index);
     setIsModalOpen(true);
   };
@@ -87,28 +90,39 @@ const Projects = () => {
 
   return (
 
-    
     <div className="projects-container">
       {projects.map((project, index) => (
-        <div className="project-card" key={index}>
-          <div className="project-header">
-            <p className="project-subtitle">{project.technologies.join(", ")}</p>
-            <h4 className="project-title">{project.title}</h4>
-          </div>
-          <img
-            className="project-image"
-            src={project.previewImage || "default-image.jpg"} // Use default image if no preview image is provided
-            alt={`${project.title} background`}
-          />
-          <div className="project-footer">
-            <p className="footer-text">
-              {project.description}
-            </p>
-            <button className="notify-btn" onClick={() => openModal(index)}>
-              👁 Preview
-            </button>
-          </div>
-        </div>
+        <>
+        
+          <div className="project-card" key={index}>
+            <div className="project-header">
+              <p className="project-subtitle">{project.technologies.join(", ")}</p>
+              <h4 className="project-title">{project.title}</h4>
+            </div>
+            <img
+              className="project-image"
+              src={project.previewImage || "default-image.jpg"} // Use default image if no preview image is provided
+              alt={`${project.title} background`}
+            />
+            <div className="project-footer">
+              <p className="footer-text">
+                {project.description}
+              </p>
+              <button className="notify-btn" onClick={() => openModal(index)}>
+                👁 Preview
+              </button>
+            </div>     
+
+          </div>     
+          
+          {
+            isModalOpen && currentProjectIndex != null &&
+            <ProjectModal key={index} project={project} onClose={closeModal}/> 
+            // <p> yfvydjghlo </p>
+          }
+        
+        </>
+        
       ))}
 
       {/* Memory Game */}
@@ -130,6 +144,11 @@ const Projects = () => {
           </p>
           <button className="notify-btn"> 👁 Preview </button>
         </div>
+
+        {/* {
+          isModalOpen && currentProjectIndex != null &&
+          <ProjectModal />
+        } */}
       </div>
 
       {/* Base Apparel */}

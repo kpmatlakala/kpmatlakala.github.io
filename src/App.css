@@ -107,12 +107,21 @@
   /* inset: 0; */
   top: 4%;
   right: 16%;
-  /* right: -40%; */
+  transform: scale(1);
   background: transparent;
   z-index: 1;
   transition: all 2s;
-
 }
+
+.mid-layer::before
+{
+  position: absolute;
+  /* inset: 0; */
+  top: 4%;
+  right: 16%;
+  transform: scale(0);
+}
+
 .mid-layer.onEduPage
 {
   right: -40%;

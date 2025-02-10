@@ -47,15 +47,14 @@
   {
     opacity: 1;
     scale: 1;    
-    transform: translate(0);
+    /* transform: translate(0); */
   }
   to
   {
     opacity: 0;
     scale: 0;
-    transform: translate(0px, 50px);    
-    box-shadow: magenta 0 -16px 32px 8px;
-  
+    /* transform: translate(0px, 50px);     */
+    box-shadow: magenta 0 -16px 32px 8px;  
   }
 }
 
