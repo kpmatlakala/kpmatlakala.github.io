@@ -298,6 +298,7 @@
   gap: 15px;
   overflow-x: auto; /* In case there are too many screenshots */
   padding-bottom: 16px;
+  margin: 16px;
 }
 
 .project-screenshot-img {
@@ -308,15 +309,89 @@
 }
 
 .project-screenshot-img:hover {
-  transform: scale(1.75);
+  transform: scale(1.25);
   max-height: 420px;
   z-index: 999;
 }
 
 /* Live Preview Button */
-.project-modal .project-actions {
-  margin-top: 20px;
-  text-align: center;
+.project-modal 
+.project-actions {
+  position: relative;
+}
+
+.action-btn {
+  background-color: #333;
+  color: white;
+  width: 128px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  z-index: 0;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+  background-color: #555; /* Changes color on hover */
+}
+
+.action-links {
+  display: none;
+  position: absolute;
+  top: 16%;
+  left: 0;
+  background-color: #333;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.action-btn:hover .action-links {
+  display: block;
+}
+
+.action-link {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.action-link:hover {
+  background-color: #444;
+}
+
+.action-link:not(:last-child) {
+  border-bottom: 1px solid #444; /* Adds a separator line */
+}
+
+.action-link.github-link {
+  background-color: #333;
+}
+
+.action-link.live-preview-link {
+  background-color: #333;
+}
+
+.action-btn button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.action-btn button:hover {
+  background-color: #444;
 }
 
 .project-modal .preview-btn {
@@ -334,7 +409,61 @@
   background-color: #2980b9;
 }
 
-  
+
+.game-modal 
+{
+  position: absolute;
+  inset: 0;
+  /* top: 0;
+  left: 0; */
+  padding: 8px;
+  width: 100%;
+  height: 100%;
+  /* background: black; */
+  /* height: 800px; */
+}
+
+.game-modal button 
+{
+    position: absolute;
+    top: 86px;
+    right: 32px;
+    padding: 4px;
+    border: solid 2px rgb(0, 53, 102);
+    font-weight: 700;
+}
+
+.game-modal button:hover 
+{
+    padding: 6px;
+    font-weight: 800;
+    background: #979797;
+    color: #202020;
+    border: solid 2px rgb(0, 0, 0);
+}
+
+.game-modal.go-back 
+{
+    display: none;
+    transform: translateZ(-500px); /* Moves the modal back in the Z-axis */
+    z-index: 999;
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%; /* This will make the iframe responsive */
+  padding-bottom: 61.53%; /* This is calculated from the aspect ratio 1280x786 (height/width) */
+  height: 0;
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
   
   @media (min-width: 640px) {

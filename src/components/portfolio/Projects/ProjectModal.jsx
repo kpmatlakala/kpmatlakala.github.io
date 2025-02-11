@@ -2,6 +2,7 @@ import React from 'react';
 import './Projects.css';
 
 const ProjectModal = ({ project, isModalOpen, onClose }) => {
+
   return (
     <div className={`project-modal ${isModalOpen ? 'open' : ''}`}>
       <div className="modal-content">
@@ -30,6 +31,33 @@ const ProjectModal = ({ project, isModalOpen, onClose }) => {
               <li key={index}>{challenge}</li>
             ))}
           </ul>
+        </div>
+
+        <div className="project-actions">
+            <button className="action-btn">
+                Preview
+                <div className="action-links">
+                  <a 
+                    href={project.githubLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="action-link github-link"
+                  >
+                    GitHub Repo
+                  </a>
+                  {project.livePreviewLink && (
+                      <a 
+                          href={project.livePreviewLink} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="action-link live-preview-link"
+                      >
+                        👁 Live Preview
+                      </a>
+                  )}
+                  
+                </div>
+            </button>
         </div>
 
         {/* Project Image Preview */}

@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./Projects.css";
 import ProjectModal from "./ProjectModal";
+import ProjectModalWithIFrame from "./ProjectModalWithIFrame";
 
 // Data for the projects
 const projects = [
   {
     title: 'Weather App ',
     description: 'A weather forecasting app that fetches real-time weather data using the OpenWeatherMap API.',
+    challenge:'',
     technologies: ['React', 'CSS', 'OpenWeatherMap API'],
     duration: 'July 2024 – October 2024',
     previewImage: 'https://img.freepik.com/free-vector/app-weather-elements_1051-392.jpg?t=st=1738043795~exp=1738047395~hmac=d7d39ccb60fd2c0bb05f2716f4853a16fad7acac456fe8a607baf02e0c953fbf&w=826',
@@ -14,7 +16,7 @@ const projects = [
       'src/assets/weather_shots_so1.png',
       // 'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
     ],
-    githubLink: 'https://',
+    githubLink: 'https://github.com/DeLightPlus/',
     livePreviewLink: '',
     keyFeatures: [
       'Real-time weather data fetching',
@@ -29,6 +31,7 @@ const projects = [
   {
     title: 'ShoppingList App',
     description: 'A shopping list app that allows users to add, remove, and manage items, using Redux Toolkit for state management.',
+    challenge:'',
     technologies: ['React', 'Redux Toolkit', 'CSS'],
     duration: 'July 2024 – October 2024',
     keyFeatures: [
@@ -45,11 +48,13 @@ const projects = [
       'https://img.freepik.com/free-vector/real-time-weather-forecast-app_1051-392.jpg',
       'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
     ],
-    livePreviewLink: 'https://shoppinglist-app-demo-link.com',
+    githubLink: 'https://github.com/DeLightPlus/',
+    livePreviewLink: '',
   },
   {
     title: 'TodoList App',
     description: 'A simple todo list app where users can add, remove, and edit tasks, with SQLite3 as the local database.',
+    challenge:'',
     technologies: ['React', 'CSS', 'SQLite3'],
     duration: 'July 2024 – October 2024',
     keyFeatures: [
@@ -66,18 +71,114 @@ const projects = [
       'https://img.freepik.com/free-vector/real-time-weather-forecast-app_1051-392.jpg',
       'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
     ],
+    githubLink: 'https://github.com/DeLightPlus/',
     livePreviewLink: '',
   },
+  {
+    title: 'E-Commerce App ',
+    description: '',
+    challenge:'React UI/UX Challenge',
+    technologies: ['React', 'CSS'],
+    duration: 'July 2024 – October 2024',
+    previewImage: 'src/assets/ecommerce_x_shots_so.png',
+    screenshots: [
+      'src/assets/ecommerce_x_shots_so.png',      
+    ],
+    githubLink: 'https://github.com/DeLightPlus/',
+    livePreviewLink: '',
+    keyFeatures: [
+      
+    ],
+    challenges: [
+      
+    ],
+  },
+  {
+    title: 'Online Recipe App',
+    description: '',
+    technologies: ['React', 'CSS', 'JSON SERVER'],
+    duration: 'July 2024 – October 2024',
+    keyFeatures: [
+      
+      'Add, remove, and edit online recipes',
+      'Data persistence using localStorage',
+    ],
+    challenges: [
+      'Managing complex state transitions: Used Redux Toolkit\'s createSlice for better state handling.',
+      'Persisting data across app restarts: Implemented localStorage to keep shopping list data intact.',
+    ],
+    previewImage: 'https://img.freepik.com/premium-psd/close-up-person-preparing-family-recipes_23-2149292561.jpg?ga=GA1.1.1866478789.1730715331&semt=ais_hybrid',
+    screenshots: [
+      'https://img.freepik.com/free-vector/real-time-weather-forecast-app_1051-392.jpg',
+      'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
+    ],
+    githubLink: 'https://github.com/DeLightPlus/',
+    livePreviewLink: '',
+  },
+  {
+    title: 'Hotel Booking App',
+    description: 'A simple todo list app where users can add, remove, and edit tasks, with SQLite3 as the local database.',
+    technologies: ['React', 'CSS', 'Redux', 'Firebase', 'Node.JS'],
+    duration: 'July 2024 – October 2024',
+    keyFeatures: [
+      'Local database with SQLite3 for task management',
+      'CRUD functionality for tasks (Create, Read, Update, Delete)',
+      'Task filtering by completion status',
+    ],
+    challenges: [
+      '',
+    ],
+    previewImage: 'src/assets/hotelapp_x_shots_so.png',
+    screenshots: [
+      'https://img.freepik.com/free-vector/real-time-weather-forecast-app_1051-392.jpg',
+      'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
+    ],
+    githubLink: 'https://github.com/DeLightPlus/',
+    livePreviewLink: '',
+  }
 ];
+
+const projectWithIFrame = [
+  {
+    title: 'Memory Game',
+    description: 'A fun and interactive card-guessing game that challenges your memory. Built with DOM manipulation, this game allows players to match pairs of cards with the same letter.',
+    technologies: ['HTML', 'CSS', 'JavaScript'],
+    duration: 'July 2024 – October 2024',
+    previewImage: 'https://img.freepik.com/free-vector/interactive-memory-game-elements_1051-392.jpg', // Use a relevant preview image
+    screenshots: [
+      'https://img.freepik.com/free-vector/memory-game-play-preview_1051-392.jpg',
+      'https://img.freepik.com/free-vector/memory-game-cards-preview_1051-392.jpg',
+    ],
+    livePreviewLink: '',  // Leave this blank for the iframe preview
+    keyFeatures: [
+      'Interactive card matching gameplay',
+      // 'Timed challenge to improve memory',
+      'Dynamic card shuffling and pair matching',
+    ],
+    challenges: [
+      'Challenge: Managing state of cards and match detection. Solution: Used an array to track card states and compare matched pairs effectively with JavaScript.',
+      'Challenge: Synchronizing time limit and game over condition. Solution: Set up a countdown timer that halts the game when time runs out or all pairs are matched.',
+    ],
+    iframeLink: 'src/components/portfolio/Projects/memory-game/index.html', // Path to the iframe HTML
+  },
+
+];
+
 
 const Projects = () => {
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isIFrameModalOpen, setIsIFrameModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentProjectIndex, setCurrentProjectIndex] = useState(null);
+  const [currentIFrameProjectIndex, setCurrentIFrameProjectIndex] = useState(null);
 
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
+  const openIFraneModal = (index) => {
+    setCurrentIFrameProjectIndex(index);
+    setIsIFrameModalOpen(true);
+  };
+
+  const closeIFrameModal = () => {
+    setIsIFrameModalOpen(false);
   };
 
   const openModal = (index) => {
@@ -141,8 +242,9 @@ const Projects = () => {
             {/* within a time limit.  */}
           </p>
           <button className="notify-btn"> 👁 Preview </button>
-          <button className="notify-btn"> More </button>
+          <button className="notify-btn" onClick={() => openIFraneModal(0) }> More </button>
         </div>
+        
       </div>
 
       {/* Base Apparel */}
@@ -219,6 +321,14 @@ const Projects = () => {
           project={projects[currentProjectIndex]}
           isModalOpen={isModalOpen}
           onClose={closeModal}
+        />
+      )}
+
+      {isIFrameModalOpen && currentIFrameProjectIndex !== null && (
+        <ProjectModalWithIFrame
+          projectWithIFrame={projectWithIFrame[currentIFrameProjectIndex]}
+          isModalOpen={isIFrameModalOpen}
+          onClose={closeIFrameModal}
         />
       )}
     </div>
