@@ -1,9 +1,9 @@
 import React from 'react';
 import './Projects.css';
 
-const ProjectModal = ({ project, onClose }) => {
+const ProjectModal = ({ project, isModalOpen, onClose }) => {
   return (
-    <div className="project-modal">
+    <div className={`project-modal ${isModalOpen ? 'open' : ''}`}>
       <div className="modal-content">
         <button className="close-modal" onClick={onClose}>×</button>
         <h3 className="project-title">{project.title}</h3>
@@ -33,11 +33,25 @@ const ProjectModal = ({ project, onClose }) => {
         </div>
 
         {/* Project Image Preview */}
-        <div className="project-image">
+        {/* <div className="project-image">
           {project.previewImage && (
             <img src={project.previewImage} alt={project.title} className="project-preview-img" />
           )}
-        </div>
+        </div> */}
+
+        {/* Show screenshots horizontally if they exist */}
+        {project.screenshots && project.screenshots.length > 0 && (
+          <div className="screenshots-container">
+            {project.screenshots.map((screenshot, index) => (
+              <img
+                key={index}
+                src={screenshot}
+                alt={`${project.title} screenshot ${index + 1}`}
+                className="project-screenshot-img"
+              />
+            ))}
+          </div>
+        )}
 
         {/* Live Preview Link */}
         <div className="project-actions">

@@ -148,40 +148,192 @@
     grid-column: span 7;
   }
 
-  .project-modal 
-  {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 20;
+/* Modal Background */
+.project-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.86); /* Slightly lighter background for a subtle overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+.project-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 1200px;
+  height: 85vh;
+  overflow-y: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Modal Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-800px);
   }
-  
-  .modal-content 
-  {
-    background-color: #fff;
-    padding: 20px;
-    width: 80%;
-    max-width: 800px;
-    border-radius: 5px;
-    position: relative;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .close-modal 
-  {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
+}
+
+/* Close Button Style */
+.project-modal .close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.project-modal .close-modal:hover {
+  color: #e74c3c;
+}
+
+/* Title */
+.project-modal .project-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Description */
+.project-modal .project-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Technologies Section */
+.project-modal .project-technologies {
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Key Features Section */
+.project-modal .project-features {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.project-modal .project-features h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.project-modal .project-features ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.project-modal.project-features li {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin: 5px 0;
+}
+
+/* Challenges Section */
+.project-modal .project-challenges h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.project-modal .project-challenges ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.project-modal .project-challenges li {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin: 5px 0;
+}
+
+/* Project Image */
+.project-modal .project-image {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.project-modal .project-preview-img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Horizontal Screenshots Container */
+.screenshots-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  overflow-x: auto; /* In case there are too many screenshots */
+  padding-bottom: 16px;
+}
+
+.project-screenshot-img {
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.project-screenshot-img:hover {
+  transform: scale(1.75);
+  max-height: 420px;
+  z-index: 999;
+}
+
+/* Live Preview Button */
+.project-modal .project-actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.project-modal .preview-btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.project-modal .preview-btn:hover {
+  background-color: #2980b9;
+}
+
   
 
   

@@ -10,7 +10,12 @@ const projects = [
     technologies: ['React', 'CSS', 'OpenWeatherMap API'],
     duration: 'July 2024 – October 2024',
     previewImage: 'https://img.freepik.com/free-vector/app-weather-elements_1051-392.jpg?t=st=1738043795~exp=1738047395~hmac=d7d39ccb60fd2c0bb05f2716f4853a16fad7acac456fe8a607baf02e0c953fbf&w=826',
-    livePreviewLink: 'https://weather-app-demo-link.com',
+    screenshots: [
+      'src/assets/weather_shots_so1.png',
+      // 'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
+    ],
+    githubLink: 'https://',
+    livePreviewLink: '',
     keyFeatures: [
       'Real-time weather data fetching',
       'Location search functionality',
@@ -36,6 +41,10 @@ const projects = [
       'Persisting data across app restarts: Implemented localStorage to keep shopping list data intact.',
     ],
     previewImage: 'https://img.freepik.com/premium-photo/buy-vegetable-online-concept_121826-1377.jpg?ga=GA1.1.1866478789.1730715331&semt=ais_hybrid',
+    screenshots: [
+      'https://img.freepik.com/free-vector/real-time-weather-forecast-app_1051-392.jpg',
+      'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
+    ],
     livePreviewLink: 'https://shoppinglist-app-demo-link.com',
   },
   {
@@ -53,6 +62,10 @@ const projects = [
       'Ensuring data persistence: Designed the SQLite schema to persist tasks even after app restarts.',
     ],
     previewImage: 'https://img.freepik.com/free-photo/digital-business-list-app-interface_53876-15287.jpg?ga=GA1.1.1866478789.1730715331&semt=ais_hybrid',
+    screenshots: [
+      'https://img.freepik.com/free-vector/real-time-weather-forecast-app_1051-392.jpg',
+      'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
+    ],
     livePreviewLink: '',
   },
 ];
@@ -68,8 +81,6 @@ const Projects = () => {
   };
 
   const openModal = (index) => {
-    alert("open modal");
-    
     setCurrentProjectIndex(index);
     setIsModalOpen(true);
   };
@@ -88,41 +99,28 @@ const Projects = () => {
     );
   };
 
-  return (
-
+  return (    
     <div className="projects-container">
       {projects.map((project, index) => (
-        <>
-        
-          <div className="project-card" key={index}>
-            <div className="project-header">
-              <p className="project-subtitle">{project.technologies.join(", ")}</p>
-              <h4 className="project-title">{project.title}</h4>
-            </div>
-            <img
-              className="project-image"
-              src={project.previewImage || "default-image.jpg"} // Use default image if no preview image is provided
-              alt={`${project.title} background`}
-            />
-            <div className="project-footer">
-              <p className="footer-text">
-                {project.description}
-              </p>
-              <button className="notify-btn" onClick={() => openModal(index)}>
-                👁 Preview
-              </button>
-            </div>     
-
-          </div>     
-          
-          {
-            isModalOpen && currentProjectIndex != null &&
-            <ProjectModal key={index} project={project} onClose={closeModal}/> 
-            // <p> yfvydjghlo </p>
-          }
-        
-        </>
-        
+        <div className="project-card" key={index}>
+          <div className="project-header">
+            <p className="project-subtitle">{project.technologies.join(", ")}</p>
+            <h4 className="project-title">{project.title}</h4>
+          </div>
+          <img
+            className="project-image"
+            src={project.previewImage || "default-image.jpg"} // Use default image if no preview image is provided
+            alt={`${project.title} background`}
+          />
+          <div className="project-footer">
+            <p className="footer-text">
+              {project.description}
+            </p>
+            <button className="notify-btn" onClick={() => openModal(index)}>
+              👁 More
+            </button>
+          </div>
+        </div>
       ))}
 
       {/* Memory Game */}
@@ -143,12 +141,8 @@ const Projects = () => {
             {/* within a time limit.  */}
           </p>
           <button className="notify-btn"> 👁 Preview </button>
+          <button className="notify-btn"> More </button>
         </div>
-
-        {/* {
-          isModalOpen && currentProjectIndex != null &&
-          <ProjectModal />
-        } */}
       </div>
 
       {/* Base Apparel */}
@@ -177,6 +171,7 @@ const Projects = () => {
             </div>
           </div>
           <button className="get-app-btn"> 👁 Preview </button>
+          <button className="get-app-btn"> More </button>
         </div>
       </div>
 
@@ -218,6 +213,14 @@ const Projects = () => {
           alt="Card background"
         />
       </div>
+
+      {isModalOpen && currentProjectIndex !== null && (
+        <ProjectModal
+          project={projects[currentProjectIndex]}
+          isModalOpen={isModalOpen}
+          onClose={closeModal}
+        />
+      )}
     </div>
   );
 };
