@@ -197,7 +197,17 @@
     transform: rotate(0) translateY(0);
     background: black;
     perspective: 300px;
-  } 
+  }  
+ 
+  .content-section .top-layer
+  {
+    width: 100%;
+  }
+
+  .content-section .top-layer h1 
+  {
+
+  }
 
   #about .intro-layer
   {
@@ -311,15 +321,6 @@
     align-items: start;
     justify-content:center;
   }
-  #education .top-layer
-  {
-    width: 100%;
-  }
-  #education .top-layer p
-  {
-    margin-top: 64px;
-    font-size: 28px;
-  }
   #education .edu-bg-container .timeline-content
   {
     padding: 0;
@@ -382,11 +383,7 @@
     height: 48px;
   }   
 
-  .content-section#skills .top-layer p
-  {
-    margin-top: 86px;
-    font-size: 28px;
-  } 
+ 
 
   .contact-container 
   {

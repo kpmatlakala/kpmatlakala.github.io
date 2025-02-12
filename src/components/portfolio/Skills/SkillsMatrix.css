@@ -187,5 +187,26 @@
   } 
 }
 
+@media (max-width: 768px) 
+{
+  .skills-matrix 
+  {
+    width: 90%
+  }
+
+  .skills-table tr 
+  {
+    height: 64px;
+  }
+
+  .skills-table th, .skills-table td 
+  {
+    padding: 4px;
+    font-size: 12px;
+  }
+
+}
+
+
 
 
