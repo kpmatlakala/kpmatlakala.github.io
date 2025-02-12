@@ -127,8 +127,8 @@
   }
   to {
     opacity: 0;
-    transform: translate(-800px, -100px);
-    scale: 0.2;
+    transform: translate(-400px, -100px);
+    scale: 0.5;
   }
 }
 

@@ -1,8 +1,10 @@
-/* App.css */
 
 /* Card container */
 .card-content 
 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   border-radius: 1.25rem;
   box-shadow: -1px 2px 6px rgba(255, 0, 242, 0.5), 2px -2px 4px rgb(0, 183, 255, 0.5);
@@ -10,18 +12,15 @@
   background-color: white;
   border: 1px solid #e5e7eb;
   margin: 20px auto;
-  padding: 10px;
+  padding: 8px;
 
-  /* animation: shakeCard 0.05s infinite ease-in-out; */
-  animation: card_appears linear, card_fadeout linear;
-  animation-timeline: view();
-  animation-range: entry 16% cover 38%, exit 0% cover 100%;
+  animation: shakeCard 0.05s infinite ease-in-out;
 
 }
 
 .card-content:hover
 {
-  animation: shakeCard 0.05s infinite ease;
+  /* animation: shakeCard 0.05s infinite ease; */
 }
 
 @keyframes card_appears
@@ -30,14 +29,14 @@
   {
     opacity: 0;
     scale: 0.25;    
-    transform: translate(0px, 32px) rotateX(90deg);    
+    transform: translate(-200px, -200px);    
     box-shadow: #f1f1f1 0 -16px 32px -8px;
   }
   to
   {
     opacity: 1;
     scale: 1;
-    transform: translate(0) rotateX(0deg);
+    transform: translateX(0) ;
   }
 }
 
@@ -137,7 +136,7 @@
 .follow-btn 
 {
   padding: 8px 16px;
-  margin-top: -8px;
+  /* margin-top: -8px; */
   border-radius: 20px;
   font-size: 0.875rem;
   cursor: pointer;
@@ -145,9 +144,12 @@
   transition: all 0.3s;
 }
 
-.follow-btn.follow {
+.follow-btn.follow 
+{
   background-color: #3b82f6;
   color: white;
+  align-self: start;
+  justify-self: end;
 }
 .follow-btn.unfollow {
   background-color: transparent;
@@ -187,6 +189,7 @@
 {
   display: flex;
   justify-content: space-between;
+  align-self: flex-end;
   padding-top: 12px;
   padding-left: 15px;
   padding-right: 15px;
@@ -208,4 +211,153 @@
   font-size: 0.875rem;
   color: #6b7280;
 }
+
+
+.work-experience-container 
+{  
+  height: 75vh;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  /* background: linear-gradient(0deg,#202020af, transparent); */
+  /* border-radius: 8px; */
+  /* box-shadow: 0px 16px 32px -16px rgba(255, 0, 255, 0.466), 8px 10px 16px -8px rgba(0, 204, 255, 0.466);; */
+
+  overflow: auto; 
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.work-experience-cards
+{
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.work-experience-cards::before
+{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(50% - 2px);
+  width: 2px;
+  height: 100%;
+  background-color: #ddd;
+}
+.work-card
+{
+  position: relative;
+}
+.timeline-dot
+{
+  position: absolute;
+  top: 8px;
+  left: calc(50% - 8px);
+  width: 16px;
+  height: 16px;
+  background-color: black;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px rgb(255, 0, 255), -1px 0px 2px rgb(0, 204, 255);
+}
+.timeline-date
+{  
+  font-size: 18px;
+  font-weight: 700;
+  color: whitesmoke;
+  margin: 2px 0 0px;
+}
+.work-card:nth-child(odd)
+{
+  padding-right: calc(50% + 30px);
+}
+.work-card:nth-child(odd) .timeline-date
+{
+  text-align: end;
+}
+
+.work-card:nth-child(even)
+{  
+  padding-left: calc(50% + 30px);
   
+}
+.work-card:nth-child(even) .timeline-date
+{
+  text-align: start;
+}
+
+.work-card:last-child
+{
+  margin-bottom: -10px;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) 
+{
+  .work-experience-cards::before 
+  {
+    left: 32px;
+  }
+  .work-experience-cards{
+    margin-bottom:110px;
+  }
+
+  .timeline-dot 
+  {
+    left: 25px;
+  }
+
+  .work-card:nth-child(even) .timeline-date,
+  .work-card:nth-child(odd) .timeline-date
+  {
+    text-align: start;
+    margin-left: 32px;
+  }
+
+  .work-card:nth-child(odd)
+  {
+    padding-right: 0;    
+  }
+  .work-card:nth-child(odd),
+  .work-card:nth-child(even)
+  {
+    padding-left: 32px;
+  }
+
+  .card-content 
+  {
+    width: 90%;
+    height: 206px;
+    border-radius: .75rem;   
+    padding: 2px; 
+
+    animation: card_appears linear, card_fadeout linear;
+    animation-timeline: view();
+    animation-range: entry 500px cover 50%, exit 0% cover 100%;
+  }
+
+  .card-header
+  {
+    padding: 2px;
+  }
+
+  .card-header .name
+  {
+    text-align: start;
+    font-size: 13px;
+  }
+
+  .card-header .username
+  {
+    text-align: start;
+    font-size: 9px;
+  }
+
+  .card-body
+  {
+    font-size: 10px;
+  }
+
+}
