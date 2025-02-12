@@ -231,6 +231,7 @@ span
   text-align: start;
   max-height: 512px;
   height: max-content;
+  max-width: 860px;
   padding: 8px;
   justify-self: flex-end;
 }
@@ -278,7 +279,7 @@ span
 {
   background: rgba(32, 32, 32, 0.322);
   /* flex-direction: column; */
-  box-shadow: 1px 1px 1px rgba(0, 255, 255, 0.356), -1px -1px 1px rgb(137 198 3);
+  box-shadow: 1px 1px 1px rgba(184, 184, 184, 0.356), -1px -1px 1px rgb(137 198 3);
   padding: 0px 8px 8px 8px;
   width: 75%;
   justify-self: flex-end;
