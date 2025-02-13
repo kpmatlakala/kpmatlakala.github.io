@@ -210,7 +210,7 @@ const Contact = () => {
       </section>
 
       <section className='reviews'>
-        <h2>Reviews</h2>
+        <h3>Reviews</h3>
       </section>
 
       <section className="contact-form">
