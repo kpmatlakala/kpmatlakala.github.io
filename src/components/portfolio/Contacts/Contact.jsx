@@ -26,7 +26,6 @@ const Contact = () => {
     <div className="contact-container">
       
       <section className="contact-details">
-
         {/* Phone */}
         <div className="card max-width">
           <div className="card-header flex">
@@ -210,6 +209,10 @@ const Contact = () => {
         
       </section>
 
+      <section className='reviews'>
+        <h2>Reviews</h2>
+      </section>
+
       <section className="contact-form">
         <h3>Send Me a Message</h3>
         <form onSubmit={handleSubmit}>
@@ -221,11 +224,23 @@ const Contact = () => {
             <label>Email:</label>
             <input type="email" name="email" value={formData.email} onChange={handleChange} required />
           </div>
+
           <div className="form-group">
             <label>Message:</label>
             <textarea name="message" value={formData.message} onChange={handleChange} required></textarea>
           </div>
-          <button type="submit" className="submit-btn">Send Message</button>
+          
+          <div className="form-group">
+            <label>Subject:  
+              <select>
+                <option value="Message">Message</option>
+                <option value="Message">Review</option>
+                <option value="General">General</option>
+                <option value="Business">Business</option>                
+              </select>
+            </label>
+          </div>
+          <button type="submit" className="submit-btn">Send</button>
         </form>
       </section>
     </div>

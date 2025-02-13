@@ -1,18 +1,35 @@
+.projects-groups
+{
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  height: 86%;
+  overflow-y: auto;
+  justify-content: flex-start;
+}
+
+.projects-groups h1
+{
+  font-size: 18px;
+  margin: 16px;
+  
+}
+
 /* Container for the projects */
 .projects-container 
 {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1rem;
-    padding: 1rem 2rem;
-    padding-bottom: 64px;
-    width: 96%;
-    height: 100vh;
-    margin-left: 128px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  padding: 1rem 2rem;
+  padding-bottom: 64px;
+  /* width: 96%; */
+  height: 100vh;
+  margin-left: 128px;
 
-    overflow-y: scroll;
-    
-  }
+  overflow-y: scroll;
+  
+}
   
   /* Common styles for all cards */
   .project-card 

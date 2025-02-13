@@ -9,6 +9,7 @@
   overflow: hidden;
   margin: 8px;
   width: 100%;
+  height: max-content;
 }
   
 .max-width 
@@ -68,7 +69,7 @@
   padding: 16px;
   font-size: 1rem;
   color: #dff3ff;
-  height: 100px;
+
 }
 
 .card-body ul
@@ -80,7 +81,7 @@
 /* Card footer styles */
 .card-footer 
 {
-  padding: 8px;
+  padding: 4px;
   display: flex;
   justify-content: flex-end;
 }
@@ -105,3 +106,14 @@
   font-size: 1rem;
 }
   
+
+.reviews
+{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 0 1.5em;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 1px 1px cyan, -1px -1px magenta; 
+}
