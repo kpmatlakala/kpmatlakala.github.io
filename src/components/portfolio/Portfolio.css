@@ -202,6 +202,7 @@
   .content-section .top-layer
   {
     width: 100%;
+    padding: 16px;
   }
 
   .content-section .top-layer h1 
@@ -321,19 +322,32 @@
     align-items: start;
     justify-content:center;
   }
+
+  #education .edu-bg-container
+  {
+    width: 100%;
+  }
+
   #education .edu-bg-container .timeline-content
   {
     padding: 0;
     margin-bottom: 8px;
-    max-width: 97svw;
+    max-width: 97%;
     width: 100%;
+  }
+
+  #education .edu-bg-container .timeline-content#additional-training 
+  {
+    max-width: 97%;
+    margin-bottom: 132px;
   }
 
   .timeline-content .description-container
   {
     padding: 0;
     margin: 0;
-    width: 100%; 
+    width: 97%; 
+    box-shadow: 2px 2px 2px rgba(255, 140, 255, 0.5), -1px -1px 1px rgba(202, 252, 252, 0.5)
   } 
   .description-container img
   {
@@ -384,7 +398,19 @@
     height: 48px;
   }   
 
- 
+  #projects .projects-container
+  {
+    margin: 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;    
+  }
+
+  #projects .projects-container .project-card
+  {
+   
+  }
 
   .contact-container 
   {

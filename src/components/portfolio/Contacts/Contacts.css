@@ -117,3 +117,22 @@
   border-radius: 8px;
   box-shadow: 1px 1px cyan, -1px -1px magenta; 
 }
+
+@media(max-width: 600px) 
+{
+  .contact-container
+  {
+    width: 97%;
+    padding-bottom: 25%;
+  }
+  .reviews
+  {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 1.5em 0;
+    padding: 0.5rem;
+    border-radius: 8px;
+    box-shadow: 1px 1px cyan, -1px -1px magenta; 
+  }  
+}

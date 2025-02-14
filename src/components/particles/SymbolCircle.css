@@ -23,9 +23,9 @@
   align-items: center;
   border-radius: 50%;
   opacity: 0.8;
-  border: 2px solid #3f3f3f25;
+  border: 2px solid #3f3f3f0e;
   animation-timing-function: linear;
-  color: rgba(105, 105, 105, 0.363);
+  color: rgba(105, 105, 105, 0.747);
 }
 
 .symbol 

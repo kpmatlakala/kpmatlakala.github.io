@@ -233,7 +233,14 @@ const SplashScreen  = ({ onFinish }) => {
                 <li>Phone: <a href="tel:+27727138367">+27 72 713 8367</a></li>
               </ul>
             </li>
-            <li><strong>Date:</strong> 20/12/2024</li>
+            <li><strong>Date:</strong> 20/12/2024
+              <a href="src/assets/Mr-Kabelo-Peter-Matlakala-Resume-20241024.pdf" download="KP_Matlakala_Resume">
+                <button className="resume-btn">
+                  {/* <FaDownload size={10} />  */}
+                  Resume
+                </button>
+              </a>
+            </li>
           </ul>
         </div>
 
