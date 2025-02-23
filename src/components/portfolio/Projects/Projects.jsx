@@ -138,6 +138,51 @@ const projects = [
   }
 ];
 
+const group_projects = [  
+  {
+    title: 'Restaurant Reservation App',
+    description: 'A simple todo list app where users can add, remove, and edit tasks, with SQLite3 as the local database.',
+    technologies: ['React', 'CSS', 'Redux', 'Firebase', 'Node.JS'],
+    duration: 'July 2024 – October 2024',
+    keyFeatures: [
+      'Local database with SQLite3 for task management',
+      'CRUD functionality for tasks (Create, Read, Update, Delete)',
+      'Task filtering by completion status',
+    ],
+    challenges: [
+      '',
+    ],
+    previewImage: 'src/assets/hotelapp_x_shots_so.png',
+    screenshots: [
+      'https://img.freepik.com/free-vector/real-time-weather-forecast-app_1051-392.jpg',
+      'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
+    ],
+    githubLink: 'https://github.com/DeLightPlus/',
+    livePreviewLink: '',
+  },
+  {
+    title: 'Travelling Planner App',
+    description: 'A simple todo list app where users can add, remove, and edit tasks, with SQLite3 as the local database.',
+    technologies: ['React', 'CSS', 'Redux', 'Firebase', 'Node.JS'],
+    duration: 'July 2024 – October 2024',
+    keyFeatures: [
+      'Local database with SQLite3 for task management',
+      'CRUD functionality for tasks (Create, Read, Update, Delete)',
+      'Task filtering by completion status',
+    ],
+    challenges: [
+      '',
+    ],
+    previewImage: 'src/assets/hotelapp_x_shots_so.png',
+    screenshots: [
+      'https://img.freepik.com/free-vector/real-time-weather-forecast-app_1051-392.jpg',
+      'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
+    ],
+    githubLink: 'https://github.com/DeLightPlus/',
+    livePreviewLink: '',
+  }
+];
+
 const projectWithIFrame = [
   {
     title: 'Memory Game',
@@ -345,17 +390,25 @@ const Projects = () => {
 
       <div className="projects-container">       
 
-        {projects.map((project, index) => (
+        {group_projects.map((project, index) => (
           <div className="project-card" key={index}>
             <div className="project-header">
               <p className="project-subtitle">{project.technologies.join(", ")}</p>
               <h4 className="project-title">{project.title}</h4>
             </div>
-            <img
+
+
+            <div class="display_div">
+              <div class="screen">
+                    <span class="notfound_text"> NOT FOUND</span>
+                  </div>             
+            </div>
+
+            {/* <img
               className="project-image"
               src={project.previewImage || "default-image.jpg"} // Use default image if no preview image is provided
               alt={`${project.title} background`}
-            />
+            /> */}
             <div className="project-footer">
               <p className="footer-text">
                 {project.description}
@@ -366,114 +419,16 @@ const Projects = () => {
             </div>
           </div>
         ))}
-
-        {/* Memory Game */}
-        <div className="project-card project-with-footer">
-          <div className="project-header">
-            <p className="project-subtitle">HTML, CSS, JavaScript, Node.Js, ejs</p>
-            <h4 className="project-title">Card Guessing Game</h4>
-          </div>
-          <img
-            className="project-image"
-            src="projects/memory-game/screenshots/237shots_so.png"
-            alt="Card example background"
-          />
-          <div className="project-footer">
-            <p className="footer-text"> 
-              A fun and interactive card-guessing game that challenges your memory. 
-              <br/>Built with DOM manipulation, this game allows players to match pairs of cards 
-              {/* within a time limit.  */}
-            </p>
-            <button className="notify-btn"> 👁 Preview </button>
-            <button className="notify-btn" onClick={() => openIFraneModal(0) }> More </button>
-          </div>
-          
-        </div>
-
-        {/* Base Apparel */}
-        <div className="project-card project-with-footer">
-          <div className="project-header">
-            <p className="project-subtitle">HTML, CSS</p>
-            <h4 className="project-title">Base Apparel</h4>
-          </div>
-          <img
-            className="project-image"
-            src="projects/base-apparel/screenshot/584shots_so.png"
-
-            alt="Relaxing app background"
-          />
-          <div className="project-footer">
-            <div className="footer-left">
-              <img
-                className="footer-icon"
-                src="https://heroui.com/images/breathing-app-icon.jpeg"
-                alt="Breathing app icon"
-              />
-
-              <div className="footer-info">
-                <p>Base Apparel</p>
-                <p>Where style meets comfort. Coming soon!</p>
-              </div>
-            </div>
-            <button className="get-app-btn"> 👁 Preview </button>
-            <button className="get-app-btn"> More </button>
-          </div>
-        </div>     
-
-        {/* Ecommerce */}
-        {/* <div className="project-card">
-          <div className="project-header">
-            <p className="project-subtitle"> React, CSS</p>
-            <h4 className="project-title"> E-Commerce App </h4>
-            <h5 className="project-title2"> React UI/UX Challenge </h5>
-          </div>
-          <img
-            className="project-image"
-            src="src/assets/ecommerce_x_shots_so.png
-            "
-            alt="Card background"
-          />
-        </div>
-
-        <div className="project-card">
-          <div className="project-header">
-            <p className="project-subtitle">React, CSS, Json Server</p>
-            <h4 className="project-title">Online Recipe App</h4>
-          </div>
-          <img
-            className="project-image"
-            src="https://img.freepik.com/premium-psd/close-up-person-preparing-family-recipes_23-2149292561.jpg?ga=GA1.1.1866478789.1730715331&semt=ais_hybrid"
-            alt="Card background"
-          />
-        </div>
-
-        <div className="project-card">
-          <div className="project-header">
-            <p className="project-subtitle">React, CSS, Redux, Firebase, Node.Js</p>
-            <h4 className="project-title">Hotel Booking App</h4>
-          </div>
-          <img
-            className="project-image"
-            src="src/assets/hotelapp_x_shots_so.png"
-            alt="Card background"
-          />
-        </div> */}
+    
+      
 
         {isModalOpen && currentProjectIndex !== null && (
           <ProjectModal
-            project={projects[currentProjectIndex]}
+            project={group_projects[currentProjectIndex]}
             isModalOpen={isModalOpen}
             onClose={closeModal}
           />
-        )}
-
-        {isIFrameModalOpen && currentIFrameProjectIndex !== null && (
-          <ProjectModalWithIFrame
-            projectWithIFrame={projectWithIFrame[currentIFrameProjectIndex]}
-            isModalOpen={isIFrameModalOpen}
-            onClose={closeIFrameModal}
-          />
-        )}
+        )}        
       </div>
 
     </div> 

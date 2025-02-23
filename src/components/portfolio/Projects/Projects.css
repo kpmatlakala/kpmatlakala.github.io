@@ -1,7 +1,7 @@
 .projects-groups
 {
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   width: 96%;
   height: 86%;
   overflow-y: auto;
@@ -23,11 +23,9 @@
   gap: 1rem;
   padding: 1rem 2rem;
   padding-bottom: 64px;
-  /* width: 96%; */
-  height: 100vh;
   margin-left: 128px;
 
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   
 }
   
@@ -480,6 +478,44 @@
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+
+.display_div {
+  border-radius: 15px;
+  box-shadow: 3.5px 3.5px 0px #e69635;
+  height: 100%;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  font-family: Montserrat;
+  /* border: 2px solid #1d0e01; */
+  background:
+    repeating-radial-gradient(#000 0 0.0001%, #ffffff 0 0.0002%) 50% 0/2500px
+      2500px,
+    repeating-conic-gradient(#000 0 0.0001%, #ffffff 0 0.0002%) 60% 60%/2500px
+      2500px;
+  background-blend-mode: difference;
+  animation: b 0.2s infinite alternate;
+  border-radius: 10px;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #252525;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+
+@keyframes b {
+  100% {
+    background-position:
+      50% 0,
+      60% 50%;
+  }
 }
 
   
