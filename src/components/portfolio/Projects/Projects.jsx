@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Projects.css";
 import ProjectModal from "./ProjectModal";
 import ProjectModalWithIFrame from "./ProjectModalWithIFrame";
+import WeatherCard from "../../Cards/WeatherCard";
 
 // Data for the projects
 const projects = [
@@ -255,21 +256,24 @@ const Projects = () => {
 
       <div className="projects-container">       
 
+        {/* Individual Projects */}
         {projects.map((project, index) => (
           <div className="project-card" key={index}>
             <div className="project-header">
               <p className="project-subtitle">{project.technologies.join(", ")}</p>
               <h4 className="project-title">{project.title}</h4>
             </div>
-            <img
-              className="project-image"
-              src={project.previewImage || "default-image.jpg"} // Use default image if no preview image is provided
-              alt={`${project.title} background`}
-            />
+            {project.title === "Weather App " ? (
+              <WeatherCard />
+            ) : (
+              <img
+                className="project-image"
+                src={project.previewImage || "default-image.jpg"} // Use default image if no preview image is provided
+                alt={`${project.title} background`}
+              />
+            )}
             <div className="project-footer">
-              <p className="footer-text">
-                {project.description}
-              </p>
+              <p className="footer-text">{project.description}</p>
               <button className="notify-btn" onClick={() => openModal(index)}>
                 👁 More
               </button>
@@ -330,45 +334,6 @@ const Projects = () => {
           </div>
         </div>     
 
-        {/* Ecommerce */}
-        {/* <div className="project-card">
-          <div className="project-header">
-            <p className="project-subtitle"> React, CSS</p>
-            <h4 className="project-title"> E-Commerce App </h4>
-            <h5 className="project-title2"> React UI/UX Challenge </h5>
-          </div>
-          <img
-            className="project-image"
-            src="src/assets/ecommerce_x_shots_so.png
-            "
-            alt="Card background"
-          />
-        </div>
-
-        <div className="project-card">
-          <div className="project-header">
-            <p className="project-subtitle">React, CSS, Json Server</p>
-            <h4 className="project-title">Online Recipe App</h4>
-          </div>
-          <img
-            className="project-image"
-            src="https://img.freepik.com/premium-psd/close-up-person-preparing-family-recipes_23-2149292561.jpg?ga=GA1.1.1866478789.1730715331&semt=ais_hybrid"
-            alt="Card background"
-          />
-        </div>
-
-        <div className="project-card">
-          <div className="project-header">
-            <p className="project-subtitle">React, CSS, Redux, Firebase, Node.Js</p>
-            <h4 className="project-title">Hotel Booking App</h4>
-          </div>
-          <img
-            className="project-image"
-            src="src/assets/hotelapp_x_shots_so.png"
-            alt="Card background"
-          />
-        </div> */}
-
         {isModalOpen && currentProjectIndex !== null && (
           <ProjectModal
             project={projects[currentProjectIndex]}
@@ -404,11 +369,6 @@ const Projects = () => {
                   </div>             
             </div>
 
-            {/* <img
-              className="project-image"
-              src={project.previewImage || "default-image.jpg"} // Use default image if no preview image is provided
-              alt={`${project.title} background`}
-            /> */}
             <div className="project-footer">
               <p className="footer-text">
                 {project.description}

@@ -124,7 +124,7 @@ const WorkExperience = () => {
                                 <h4 className="name">Web & Mobile Development <br/>
                             </h4>
                                 <h5 className="username">@<span>Code</span>Tribe <span>academy</span>
-                                <small> (2024-ongoing) </small> </h5>
+                                <small> (03/2024 - 03/2025) </small> </h5>
                             </div>
                             </div>
                             <button
