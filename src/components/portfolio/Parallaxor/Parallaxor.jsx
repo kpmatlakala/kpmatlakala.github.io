@@ -10,7 +10,7 @@ import WorkExperience from '../WorkExperience/WorkExperience';
 import Projects from '../Projects/Projects';
 import Contact from '../Contacts/Contact';
 
-import myPic from "../../../assets/20240926-main.png"
+import myPic from "../../../assets/banner.png"
 
 
 const Parallaxor = () => {
@@ -36,7 +36,7 @@ const Parallaxor = () => {
     return (
         <div className="app">    
             <div className="container"> {/* plx-wrp */}
-                <RotatingCircles onEduPage={onEduPage}/>
+                {/* <RotatingCircles onEduPage={onEduPage}/> */}
 
                 <section className="content-section" id="about"> {/* plx-grp */}
                     
