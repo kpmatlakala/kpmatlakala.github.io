@@ -111,7 +111,7 @@ const WorkExperience = () => {
 
                 <div className="work-card">
                     <div className="timeline-dot"></div>
-                    <div className="timeline-date">2024-Ongoing</div>
+                    <div className="timeline-date">2024-2025</div>
                     <div className="card-content">
                         <div className="card-header">
                             <div className="header-left">

@@ -70,12 +70,12 @@ const ProjectModal = ({ project, isModalOpen, onClose }) => {
         {/* Show screenshots horizontally if they exist */}
         {project.screenshots && project.screenshots.length > 0 && (
           <div className="screenshots-container">
-            {project.screenshots.map((screenshot, index) => (
+            {project.screenshots.map((src, i) => (
               <img
-                key={index}
-                src={screenshot}
-                alt={`${project.title} screenshot ${index + 1}`}
+                key={i}
                 className="project-screenshot-img"
+                src={src}
+                alt={`Screenshot ${i + 1}`}
               />
             ))}
           </div>

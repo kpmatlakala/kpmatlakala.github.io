@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Projects.css";
 import ProjectModal from "./ProjectModal";
 import ProjectModalWithIFrame from "./ProjectModalWithIFrame";
-import WeatherCard from "../../Cards/WeatherCard";
+
+import ProjectCard from "./ProjectCard";
+import IFrameProjectCard from "./IFrameProjectCard";
+import GroupProjectCard from "./GroupProjectCard";
 
 // Data for the projects
 const projects = [
@@ -190,31 +193,48 @@ const projectWithIFrame = [
     description: 'A fun and interactive card-guessing game that challenges your memory. Built with DOM manipulation, this game allows players to match pairs of cards with the same letter.',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     duration: 'July 2024 – October 2024',
-    previewImage: 'https://img.freepik.com/free-vector/interactive-memory-game-elements_1051-392.jpg', // Use a relevant preview image
+    previewImage: 'https://img.freepik.com/free-vector/interactive-memory-game-elements_1051-392.jpg',
     screenshots: [
       'https://img.freepik.com/free-vector/memory-game-play-preview_1051-392.jpg',
       'https://img.freepik.com/free-vector/memory-game-cards-preview_1051-392.jpg',
     ],
-    livePreviewLink: '',  // Leave this blank for the iframe preview
+    livePreviewLink: '',
     keyFeatures: [
       'Interactive card matching gameplay',
-      // 'Timed challenge to improve memory',
       'Dynamic card shuffling and pair matching',
     ],
     challenges: [
-      'Challenge: Managing state of cards and match detection. Solution: Used an array to track card states and compare matched pairs effectively with JavaScript.',
-      'Challenge: Synchronizing time limit and game over condition. Solution: Set up a countdown timer that halts the game when time runs out or all pairs are matched.',
+      'Managing state of cards and match detection.',
+      'Synchronizing time limit and game over condition.',
     ],
-    iframeLink: 'src/components/portfolio/Projects/memory-game/index.html', // Path to the iframe HTML
+    iframeLink: 'src/components/portfolio/Projects/memory-game/index.html',
   },
-
+  {
+    title: 'Base Apparel',
+    description: 'A modern landing page for a fictional apparel brand. Responsive and stylish, built with HTML and CSS.',
+    technologies: ['HTML', 'CSS'],
+    duration: 'August 2024',
+    previewImage: 'projects/base-apparel/screenshot/584shots_so.png',
+    screenshots: [
+      'projects/base-apparel/screenshot/584shots_so.png',
+    ],
+    livePreviewLink: '',
+    keyFeatures: [
+      'Responsive design',
+      'Modern layout and branding',
+    ],
+    challenges: [
+      'Ensuring cross-browser compatibility.',
+      'Mobile-first responsive design.',
+    ],
+    iframeLink: 'src/components/portfolio/Projects/base-apparel/index.html',
+  },
 ];
 
 
 const Projects = () => {
 
-  const [activeMainTab, setActiveMainTab] = useState("delightplus");
-  const [activeSubTab, setActiveSubTab] = useState("individual");
+  const [modalSource, setModalSource] = useState("individual"); // "individual" or "group"
 
   const [isIFrameModalOpen, setIsIFrameModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -230,8 +250,9 @@ const Projects = () => {
     setIsIFrameModalOpen(false);
   };
 
-  const openModal = (index) => {
+  const openModal = (index, source = "individual") => {
     setCurrentProjectIndex(index);
+    setModalSource(source);
     setIsModalOpen(true);
   };
 
@@ -249,91 +270,47 @@ const Projects = () => {
     );
   };
 
+  // Prevent background scroll when any modal is open
+  useEffect(() => {
+    if (isModalOpen || isIFrameModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    // Clean up on unmount
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isModalOpen, isIFrameModalOpen]);
+
   return (   
     <div className="projects-groups">
     
-      <h1>CodeTribe\ Individual Projects </h1>
+      <h1>Individual Projects </h1>
 
       <div className="projects-container">       
 
         {/* Individual Projects */}
         {projects.map((project, index) => (
-          <div className="project-card" key={index}>
-            <div className="project-header">
-              <p className="project-subtitle">{project.technologies.join(", ")}</p>
-              <h4 className="project-title">{project.title}</h4>
-            </div>
-            {project.title === "Weather App " ? (
-              <WeatherCard />
-            ) : (
-              <img
-                className="project-image"
-                src={project.previewImage || "default-image.jpg"} // Use default image if no preview image is provided
-                alt={`${project.title} background`}
-              />
-            )}
-            <div className="project-footer">
-              <p className="footer-text">{project.description}</p>
-              <button className="notify-btn" onClick={() => openModal(index)}>
-                👁 More
-              </button>
-            </div>
-          </div>
+          <ProjectCard
+            key={index}
+            project={project}
+            isWeatherApp={project.title === "Weather App "}
+            onMore={() => openModal(index, "individual")}
+          />
         ))}
 
-        {/* Memory Game */}
-        <div className="project-card project-with-footer">
-          <div className="project-header">
-            <p className="project-subtitle">HTML, CSS, JavaScript, Node.Js, ejs</p>
-            <h4 className="project-title">Card Guessing Game</h4>
-          </div>
-          <img
-            className="project-image"
-            src="projects/memory-game/screenshots/237shots_so.png"
-            alt="Card example background"
+        {/* Local Projects (Memory Game, Base Apparel, etc.) */}
+        {projectWithIFrame.map((project, index) => (
+          <IFrameProjectCard
+            key={index}
+            project={project}
+            onPreview={() => {/* Optional: handle preview */}}
+            onMore={() => openIFraneModal(index)}
           />
-          <div className="project-footer">
-            <p className="footer-text"> 
-              A fun and interactive card-guessing game that challenges your memory. 
-              <br/>Built with DOM manipulation, this game allows players to match pairs of cards 
-              {/* within a time limit.  */}
-            </p>
-            <button className="notify-btn"> 👁 Preview </button>
-            <button className="notify-btn" onClick={() => openIFraneModal(0) }> More </button>
-          </div>
-          
-        </div>
+        ))}
 
-        {/* Base Apparel */}
-        <div className="project-card project-with-footer">
-          <div className="project-header">
-            <p className="project-subtitle">HTML, CSS</p>
-            <h4 className="project-title">Base Apparel</h4>
-          </div>
-          <img
-            className="project-image"
-            src="projects/base-apparel/screenshot/584shots_so.png"
-
-            alt="Relaxing app background"
-          />
-          <div className="project-footer">
-            <div className="footer-left">
-              <img
-                className="footer-icon"
-                src="https://heroui.com/images/breathing-app-icon.jpeg"
-                alt="Breathing app icon"
-              />
-
-              <div className="footer-info">
-                <p>Base Apparel</p>
-                <p>Where style meets comfort. Coming soon!</p>
-              </div>
-            </div>
-            <button className="get-app-btn"> 👁 Preview </button>
-            <button className="get-app-btn"> More </button>
-          </div>
-        </div>     
-
+        {/* Modals */}
         {isModalOpen && currentProjectIndex !== null && (
           <ProjectModal
             project={projects[currentProjectIndex]}
@@ -351,46 +328,28 @@ const Projects = () => {
         )}
       </div>
 
-      <h1>CodeTribe\ Group Projects </h1>
-
-      <div className="projects-container">       
-
+      <h1>Group Projects </h1>
+      <div className="projects-container">
         {group_projects.map((project, index) => (
-          <div className="project-card" key={index}>
-            <div className="project-header">
-              <p className="project-subtitle">{project.technologies.join(", ")}</p>
-              <h4 className="project-title">{project.title}</h4>
-            </div>
-
-
-            <div class="display_div">
-              <div class="screen">
-                    <span class="notfound_text"> NOT FOUND</span>
-                  </div>             
-            </div>
-
-            <div className="project-footer">
-              <p className="footer-text">
-                {project.description}
-              </p>
-              <button className="notify-btn" onClick={() => openModal(index)}>
-                👁 More
-              </button>
-            </div>
-          </div>
+          <GroupProjectCard
+            key={index}
+            project={project}
+            onMore={() => openModal(index, "group")}
+          />
         ))}
-    
-      
 
         {isModalOpen && currentProjectIndex !== null && (
           <ProjectModal
-            project={group_projects[currentProjectIndex]}
+            project={
+              modalSource === "individual"
+                ? projects[currentProjectIndex]
+                : group_projects[currentProjectIndex]
+            }
             isModalOpen={isModalOpen}
             onClose={closeModal}
           />
-        )}        
+        )}
       </div>
-
     </div> 
   );
 };

@@ -1,18 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import './WeatherCard.css';
 
 const WeatherCard = () => {
   return (
-    <StyledWrapper>
-      <div className="card">
-        <svg 
-            fill="none" 
-            viewBox="0 0 342 175" 
-            height={175} width={342} 
-            xmlns="http://www.w3.org/2000/svg" 
-            className="background">
-          <path fill="#000000" d="M0 66.4396C0 31.6455 0 14.2484 11.326 5.24044C22.6519 -3.76754 39.6026 0.147978 73.5041 7.97901L307.903 62.1238C324.259 65.9018 332.436 67.7909 337.218 73.8031C342 79.8154 342 88.2086 342 104.995V131C342 151.742 342 162.113 335.556 168.556C329.113 175 318.742 175 298 175H44C23.2582 175 12.8873 175 6.44365 168.556C0 162.113 0 151.742 0 131V66.4396Z" />
-        </svg>
+    <>
+      <div className="weather-card">        
 
         <div className="cloud">
             <svg 
@@ -51,64 +43,7 @@ const WeatherCard = () => {
           <p className="info-right">Mid Rain</p>
         </div>
       </div>
-    </StyledWrapper>
+    </>
   );
 }
-
-const StyledWrapper = styled.div`
-  .card {
-    width: 97%;
-    height: 100%;
-    position: relative;
-    padding: 16px;
-    padding-top: 40px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .background {
-    fill: linear-gradient(90deg, #5936B4 0%, #362A84 100%);
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-  }
-
-  .cloud {
-    position: absolute;
-    right: 0;
-    top: 4px;
-  }
-
-  .cloud svg {
-    height: 120px;
-  }
-
-  .card .main-text {
-    font-size: 48px;
-    text-align: left;
-    font-weight: 700;
-    margin-top: 16px;
-    margin-left: 8px;
-    z-index: 2;
-  }
-
-  .card .info {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .card .info .text-gray {
-    color: rgba(235, 235, 245, 0.60);
-  }
-
-  .card .info .info-left {
-    text-align: left;
-  }
-
-  .card .info .info-right {
-    align-self: flex-end;
-  }`;
-
 export default WeatherCard;

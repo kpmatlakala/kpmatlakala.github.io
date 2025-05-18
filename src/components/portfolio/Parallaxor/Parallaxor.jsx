@@ -91,7 +91,15 @@ const Parallaxor = () => {
                         </p>
                         <hr/>
                     </div>
-                    <SkillsMatrix />                    
+                    <SkillsMatrix />  
+                    <h3>GitHub Activity</h3>
+                    <div className="github-matrix">
+                        <img
+                            src="https://ghchart.rshah.org/DeLightPlus"
+                            alt="GitHub Contribution Chart"
+                            style={{ width: "100%", maxWidth: 700, background: "#fff", borderRadius: 8, boxShadow: "0 2px 12px #0001" }}
+                        />
+                    </div>                  
                 </section>
 
                 <section className="content-section" id="experience">

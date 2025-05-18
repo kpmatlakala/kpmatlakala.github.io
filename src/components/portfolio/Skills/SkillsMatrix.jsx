@@ -137,6 +137,7 @@ const getProficiencyWidth = (proficiency) => {
 
 const SkillsMatrix = () => {
   return (
+    <>
     <div className="skills-matrix">
       <table className="skills-table">
         <thead>
@@ -171,6 +172,8 @@ const SkillsMatrix = () => {
         </tbody>
       </table>
     </div>
+    
+    </>
   );
 };
 

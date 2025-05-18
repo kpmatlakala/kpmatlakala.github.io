@@ -4,11 +4,30 @@
   background: #00000000;
 }
 
+#skills h3 
+{
+  color: #e0e0e0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 8px;  
+}
+
+.github-matrix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 8px;
+  background: #2321367a;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px #0002;
+}
+
 .skills-matrix 
 {
     width: 100%;
     max-width: 900px;
-    height: 80vh;  
+    height: 50vh;  
     margin-top: 0.75rem;
     padding: 0.2rem;
     color: #333;

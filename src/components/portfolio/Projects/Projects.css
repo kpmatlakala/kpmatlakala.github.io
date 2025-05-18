@@ -74,7 +74,53 @@
     font-size: 0.75rem;
   }
   
-  /* Project Image */
+  /* Card image container for effect */
+.project-image-container {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #0002;
+  background: #181825;
+  margin-bottom: 12px;
+  position: relative;
+  transition: box-shadow 0.3s;
+}
+
+/* Image itself */
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s cubic-bezier(.4,2,.6,1), filter 0.3s;
+  border-radius: 12px;
+}
+
+/* Hover effect on card */
+.project-card:hover .project-image-container,
+.project-card:focus-within .project-image-container {
+  box-shadow: 0 6px 32px #7ee78755, 0 2px 16px #0004;
+}
+
+.project-card:hover .project-image,
+.project-card:focus-within .project-image {
+  transform: scale(1.06) rotate(-1deg);
+  filter: brightness(1.08) saturate(1.2) drop-shadow(0 0 8px #7ee78744);
+}
+
+/* Optional: subtle overlay on hover */
+.project-card:hover .project-image-container::after,
+.project-card:focus-within .project-image-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #7ee78722 0%, #bde5f522 100%);
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+/* Project Image */
   .project-image 
   {
     width: 100%;
@@ -165,9 +211,9 @@
 
 /* Modal Background */
 .project-modal {
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: 0;
+  left: 58px;
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.86); /* Slightly lighter background for a subtle overlay */
@@ -187,16 +233,17 @@
 
 /* Modal Content */
 .modal-content {
-  position: relative;
-  background-color: #fff;
-  padding: 20px;
-  width: 90%;
-  max-width: 1200px;
-  height: 85vh;
-  overflow-y: auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  animation: fadeIn 0.3s ease-out;
+    position: relative;
+    background-color: #ffffff;
+    padding: 20px;
+    width: 100%;
+
+    height: 100%;
+    margin-left: 32px;
+    overflow-y: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.3s ease-out;
 }
 
 /* Modal Animation */
@@ -213,9 +260,9 @@
 
 /* Close Button Style */
 .project-modal .close-modal {
-  position: absolute;
-  top: 15px;
-  right: 15px;
+  position: fixed;
+  top: 16px;
+  right: 64px;
   font-size: 24px;
   background: none;
   border: none;
@@ -310,23 +357,33 @@
 .screenshots-container {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  overflow-x: auto; /* In case there are too many screenshots */
+  gap: 18px;
+  overflow-x: auto;
   padding-bottom: 16px;
-  margin: 16px;
+  margin: 16px 0;
 }
 
 .project-screenshot-img {
-  max-height: 400px;
+  max-height: 260px;
+  max-width: 420px;
   object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #0002, 0 0px 0px #7ee78700;
+  transition: 
+    transform 0.35s cubic-bezier(.4,2,.6,1),
+    box-shadow 0.3s,
+    filter 0.3s;
+  cursor: pointer;
+  background: #f8fafc;
+  border: 2px solid #e6e6e6;
 }
 
 .project-screenshot-img:hover {
-  transform: scale(1.25);
-  max-height: 420px;
-  z-index: 999;
+  transform: scale(1.12) rotate(-2deg);
+  box-shadow: 0 8px 32px #7ee78755, 0 2px 16px #0004;
+  filter: brightness(1.08) saturate(1.2);
+  z-index: 2;
+  border-color: #7ee787;
 }
 
 /* Live Preview Button */
@@ -533,4 +590,3 @@
     }
   }
 
-  
