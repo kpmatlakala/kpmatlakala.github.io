@@ -84,9 +84,9 @@ const projects = [
     challenge:'React UI/UX Challenge',
     technologies: ['React', 'CSS'],
     duration: 'July 2024 – October 2024',
-    previewImage: 'src/assets/ecommerce_x_shots_so.png',
+    previewImage: 'public/assets/ecommerce_x_shots_so.png',
     screenshots: [
-      'src/assets/ecommerce_x_shots_so.png',      
+      'public/assets/ecommerce_x_shots_so.png',      
     ],
     githubLink: 'https://github.com/DeLightPlus/',
     livePreviewLink: '',
@@ -132,7 +132,7 @@ const projects = [
     challenges: [
       '',
     ],
-    previewImage: 'src/assets/hotelapp_x_shots_so.png',
+    previewImage: 'public/assets/hotelapp_x_shots_so.png',
     screenshots: [
       'https://img.freepik.com/free-vector/real-time-weather-forecast-app_1051-392.jpg',
       'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
@@ -214,7 +214,7 @@ const projectWithIFrame = [
     description: 'A modern landing page for a fictional apparel brand. Responsive and stylish, built with HTML and CSS.',
     technologies: ['HTML', 'CSS'],
     duration: 'August 2024',
-    previewImage: 'projects/base-apparel/screenshot/584shots_so.png',
+    previewImage: 'projects/base-apparel/preview.png',
     screenshots: [
       'projects/base-apparel/screenshot/584shots_so.png',
     ],

@@ -1,7 +1,49 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import './WeatherCard.css';
 
+const API_KEY = "YOUR_API_KEY"; // Replace with your OpenWeatherMap API key
+
+// Example fallback data
+const MOCK_WEATHER = {
+  name: "Polokwane",
+  main: {
+    temp: 22,
+    temp_max: 25,
+    temp_min: 18,
+    humidity: 60,
+  },
+  weather: [
+    { description: "clear sky" }
+  ],
+  wind: { speed: 3.2 },
+  cod: 200,
+};
+
 const WeatherCard = () => {
+  const [weather, setWeather] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=Polokwane,ZA&appid=${API_KEY}&units=metric`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.cod === 200) {
+          setWeather(data);
+        } else {
+          setWeather(MOCK_WEATHER);
+        }
+        setLoading(false);
+      })
+      .catch(() => {
+        setWeather(MOCK_WEATHER);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <div className="weather-card">Loading weather...</div>;
+
   return (
     <>
       <div className="weather-card">        
@@ -34,13 +76,13 @@ const WeatherCard = () => {
                 </g>
             </svg>
         </div>
-        <p className="main-text">24°</p>
+        <p className="main-text">{Math.round(weather.main.temp)}°C</p>
         <div className="info">
           <div className="info-left">
-            <p className="text-gray">H:32° L: 16°</p>
+            <p className="text-gray">H:{Math.round(weather.main.temp_max)}° L:{Math.round(weather.main.temp_min)}°</p>
             <p>South Africa, Polokwane</p>
           </div>
-          <p className="info-right">Mid Rain</p>
+          <p className="info-right">{weather.weather[0].description}</p>
         </div>
       </div>
     </>
