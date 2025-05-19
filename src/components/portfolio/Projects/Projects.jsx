@@ -84,9 +84,9 @@ const projects = [
     challenge:'React UI/UX Challenge',
     technologies: ['React', 'CSS'],
     duration: 'July 2024 – October 2024',
-    previewImage: 'public/assets/ecommerce_x_shots_so.png',
+    previewImage: 'assets/ecommerce_x_shots_so.png',
     screenshots: [
-      'public/assets/ecommerce_x_shots_so.png',      
+      'assets/ecommerce_x_shots_so.png',      
     ],
     githubLink: 'https://github.com/DeLightPlus/',
     livePreviewLink: '',
@@ -132,7 +132,7 @@ const projects = [
     challenges: [
       '',
     ],
-    previewImage: 'public/assets/hotelapp_x_shots_so.png',
+    previewImage: 'assets/hotelapp_x_shots_so.png',
     screenshots: [
       'https://img.freepik.com/free-vector/real-time-weather-forecast-app_1051-392.jpg',
       'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
