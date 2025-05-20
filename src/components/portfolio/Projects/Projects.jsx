@@ -199,7 +199,7 @@ const projectWithIFrame = [
       '/mini-games/banner.jpg',
       'https://img.freepik.com/free-vector/memory-game-cards-preview_1051-392.jpg',
     ],
-    livePreviewLink: '/mini-games/game-manager.html',
+    livePreviewLink: 'https://delightplus-portfolio.vercel.app/mini-games/game-manager.html',
     githubLink: 'https://github.com/DeLightPlus/',
     keyFeatures: [
       'Multiple games: Card-matching, Tetris, and Snake',
@@ -235,6 +235,33 @@ const projectWithIFrame = [
       'Mobile-first responsive design.',
     ],
     iframeLink: '/base-apparel/index.html',
+  },
+   {
+    title: 'Frontend Mentor Challenges',
+    description: 'A collection of frontend challenges from Frontend Mentor, showcasing various skills and techniques in web development.',
+    technologies: ['HTML', 'CSS'],
+    duration: 'May 2025',
+    previewImage: '',
+    screenshots: [
+      'frontend-mentor-challanges/assets/previews/getting-started/qr-preview.jpg',
+      'frontend-mentor-challanges/assets/previews/getting-started/blog-preview.jpg',
+      'frontend-mentor-challanges/assets/previews/getting-started/social-preview.jpg',
+      'frontend-mentor-challanges/assets/previews/getting-started/recipe-preview.jpg',
+    ],
+    livePreviewLink: 'https://delightplus-portfolio.vercel.app/frontend-mentor-challanges/index.html',
+    githubLink: 'https://github.com/DeLightPlus',
+    keyFeatures: [
+      'Responsive design',
+      'Modern layout and branding',
+      'CSS animations and transitions',
+      'CSS Grid and Flexbox layouts',
+    ],
+    challenges: [
+      'Ensuring cross-browser compatibility.',
+      'Mobile-first responsive design.',
+      'Implementing various design patterns and techniques.',
+    ],
+    iframeLink: '/frontend-mentor-challanges/index.html',
   },
 ];
 

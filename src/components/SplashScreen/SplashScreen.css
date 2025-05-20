@@ -11,6 +11,12 @@
   padding-top: 50px; /* Added to give space for fixed progress bar */
 }
 
+.chat-header
+{
+  position:sticky;
+  top: 0;
+}
+
 /* Welcome Header */
 .welcome-header
 {

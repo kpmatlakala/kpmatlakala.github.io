@@ -1,4 +1,5 @@
 import React from "react";
+import NotFoundDiv from "../../Cards/NotFound/notfounddiv";
 
 const IFrameProjectCard = ({ project, onPreview, onMore }) => (
     <div className="project-card project-with-footer">
@@ -6,11 +7,15 @@ const IFrameProjectCard = ({ project, onPreview, onMore }) => (
             <p className="project-subtitle">{project.technologies.join(", ")}</p>
             <h4 className="project-title">{project.title}</h4>
         </div>
-        <img
-            className="project-image"
-            src={project.previewImage}
-            alt={`${project.title} background`}
-        />
+        {(project.previewImage || project.previewImage == '') ? (
+            <img
+                className="project-image"
+                src={project.previewImage}
+                alt={`${project.title} background`}
+            />
+        ) : (
+            <NotFoundDiv />
+        )}
         <div className="project-footer">
             <p className="footer-text">{project.description}</p>
             {project.livePreviewLink && (

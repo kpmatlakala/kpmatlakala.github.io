@@ -79,7 +79,7 @@ const SplashScreen  = ({ onFinish }) => {
   // Countdown timer and final message logic
   useEffect(() => {
     if (isComplete && countdown > 0) {
-      const timer = setInterval(() => setCountdown((prev) => prev - 1), 1000);
+      const timer = setInterval(() => setCountdown((prev) => prev - 1), 500);
       return () => clearInterval(timer);
     }
 
@@ -159,12 +159,8 @@ const SplashScreen  = ({ onFinish }) => {
       setMessages((prev) => [
         ...prev,
         { text: `I will be hanging around in the chat section, ready when you need me, ${userName}! 😄`, from: "DLP" },
-      ]);
-
-      setTimeout(() => {
-        // You can call onFinish() here if you want to trigger additional actions
-      }, 10000);
-    }, 1000);
+      ]);    
+    }, 500);
   };
 
   // Handle "Continue" button click to show modal
@@ -199,18 +195,8 @@ const SplashScreen  = ({ onFinish }) => {
 
   return (
     <div className="splash-container">
-      {/* Fixed Progress Bar */}
-      {isComplete && (
-        <div className="progress-container">
-          <div
-            className="progress-bar"
-            style={{ width: `${countdown * 10}%` }} // Dynamically update progress width
-          />
-        </div>
-      )}
-
-      <div className="welcome-header">
-        <h3>Welcome to <strong><u>De Light Plus</u></strong> chat</h3>
+            <div className="welcome-header">
+        <h3>Welcome to <strong><u>DeLightPlus</u></strong><sub>chat</sub></h3>
         <div className="logo-section">
           <p>*******************************************************</p>
           <h1>K.P Matlakala</h1>
@@ -223,8 +209,8 @@ const SplashScreen  = ({ onFinish }) => {
         <div className="portfolio-details">
           <ul>
             <li><strong>Full Name:</strong> Kabelo Peter Matlakala</li>
-            <li><strong>CodeTribe Location:</strong> Limpopo, Polokwane</li>
-            <li><strong>Program Enrolled:</strong> Web and Mobile Development</li>
+            <li><strong>Location:</strong> Limpopo, Polokwane</li>
+            <li><strong></strong> Web and Mobile Development</li>
             <li><strong><u>Contact Information:</u></strong>
               <ul>
                 <li>Email: <a href="mailto:matlakalakabelo1@gmail.com">matlakalakabelo1@gmail.com</a></li>
@@ -233,7 +219,8 @@ const SplashScreen  = ({ onFinish }) => {
                 <li>Phone: <a href="tel:+27727138367">+27 72 713 8367</a></li>
               </ul>
             </li>
-            <li><strong>Date:</strong> 20/12/2024
+            <li>
+              {/* <strong>Date:</strong> 20/12/2024 */}
               <a href="src/assets/Mr-Kabelo-Peter-Matlakala-Resume-20241024.pdf" download="KP_Matlakala_Resume">
                 <button className="resume-btn">
                   {/* <FaDownload size={10} />  */}
@@ -300,13 +287,13 @@ const SplashScreen  = ({ onFinish }) => {
       )}
 
       {/* Progress Bar for Final Message */}
-      {isComplete && finalMessageShown && (
+      {/* {isComplete && finalMessageShown && (
         <div className="progress-container">
           <button className="continue-btn" onClick={handleContinue}>
             » continue ▸
           </button>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

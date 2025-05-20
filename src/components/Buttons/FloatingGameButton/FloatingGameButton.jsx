@@ -1,10 +1,16 @@
 import React from "react";
 import "./FloatingGameButton.css";
 
-const FloatingGameButton = ({ onClick }) => (
-  <button className="floating-game-btn" onClick={onClick} title="Open Games">
+const FloatingGameButton = () => (
+  <a
+    className="floating-game-btn"
+    href="https://delightplus-portfolio.vercel.app/mini-games/game-manager.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    title="Open Games"
+  >
     🎮
-  </button>
+  </a>
 );
 
 export default FloatingGameButton;

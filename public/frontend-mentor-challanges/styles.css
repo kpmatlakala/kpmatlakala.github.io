@@ -1,0 +1,219 @@
+/* Define dark theme as default */
+:root {
+    --bg-color: #111;
+    --text-color: #eee;
+    --card-bg: #1e1e1e;
+    --card-border: #333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Toggle to light theme when checkbox is checked using :has() */
+.theme-wrapper:has(#theme-toggle:checked) {
+    --bg: #f9f9f9;
+    --text: #111;
+    --card-bg: #fff;
+    --accent: #333;
+    --border: #ddd;
+}
+
+
+:root,
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+#theme-toggle:checked~main {
+    --bg: #f9f9f9;
+    --text: #111;
+    --card-bg: #fff;
+    --accent: #333;
+    --border: #ddd;
+}
+
+body {
+    font-family: 'Fira Code', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;    
+}
+
+header,
+footer {
+    text-align: center;
+    padding: 1rem;
+}
+
+#theme-toggle {
+    position: absolute;
+    left: -9999px;
+}
+
+label[for="theme-toggle"] {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem 4rem;
+    background-color: var(--bg);
+    border-left:grey solid 1px;
+    border-right: gray solid 1px;
+}
+
+h1,
+h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--accent);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.5rem;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1rem;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+
+.about {
+    font-size: 0.95rem;
+}
+
+.about p {
+    margin-bottom: 0.5rem;
+}
+
+.contact a {
+    color: var(--text);
+    text-decoration: underline;
+}
+
+.contact ul li {
+    list-style: none;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: var(--bg, var(--card-bg));
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .project-card {
+        padding: 0.8rem;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        margin-bottom: 1rem;
+        background-color: var(--card-bg);
+        padding: 1rem;
+        box-shadow: 0 2px 4px var(--shadow);
+    }
+
+    td {
+        border: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    th {
+        display: none;
+    }
+}
+
+
+/* Toggle functionality */
+#theme-toggle:checked~main {
+    background-color: #f9f9f9;
+    color: #111;
+}
+
+#theme-toggle:checked~main body {
+    background-color: #f9f9f9;
+}
+
+body.light {
+    --bg-color: #f9f9f9;
+    --text-color: #111;
+    --card-bg: #fff;
+    --card-border: #ccc;
+}
+
+body.light main {
+    background-color: #f9f9f9;
+    color: #111;
+}
+
+footer.light {
+    background-color: #f1f1f1;
+    color: #111;
+}

@@ -5,7 +5,7 @@ const ChatModal = ({ chatMaximized, handleChatMaximize, handleChatToggle, handle
     <div className={ `chat-modal ${ chatMaximized ? "maximized" : "restored" }`} > 
       <div className="chat-modal-content">
         <div className="chat-header">
-          <h2>De-Light<small><sub>Plus Chat</sub></small></h2>
+          <h2><u>DeLightPlus</u><small><sub>Chat</sub></small></h2>
           <div className="chat-controls">
             <button
               onClick={handleChatToggle}
