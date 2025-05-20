@@ -12,7 +12,7 @@ const projects = [
   {
     title: 'Weather App ',
     description: 'A weather forecasting app that fetches real-time weather data using the OpenWeatherMap API.',
-    challenge:'',
+    challenge: '',
     technologies: ['React', 'CSS', 'OpenWeatherMap API'],
     duration: 'July 2024 – October 2024',
     previewImage: 'https://img.freepik.com/free-vector/app-weather-elements_1051-392.jpg?t=st=1738043795~exp=1738047395~hmac=d7d39ccb60fd2c0bb05f2716f4853a16fad7acac456fe8a607baf02e0c953fbf&w=826',
@@ -35,7 +35,7 @@ const projects = [
   {
     title: 'ShoppingList App',
     description: 'A shopping list app that allows users to add, remove, and manage items, using Redux Toolkit for state management.',
-    challenge:'',
+    challenge: '',
     technologies: ['React', 'Redux Toolkit', 'CSS'],
     duration: 'July 2024 – October 2024',
     keyFeatures: [
@@ -58,7 +58,7 @@ const projects = [
   {
     title: 'TodoList App',
     description: 'A simple todo list app where users can add, remove, and edit tasks, with SQLite3 as the local database.',
-    challenge:'',
+    challenge: '',
     technologies: ['React', 'CSS', 'SQLite3'],
     duration: 'July 2024 – October 2024',
     keyFeatures: [
@@ -81,20 +81,20 @@ const projects = [
   {
     title: 'E-Commerce App ',
     description: '',
-    challenge:'React UI/UX Challenge',
+    challenge: 'React UI/UX Challenge',
     technologies: ['React', 'CSS'],
     duration: 'July 2024 – October 2024',
     previewImage: 'assets/ecommerce_x_shots_so.png',
     screenshots: [
-      'assets/ecommerce_x_shots_so.png',      
+      'assets/ecommerce_x_shots_so.png',
     ],
     githubLink: 'https://github.com/DeLightPlus/',
     livePreviewLink: '',
     keyFeatures: [
-      
+
     ],
     challenges: [
-      
+
     ],
   },
   {
@@ -103,7 +103,7 @@ const projects = [
     technologies: ['React', 'CSS', 'JSON SERVER'],
     duration: 'July 2024 – October 2024',
     keyFeatures: [
-      
+
       'Add, remove, and edit online recipes',
       'Data persistence using localStorage',
     ],
@@ -142,7 +142,7 @@ const projects = [
   }
 ];
 
-const group_projects = [  
+const group_projects = [
   {
     title: 'Restaurant Reservation App',
     description: 'A simple todo list app where users can add, remove, and edit tasks, with SQLite3 as the local database.',
@@ -204,7 +204,7 @@ const projectWithIFrame = [
     keyFeatures: [
       'Multiple games: Card-matching, Tetris, and Snake',
       'Interactive card matching gameplay',
-      'Classic Tetris and Snake mechanics',    
+      'Classic Tetris and Snake mechanics',
       'Responsive and accessible UI',
     ],
     challenges: [
@@ -214,6 +214,62 @@ const projectWithIFrame = [
       'Handling keyboard controls for Tetris and Snake.',
     ],
     iframeLink: '/mini-games/game-manager.html',
+  },
+  {
+    title: 'Frontend Mentor Challenges',
+    description: 'A collection of frontend challenges from Frontend Mentor, showcasing various skills and techniques in web development.',
+    technologies: ['HTML', 'CSS'],
+    duration: 'May 2025',
+    previewImage: 'https://th.bing.com/th/id/OIP.IbDTC4_LJDzbVrj-stJIoQHaEK?w=262&h=180&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3',
+    screenshots: [
+      'frontend-mentor-challanges/assets/previews/getting-started/qr-preview.jpg',
+      'frontend-mentor-challanges/assets/previews/getting-started/blog-preview.jpg',
+      'frontend-mentor-challanges/assets/previews/getting-started/social-preview.jpg',
+      'frontend-mentor-challanges/assets/previews/getting-started/recipe-preview.jpg',
+    ],
+    livePreviewLink: 'https://delightplus-portfolio.vercel.app/frontend-mentor-challanges/index.html',
+    githubLink: 'https://github.com/DeLightPlus',
+    keyFeatures: [
+      'Responsive design',
+      'Modern layout and branding',
+      'CSS animations and transitions',
+      'CSS Grid and Flexbox layouts',
+    ],
+    challenges: [
+      'Ensuring cross-browser compatibility.',
+      'Mobile-first responsive design.',
+      'Implementing various design patterns and techniques.',
+    ],
+    iframeLink: '/frontend-mentor-challanges/index.html',
+  },
+  {
+    title: 'Web Portfolio Challenge',
+    description: 'A modern portfolio website showcasing projects and skills. Responsive and stylish, built with HTML, CSS and Javascript.',
+    technologies: ['HTML', 'CSS', "Javascrip"],
+    duration: 'may 2025',
+    previewImage: '/portfolio-challenge/screenshot/ui-challenge_shots.png',
+    screenshots: [
+      'portfolio-challenge/screenshot/ui-challenge_shots.png',
+    ],
+    livePreviewLink: 'https://delightplus-portfolio.vercel.app/portfolio-challenge/index.html',
+    githubLink: 'https://github.com/DeLightPlus',
+    keyFeatures: [
+      'Responsive design',      
+      'Modern layout and branding',  
+      'CSS animations and transitions; Grid and Flexbox layouts',
+      'JavaScript for interactivity',
+      'Smooth scrolling and navigation',
+      'Image optimization',      
+    ],
+    challenges: [
+      'Ensuring cross-browser compatibility.',
+      'Mobile-first responsive design.',
+      'Implementing various design patterns and techniques.',
+      'Handling JavaScript events and DOM manipulation.',
+      'Optimizing images for faster loading times.',
+      'Creating a smooth scrolling effect for navigation links.',
+    ],
+    iframeLink: '/portfolio-challenge/index.html',
   },
   {
     title: 'Base Apparel',
@@ -236,33 +292,8 @@ const projectWithIFrame = [
     ],
     iframeLink: '/base-apparel/index.html',
   },
-   {
-    title: 'Frontend Mentor Challenges',
-    description: 'A collection of frontend challenges from Frontend Mentor, showcasing various skills and techniques in web development.',
-    technologies: ['HTML', 'CSS'],
-    duration: 'May 2025',
-    previewImage: '',
-    screenshots: [
-      'frontend-mentor-challanges/assets/previews/getting-started/qr-preview.jpg',
-      'frontend-mentor-challanges/assets/previews/getting-started/blog-preview.jpg',
-      'frontend-mentor-challanges/assets/previews/getting-started/social-preview.jpg',
-      'frontend-mentor-challanges/assets/previews/getting-started/recipe-preview.jpg',
-    ],
-    livePreviewLink: 'https://delightplus-portfolio.vercel.app/frontend-mentor-challanges/index.html',
-    githubLink: 'https://github.com/DeLightPlus',
-    keyFeatures: [
-      'Responsive design',
-      'Modern layout and branding',
-      'CSS animations and transitions',
-      'CSS Grid and Flexbox layouts',
-    ],
-    challenges: [
-      'Ensuring cross-browser compatibility.',
-      'Mobile-first responsive design.',
-      'Implementing various design patterns and techniques.',
-    ],
-    iframeLink: '/frontend-mentor-challanges/index.html',
-  },
+
+
 ];
 
 
@@ -317,21 +348,21 @@ const Projects = () => {
     };
   }, [isModalOpen, isIFrameModalOpen]);
 
-  return (   
+  return (
     <div className="projects-groups">
-    
+
       <h1>Individual Projects </h1>
 
-      <div className="projects-container">  
+      <div className="projects-container">
         {/* Local Projects (Memory Game, Base Apparel, etc.) */}
         {projectWithIFrame.map((project, index) => (
           <IFrameProjectCard
             key={index}
             project={project}
-            onPreview={() => {/* Optional: handle preview */}}
+            onPreview={() => {/* Optional: handle preview */ }}
             onMore={() => openIFraneModal(index)}
           />
-        ))}     
+        ))}
 
         {/* Individual Projects */}
         {projects.map((project, index) => (
@@ -343,7 +374,7 @@ const Projects = () => {
           />
         ))}
 
-        
+
 
         {/* Modals */}
         {isModalOpen && currentProjectIndex !== null && (
@@ -385,7 +416,7 @@ const Projects = () => {
           />
         )}
       </div>
-    </div> 
+    </div>
   );
 };
 

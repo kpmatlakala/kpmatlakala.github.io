@@ -92,7 +92,7 @@ const ProjectModalWithIFrame = ({ projectWithIFrame, isModalOpen, onClose }) => 
 
                         {/* Modal for Preview */}
                         <div className={`game-modal ${!isOpen ? 'go-back' : ''}`}>
-                            <button onClick={toggleModal}> ◀ Close The Game</button>
+                            <button onClick={toggleModal}> ◀ Close </button>
                             <iframe
                                 src={projectWithIFrame.iframeLink}
                                 width="100%"
