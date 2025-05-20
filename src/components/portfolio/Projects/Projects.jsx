@@ -10,26 +10,22 @@ import GroupProjectCard from "./GroupProjectCard";
 // Data for the projects
 const projects = [
   {
-    title: 'Weather App ',
-    description: 'A weather forecasting app that fetches real-time weather data using the OpenWeatherMap API.',
-    challenge: '',
-    technologies: ['React', 'CSS', 'OpenWeatherMap API'],
+    title: 'E-Commerce App ',
+    description: '',
+    challenge: 'React UI/UX Challenge',
+    technologies: ['React', 'CSS'],
     duration: 'July 2024 – October 2024',
-    previewImage: 'https://img.freepik.com/free-vector/app-weather-elements_1051-392.jpg?t=st=1738043795~exp=1738047395~hmac=d7d39ccb60fd2c0bb05f2716f4853a16fad7acac456fe8a607baf02e0c953fbf&w=826',
+    previewImage: 'assets/ecommerce_x_shots_so.png',
     screenshots: [
-      '/assets/weather_shots_so1.png',
-      // 'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
+      'assets/ecommerce_x_shots_so.png',
     ],
     githubLink: 'https://github.com/DeLightPlus/',
     livePreviewLink: '',
     keyFeatures: [
-      'Real-time weather data fetching',
-      'Location search functionality',
-      'Temperature unit conversion (Celsius/Fahrenheit)',
+
     ],
     challenges: [
-      'Handling asynchronous nature of fetching data: Used async/await to handle API calls.',
-      'Managing user input errors: Implemented input validation for city name errors to avoid crashes.',
+
     ],
   },
   {
@@ -78,25 +74,8 @@ const projects = [
     githubLink: 'https://github.com/DeLightPlus/',
     livePreviewLink: '',
   },
-  {
-    title: 'E-Commerce App ',
-    description: '',
-    challenge: 'React UI/UX Challenge',
-    technologies: ['React', 'CSS'],
-    duration: 'July 2024 – October 2024',
-    previewImage: 'assets/ecommerce_x_shots_so.png',
-    screenshots: [
-      'assets/ecommerce_x_shots_so.png',
-    ],
-    githubLink: 'https://github.com/DeLightPlus/',
-    livePreviewLink: '',
-    keyFeatures: [
 
-    ],
-    challenges: [
 
-    ],
-  },
   {
     title: 'Online Recipe App',
     description: '',
@@ -188,16 +167,42 @@ const group_projects = [
 ];
 
 const projectWithIFrame = [
+  // Weather App as an IFrame project (add as first project)
+  {
+    title: 'Weather App',
+    description: 'A weather forecasting app that fetches real-time weather data using the OpenWeatherMap API. ',
+    technologies: ['React', 'CSS', 'OpenWeatherMap API'],
+    duration: 'July 2024 – October 2024',
+    previewImage: '',
+    screenshots: [
+      '/assets/weather_shots_so1.png',
+      // Add more screenshots if available
+    ],
+    livePreviewLink: 'https://delightplus-portfolio.vercel.app/weather-app/index.html',
+    githubLink: 'https://github.com/DeLightPlus/',
+    keyFeatures: [
+      'Real-time weather data fetching',
+      'Location search functionality',
+      'Temperature unit conversion (Celsius/Fahrenheit)',
+      'Responsive and modern UI',
+    ],
+    challenges: [
+      'Handling asynchronous API calls.',
+      'Managing user input errors and validation.',
+      'Integrating OpenWeatherMap API.',
+    ],
+    iframeLink: '/weather-app/index.html',
+  },
   {
     title: 'Mini Games',
     description:
-      'A fun and interactive collection of browser games including a card-matching memory game, Tetris, and a Snake-inspired game. Built with HTML, CSS, and JavaScript, these games feature dynamic gameplay, responsive UI, and engaging challenges for all ages.',
+      'A fun and interactive collection of browser games including a card-matching memory game, Tetris, and a Snake-inspired game.',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     duration: 'July 2024 – October 2024',
     previewImage: '/mini-games/banner.jpg',
     screenshots: [
       '/mini-games/banner.jpg',
-      'https://img.freepik.com/free-vector/memory-game-cards-preview_1051-392.jpg',
+      'https://img.freepik.com/premium-vector/colorful-block-puzzle-game-vector_972395-1215.jpg?w=826',
     ],
     livePreviewLink: 'https://delightplus-portfolio.vercel.app/mini-games/game-manager.html',
     githubLink: 'https://github.com/DeLightPlus/',
@@ -254,12 +259,12 @@ const projectWithIFrame = [
     livePreviewLink: 'https://delightplus-portfolio.vercel.app/portfolio-challenge/index.html',
     githubLink: 'https://github.com/DeLightPlus',
     keyFeatures: [
-      'Responsive design',      
-      'Modern layout and branding',  
+      'Responsive design',
+      'Modern layout and branding',
       'CSS animations and transitions; Grid and Flexbox layouts',
       'JavaScript for interactivity',
       'Smooth scrolling and navigation',
-      'Image optimization',      
+      'Image optimization',
     ],
     challenges: [
       'Ensuring cross-browser compatibility.',
@@ -359,6 +364,7 @@ const Projects = () => {
           <IFrameProjectCard
             key={index}
             project={project}
+            isWeatherApp={project.title.trim() === "Weather App"}
             onPreview={() => {/* Optional: handle preview */ }}
             onMore={() => openIFraneModal(index)}
           />
@@ -373,8 +379,6 @@ const Projects = () => {
             onMore={() => openModal(index, "individual")}
           />
         ))}
-
-
 
         {/* Modals */}
         {isModalOpen && currentProjectIndex !== null && (

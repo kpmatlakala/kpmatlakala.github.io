@@ -1,13 +1,16 @@
 import React from "react";
 import NotFoundDiv from "../../Cards/NotFound/notfounddiv";
+import WeatherCard from "../../Cards/WeatherCard";
 
-const IFrameProjectCard = ({ project, onPreview, onMore }) => (
+const IFrameProjectCard = ({ project, onPreview, onMore, isWeatherApp }) => (
     <div className="project-card project-with-footer">
         <div className="project-header">
             <p className="project-subtitle">{project.technologies.join(", ")}</p>
             <h4 className="project-title">{project.title}</h4>
         </div>
-        {(project.previewImage || project.previewImage == '') ? (
+        {isWeatherApp ? (
+            <WeatherCard />
+        ) : (project.previewImage ? (
             <img
                 className="project-image"
                 src={project.previewImage}
@@ -15,7 +18,7 @@ const IFrameProjectCard = ({ project, onPreview, onMore }) => (
             />
         ) : (
             <NotFoundDiv />
-        )}
+        ))}
         <div className="project-footer">
             <p className="footer-text">{project.description}</p>
             {project.livePreviewLink && (
@@ -25,12 +28,10 @@ const IFrameProjectCard = ({ project, onPreview, onMore }) => (
                     target="_blank"
                     rel="noopener noreferrer"
                     title="Live Preview"
-
                 >
                     👁
                 </a>
             )}
-            {/* <button className="notify-btn" onClick={onPreview}>👁</button> */}
             <button className="get-app-btn" onClick={onMore}>More</button>
         </div>
     </div>

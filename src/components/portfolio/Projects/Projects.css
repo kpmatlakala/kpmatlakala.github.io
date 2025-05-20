@@ -225,7 +225,7 @@
 
 /* Modal Background */
 .project-modal {
-  position: absolute;
+  position: fixed; /* Changed from absolute to fixed */
   top: 0;
   left: 58px;
   right: 0;
@@ -370,33 +370,30 @@
 /* Horizontal Screenshots Container */
 .screenshots-container {
   display: flex;
+  flex-wrap: wrap;           /* Allow wrapping to next line */
   justify-content: center;
-  gap: 18px;
+  gap: 12px;
   overflow-x: auto;
-  padding-bottom: 16px;
-  margin: 16px 0;
+  padding-bottom: 12px;
+  margin: 12px 0;
 }
 
 .project-screenshot-img {
-  max-height: 260px;
-  max-width: 420px;
+  max-height: 120px;         /* Reduce image height */
+  max-width: 180px;          /* Reduce image width */
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px #0002, 0 0px 0px #7ee78700;
-  transition: 
-    transform 0.35s cubic-bezier(.4,2,.6,1),
-    box-shadow 0.3s,
-    filter 0.3s;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0002;
+  transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
   cursor: pointer;
   background: #f8fafc;
-  border: 2px solid #e6e6e6;
+  border: 1.5px solid #e6e6e6;
 }
 
 .project-screenshot-img:hover {
-  transform: scale(1.12) rotate(-2deg);
-  box-shadow: 0 8px 32px #7ee78755, 0 2px 16px #0004;
-  filter: brightness(1.08) saturate(1.2);
-  z-index: 2;
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 6px 18px #7ee78755, 0 2px 8px #0004;
+  filter: brightness(1.08) saturate(1.15);
   border-color: #7ee787;
 }
 

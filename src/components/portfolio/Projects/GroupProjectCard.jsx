@@ -20,8 +20,8 @@ const GroupProjectCard = ({ project, onMore }) => (
     
     <div className="project-footer">
       <p className="footer-text">{project.description}</p>
-      <button className="notify-btn" onClick={onMore}>
-        👁 More
+      <button className="get-app-btn" onClick={onMore}>
+        More...
       </button>
     </div>
   </div>
