@@ -2,7 +2,6 @@ import React from 'react';
 import './Projects.css';
 
 const ProjectModal = ({ project, isModalOpen, onClose }) => {
-
   return (
     <div className={`project-modal ${isModalOpen ? 'open' : ''}`}>
       <div className="modal-content">
@@ -33,41 +32,29 @@ const ProjectModal = ({ project, isModalOpen, onClose }) => {
           </ul>
         </div>
 
-        <div className="project-actions">
-            <button className="action-btn">
-                Preview
-                <div className="action-links">
-                  <a 
-                    href={project.githubLink} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="action-link github-link"
-                  >
-                    GitHub Repo
-                  </a>
-                  {project.livePreviewLink && (
-                      <a 
-                          href={project.livePreviewLink} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="action-link live-preview-link"
-                      >
-                        👁 Live Preview
-                      </a>
-                  )}
-                  
-                </div>
-            </button>
+        <div className="action-links">
+          {project.githubLink && (
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-link github-link"
+            >
+              GitHub
+            </a>
+          )}
+          {project.livePreviewLink && (
+            <a
+              href={project.livePreviewLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-link live-preview-link"
+            >
+              Live
+            </a>
+          )}
         </div>
 
-        {/* Project Image Preview */}
-        {/* <div className="project-image">
-          {project.previewImage && (
-            <img src={project.previewImage} alt={project.title} className="project-preview-img" />
-          )}
-        </div> */}
-
-        {/* Show screenshots horizontally if they exist */}
         {project.screenshots && project.screenshots.length > 0 && (
           <div className="screenshots-container">
             {project.screenshots.map((src, i) => (
@@ -80,15 +67,6 @@ const ProjectModal = ({ project, isModalOpen, onClose }) => {
             ))}
           </div>
         )}
-
-        {/* Live Preview Link */}
-        <div className="project-actions">
-          {project.livePreviewLink && (
-            <a href={project.livePreviewLink} target="_blank" rel="noopener noreferrer">
-              <button className="preview-btn">View Live Demo</button>
-            </a>
-          )}
-        </div>
       </div>
     </div>
   );

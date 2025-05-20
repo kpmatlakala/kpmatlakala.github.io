@@ -1,51 +1,3 @@
-*
-{
-    margin: 0;
-    padding: 0;
-}
-
-header, footer
-{
-    text-align: center;
-    color: aliceblue;
-    background-color: #313131;
-    min-height: 32px;
-}
-
-a
-{
-    color:cornflowerblue;
-}
-
-body 
-{
-   
-    height: 100vh;
-    width: 100%;
-    background: url(grid-paper.jpg) 0px 48px;
-}
-
-main
-{
-    display: flex;    
-    min-height: 92vh;
-    align-items: center;
-    justify-content: center;
-}
-
-.container
-{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 8px;
-    background: rgb(62, 68, 71);
-    padding:  8px;
-}
 
 .memory_game
 {
@@ -66,15 +18,11 @@ main
     position: relative;
     display: flex;
     font-size: 3em;
-
     justify-content: center;
     text-align: center;
-    align-items: center;
-   
+    align-items: center;   
     width: 86px;
-    height: 100px;  
-    background: lightgray;
-    
+    height: 100px;      
     transform: rotateY(360deg);
     transition: 0.3s;
 }
@@ -83,7 +31,9 @@ main
 {
     transform: translateY(0.05rem) scale(1.05); 
     transition: transform 600ms ease-in-out;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); */
+    box-shadow: 0 8px 32px rgba(16, 185, 129, 0.473);
+    border-color: #10b981;
 }
 
 .card.flip_card
@@ -93,13 +43,13 @@ main
 
 .card::after
 {
-    content: '🎴';     
-    padding: 14px;
-    font-size: 50px;
+    content: '👽';     
+    padding: 8px;
+    font-size: 56px;
     position: absolute;
     inset: 0; 
-    background: linear-gradient(to right, #3131318a,#0000008c,#5757577a);
-    border: #000 solid 2px;
+    background: linear-gradient(to right, #222222cc,#0000008c,#222222cc);
+    border: #10b98141 solid 2px;
     transition: 0.25s;
     transform: rotateY(0deg);
     backface-visibility: hidden;

@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import SplashScreen from "./components/SplashScreen/SplashScreen";
 import Portfolio from "./components/portfolio/Portfolio"
 import ChatModal from "./components/SplashScreen/ChatModal";
+import FloatingGameButton from "./components/Buttons/FloatingGameButton/FloatingGameButton";
 
 function App() 
 {
@@ -56,9 +57,12 @@ function App()
     <>
       {
         chatMinimized ? (
-          <button className="minimized-chat"
-            onClick={handleChatToggle}> Chat 🤖
-          </button>
+          <>
+            <button className="minimized-chat"
+              onClick={handleChatToggle}> Chat 🤖
+            </button>
+            <FloatingGameButton />
+          </>
         ):(
           <ChatModal  
             chatMaximized={ chatMaximized } 

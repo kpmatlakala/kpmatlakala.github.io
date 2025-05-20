@@ -1,0 +1,24 @@
+.floating-game-btn {
+  position: fixed;
+  right: 32px;
+  bottom: 64px; /* adjust so it's above the chat button */
+  z-index: 1001;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #23272f;
+  color: #fff;
+  font-size: 2rem;
+  border: none;
+  box-shadow: 0 4px 16px #0003;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+.floating-game-btn:hover {
+  background: #7ee787;
+  color: #23272f;
+  transform: translateY(-4px) scale(1.08);
+}

@@ -146,6 +146,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 0.5rem;
   }
   
   .footer-text 
@@ -158,6 +159,7 @@
   .get-app-btn 
   {
     width: 128px;
+    height: 32px;
     background: #89c603;
     color: black;
     padding: 8px 12px;
@@ -166,12 +168,24 @@
     cursor: pointer;
     border: none;
     transition: background 0.3s ease;
+     text-decoration: none;
   }
+
+  .notify-btn {
+  padding: 8px 10px;
+  border-radius: 50%;
+  min-width: 32px;
+  width: 32px;
+  height: 32px;
+  font-size: 1.3em;
+  text-align: center;
+}
   
   .notify-btn:hover,
   .get-app-btn:hover 
   {
     background: #7bb202;
+    color: white;
   }
   
   .footer-left 
@@ -392,49 +406,36 @@
   position: relative;
 }
 
-.action-btn {
-  background-color: #333;
-  color: white;
-  width: 128px;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  position: relative;
-  z-index: 0;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.action-btn:hover {
-  background-color: #555; /* Changes color on hover */
-}
-
 .action-links {
-  display: none;
-  position: absolute;
-  top: 16%;
-  left: 0;
-  background-color: #333;
-  width: 100%;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  
+  /* background-color: #333; */
+  min-width: 300px;
   padding: 10px 0;
   border-radius: 5px;
   z-index: 2;
 }
 
-.action-btn:hover .action-links {
-  display: block;
-}
-
 .action-link {
-  display: block;
-  width: 100%;
+  width: 8rem;
   padding: 10px 20px;
   color: white;
   text-decoration: none;
   font-size: 14px;
   transition: background-color 0.3s ease;
   border: none;
+  cursor: pointer;
+}
+
+.action-link.github-link {
+  background-color: #1b1b1b;
+}
+
+.action-link.live-preview-link {
+  background-color: #333;
 }
 
 .action-link:hover {
@@ -443,14 +444,6 @@
 
 .action-link:not(:last-child) {
   border-bottom: 1px solid #444; /* Adds a separator line */
-}
-
-.action-link.github-link {
-  background-color: #333;
-}
-
-.action-link.live-preview-link {
-  background-color: #333;
 }
 
 .action-btn button {
@@ -589,4 +582,42 @@
       grid-column: span 7;
     }
   }
+
+.actionButtons {
+  display: flex;
+  gap: 14px;
+  margin: 24px 0 12px 0;
+  justify-content: flex-start;
+}
+
+.actionBtn {
+  padding: 0.5em 1.4em;
+  border-radius: 6px;
+  border: none;
+  background: #23272f;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #0002;
+  outline: none;
+  display: inline-block;
+}
+.actionBtn.github:hover {
+  background: #24292f;
+  color: #7ee787;
+  transform: translateY(-2px) scale(1.06);
+}
+.actionBtn.live:hover {
+  background: #7ee787;
+  color: #23272f;
+  transform: translateY(-2px) scale(1.06);
+}
+.actionBtn.preview:hover {
+  background: #f5a623;
+  color: #23272f;
+  transform: translateY(-2px) scale(1.06);
+}
 

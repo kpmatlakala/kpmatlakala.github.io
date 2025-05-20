@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import './WeatherCard.css';
 
-const API_KEY = "YOUR_API_KEY"; // Replace with your OpenWeatherMap API key
+const API_KEY = "895284fb2d2c50a520ea537456963d9c"; 
 
-// Example fallback data
 const MOCK_WEATHER = {
   name: "Polokwane",
   main: {
@@ -13,7 +12,7 @@ const MOCK_WEATHER = {
     humidity: 60,
   },
   weather: [
-    { description: "clear sky" }
+    { description: "clear sky", icon: "01d" }
   ],
   wind: { speed: 3.2 },
   cod: 200,
@@ -22,70 +21,162 @@ const MOCK_WEATHER = {
 const WeatherCard = () => {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [city, setCity] = useState("Polokwane");
+  const [inputCity, setInputCity] = useState("Polokwane");
 
-  useEffect(() => {
+  const fetchWeather = (cityName) => {
+    setLoading(true);
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=Polokwane,ZA&appid=${API_KEY}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(cityName)},ZA&appid=${API_KEY}&units=metric`
     )
       .then((res) => res.json())
       .then((data) => {
         if (data && data.cod === 200) {
           setWeather(data);
+          setCity(data.name);
         } else {
           setWeather(MOCK_WEATHER);
+          setCity(cityName);
         }
         setLoading(false);
       })
       .catch(() => {
         setWeather(MOCK_WEATHER);
+        setCity(cityName);
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    fetchWeather(city);
+    // eslint-disable-next-line
   }, []);
+
+  const handleCityChange = (e) => setInputCity(e.target.value);
+
+  const handleCitySubmit = (e) => {
+    e.preventDefault();
+    if (inputCity.trim()) {
+      fetchWeather(inputCity.trim());
+    }
+  };
+
+  const handleLocation = () => {
+    if (!navigator.geolocation) return;
+    setLoading(true);
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const { latitude, longitude } = pos.coords;
+        fetch(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            if (data && data.cod === 200) {
+              setWeather(data);
+              setCity(data.name);
+              setInputCity(data.name);
+            } else {
+              setWeather(MOCK_WEATHER);
+            }
+            setLoading(false);
+          })
+          .catch(() => {
+            setWeather(MOCK_WEATHER);
+            setLoading(false);
+          });
+      },
+      () => {
+        setLoading(false);
+      }
+    );
+  };
 
   if (loading) return <div className="weather-card">Loading weather...</div>;
 
-  return (
-    <>
-      <div className="weather-card">        
+  const iconCode = weather.weather[0].icon;
+  const iconUrl = iconCode
+    ? `https://openweathermap.org/img/wn/${iconCode}@4x.png`
+    : null;
 
-        <div className="cloud">
-            <svg 
-                fill="none" 
-                preserveAspectRatio="xMidYMid meet" 
-                className="iconify iconify--emojione" 
-                role="img" 
-                aria-hidden="true" 
-                xmlnsXlink="http://www.w3.org/1999/xlink" 
-                xmlns="http://www.w3.org/2000/svg" 
-                viewBox="0 0 64 64"
-            >   
-                <g strokeWidth={0} id="SVGRepo_bgCarrier" />
-                <g strokeLinejoin="round" strokeLinecap="round" id="SVGRepo_tracerCarrier" />
-                <g id="SVGRepo_iconCarrier">
-                <g fill="#75d6ff">
-                    <path d="M10.8 42.9c-.5 1.5-.1 3 1 3.4c1.1.4 2.4-.5 3-2c.6-1.8.7-4.1.2-6.9c-2.1 1.9-3.6 3.8-4.2 5.5"> </path>
-                    <path d="M13.2 57.4c.6-1.8.7-4.1.2-6.9c-2.1 1.8-3.6 3.7-4.2 5.5c-.5 1.5-.1 3 1 3.4c1.1.4 2.5-.5 3-2"> </path>
-                    <path d="M51.5 37.4c-2.1 1.8-3.6 3.7-4.2 5.5c-.5 1.5-.1 3 1 3.4c1.1.4 2.4-.5 3-2c.5-1.7.6-4.1.2-6.9"> </path>
-                    <path d="M38.2 55.9c-.5 1.5-.1 3 1 3.4s2.4-.5 3-2c.6-1.8.7-4.1.2-6.9c-2 1.9-3.5 3.8-4.2 5.5"> </path>
-                    <path d="M46.9 55.9c-.5 1.5-.1 3 1 3.4s2.4-.5 3-2c.6-1.8.7-4.1.2-6.9c-2.1 1.9-3.6 3.8-4.2 5.5"> </path>
-                    <path d="M18.6 55.9c-.5 1.5-.1 3 1 3.4s2.4-.5 3-2c.6-1.8.7-4.1.2-6.9c-2.1 1.9-3.6 3.8-4.2 5.5"> </path>
-                </g>
-                <path d="M24.5 31.9l-4.9 16.2h12.5L27.9 62l16.5-20.2H32.5l2.9-9.9z" fill="#ffce31"> </path>
-                <path fill="#ffffff" d="M18.2 32.5c-.8 0-1.6-.1-2.4-.4c-3.1-1-5.3-3.9-5.3-7.2c0-2.2 1-4.3 2.6-5.7c.4-.4.9-.7 1.4-1l.5-1.8c1.3-4.4 5.4-7.5 10-7.5c.5 0 .9 0 1.5.1c.4.1.8.1 1.2.3l.2-.4c1.9-3.3 5.4-5.4 9.2-5.4C43 3.5 47.7 8.2 47.7 14v1c.4.2.9.4 1.3.6c2.8 1.6 4.5 4.6 4.5 7.8c0 4.2-2.9 7.8-7 8.8c-.7.2-1.4.2-2 .2H18.2z"> </path>
-                <path fill="#ffffff" d="M37.1 5c5 0 9 4 9 8.9v.7c-2.1.2-4 1-5.4 2.3c1.1-.6 2.4-1 3.7-1c.5 0 1 .1 1.5.1c.8.2 1.6.5 2.3.9c2.3 1.3 3.8 3.7 3.8 6.5c0 3.6-2.5 6.5-5.8 7.3c-.7.2-1.2.3-1.8.3H18.2c-.7 0-1.3-.1-1.9-.3c-2.4-.8-4.2-3.1-4.2-5.8c0-1.8.8-3.5 2.1-4.6c.6-.5 1.3-.9 2-1.2c.6-.2 1.3-.3 2-.3c2 0 3.7.9 4.9 2.4h.1c-1.3-2.4-3.7-4.1-6.6-4.3c1.1-3.7 4.5-6.4 8.5-6.4c.4 0 .9 0 1.3.1c.8.1 1.6.3 2.3.7c2.7 1.2 4.7 3.7 5.1 6.8V18c0-3.4-1.8-6.5-4.5-8.3C30.8 6.9 33.8 5 37.1 5m0-3C33 2 29.2 4.1 27 7.6h-.3c-.6-.1-1.2-.1-1.7-.1c-5.3 0-10 3.5-11.4 8.6l-.3 1.2c-.4.2-.7.5-1.1.8c-2 1.7-3.1 4.2-3.1 6.9c0 4 2.5 7.4 6.3 8.7c.9.3 1.9.5 2.9.5h26.2c.8 0 1.6-.1 2.4-.3c4.8-1.1 8.2-5.3 8.2-10.3c0-3.8-2-7.3-5.3-9.1c-.2-.1-.3-.2-.5-.3v-.1C49.2 7.4 43.8 2 37.1 2z"> </path>
-                </g>
-            </svg>
-        </div>
-        <p className="main-text">{Math.round(weather.main.temp)}°C</p>
-        <div className="info">
-          <div className="info-left">
-            <p className="text-gray">H:{Math.round(weather.main.temp_max)}° L:{Math.round(weather.main.temp_min)}°</p>
-            <p>South Africa, Polokwane</p>
-          </div>
-          <p className="info-right">{weather.weather[0].description}</p>
-        </div>
+  return (
+    <div className="weather-card">
+      <div className="cloud">
+        {iconUrl ? (
+          <img
+            src={iconUrl}
+            alt={weather.weather[0].description}
+            style={{ width: 80, height: 80 }}
+          />
+        ) : (
+          <svg
+            width="80"
+            height="80"
+            viewBox="0 0 64 64"
+            fill="none"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <ellipse cx="32" cy="44" rx="20" ry="12" fill="#75d6ff" />
+            <ellipse cx="22" cy="40" rx="10" ry="8" fill="#bde5f5" />
+            <ellipse cx="42" cy="40" rx="12" ry="9" fill="#bde5f5" />
+          </svg>
+        )}
       </div>
-    </>
+      <p className="main-text">{Math.round(weather.main.temp)}°C</p>
+      <div className="info">
+        <div className="info-left">
+          <p className="text-gray">
+            ⬆{Math.round(weather.main.temp_max)}° 
+            ⬇{Math.round(weather.main.temp_min)}°
+            💧{weather.main.humidity}%
+            💨{Math.round(weather.wind.speed)} m/s
+          </p>
+          <form onSubmit={handleCitySubmit} style={{ display: "flex", alignItems: "center", gap: 6 }}>
+            <input
+              type="text"
+              value={inputCity}
+              onChange={handleCityChange}
+              className="weather-city-input"              
+              aria-label="City"
+            />
+
+            <button
+              type="submit"
+              title="Change city"
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                fontSize: "1.1em",
+                color: "#75d6ff",
+                padding: 0,
+              }}
+            >
+              ✔
+            </button>
+            <button
+              type="button"
+              title="Use current location"
+              onClick={handleLocation}
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                fontSize: "1.2em",
+                marginLeft: 2,
+                color: "#f5a623",
+                padding: 0,
+              }}
+            >
+              📍
+            </button>
+          </form>
+        </div>
+        <p className="info-right">{weather.weather[0].description}</p>
+      </div>
+    </div>
   );
-}
+};
+
 export default WeatherCard;

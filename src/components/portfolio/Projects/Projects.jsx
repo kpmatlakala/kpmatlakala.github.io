@@ -17,7 +17,7 @@ const projects = [
     duration: 'July 2024 – October 2024',
     previewImage: 'https://img.freepik.com/free-vector/app-weather-elements_1051-392.jpg?t=st=1738043795~exp=1738047395~hmac=d7d39ccb60fd2c0bb05f2716f4853a16fad7acac456fe8a607baf02e0c953fbf&w=826',
     screenshots: [
-      'src/assets/weather_shots_so1.png',
+      '/assets/weather_shots_so1.png',
       // 'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
     ],
     githubLink: 'https://github.com/DeLightPlus/',
@@ -156,7 +156,7 @@ const group_projects = [
     challenges: [
       '',
     ],
-    previewImage: 'src/assets/hotelapp_x_shots_so.png',
+    // previewImage: '',
     screenshots: [
       'https://img.freepik.com/free-vector/real-time-weather-forecast-app_1051-392.jpg',
       'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
@@ -177,7 +177,7 @@ const group_projects = [
     challenges: [
       '',
     ],
-    previewImage: 'src/assets/hotelapp_x_shots_so.png',
+    // previewImage: '/assets/hotelapp_x_shots_so.png',
     screenshots: [
       'https://img.freepik.com/free-vector/real-time-weather-forecast-app_1051-392.jpg',
       'https://img.freepik.com/free-vector/weather-forecast-interface_1051-392.jpg',
@@ -189,36 +189,43 @@ const group_projects = [
 
 const projectWithIFrame = [
   {
-    title: 'Memory Game',
-    description: 'A fun and interactive card-guessing game that challenges your memory. Built with DOM manipulation, this game allows players to match pairs of cards with the same letter.',
+    title: 'Mini Games',
+    description:
+      'A fun and interactive collection of browser games including a card-matching memory game, Tetris, and a Snake-inspired game. Built with HTML, CSS, and JavaScript, these games feature dynamic gameplay, responsive UI, and engaging challenges for all ages.',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     duration: 'July 2024 – October 2024',
-    previewImage: 'https://img.freepik.com/free-vector/interactive-memory-game-elements_1051-392.jpg',
+    previewImage: '/mini-games/banner.jpg',
     screenshots: [
-      'https://img.freepik.com/free-vector/memory-game-play-preview_1051-392.jpg',
+      '/mini-games/banner.jpg',
       'https://img.freepik.com/free-vector/memory-game-cards-preview_1051-392.jpg',
     ],
-    livePreviewLink: '',
+    livePreviewLink: '/mini-games/game-manager.html',
+    githubLink: 'https://github.com/DeLightPlus/',
     keyFeatures: [
+      'Multiple games: Card-matching, Tetris, and Snake',
       'Interactive card matching gameplay',
-      'Dynamic card shuffling and pair matching',
+      'Classic Tetris and Snake mechanics',    
+      'Responsive and accessible UI',
     ],
     challenges: [
-      'Managing state of cards and match detection.',
-      'Synchronizing time limit and game over condition.',
+      'Managing state and logic for multiple games.',
+      'Synchronizing time limits and game over conditions.',
+      'Ensuring smooth animations and user feedback.',
+      'Handling keyboard controls for Tetris and Snake.',
     ],
-    iframeLink: '/memory-game/index.html',
+    iframeLink: '/mini-games/game-manager.html',
   },
   {
     title: 'Base Apparel',
     description: 'A modern landing page for a fictional apparel brand. Responsive and stylish, built with HTML and CSS.',
     technologies: ['HTML', 'CSS'],
     duration: 'August 2024',
-    previewImage: 'projects/base-apparel/preview.png',
+    previewImage: 'base-apparel/preview.png',
     screenshots: [
       '/base-apparel/screenshot/584shots_so.png',
     ],
-    livePreviewLink: '',
+    livePreviewLink: 'https://delightplus-portfolio.vercel.app/base-apparel/index.html',
+    githubLink: 'https://github.com/DeLightPlus',
     keyFeatures: [
       'Responsive design',
       'Modern layout and branding',
@@ -288,7 +295,16 @@ const Projects = () => {
     
       <h1>Individual Projects </h1>
 
-      <div className="projects-container">       
+      <div className="projects-container">  
+        {/* Local Projects (Memory Game, Base Apparel, etc.) */}
+        {projectWithIFrame.map((project, index) => (
+          <IFrameProjectCard
+            key={index}
+            project={project}
+            onPreview={() => {/* Optional: handle preview */}}
+            onMore={() => openIFraneModal(index)}
+          />
+        ))}     
 
         {/* Individual Projects */}
         {projects.map((project, index) => (
@@ -300,15 +316,7 @@ const Projects = () => {
           />
         ))}
 
-        {/* Local Projects (Memory Game, Base Apparel, etc.) */}
-        {projectWithIFrame.map((project, index) => (
-          <IFrameProjectCard
-            key={index}
-            project={project}
-            onPreview={() => {/* Optional: handle preview */}}
-            onMore={() => openIFraneModal(index)}
-          />
-        ))}
+        
 
         {/* Modals */}
         {isModalOpen && currentProjectIndex !== null && (

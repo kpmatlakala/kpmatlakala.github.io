@@ -8,39 +8,57 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
+}
 
-  .cloud {
+.cloud {
     position: absolute;
-    right: 0;
-  }
+    right: 10%;
+}
 
-  .cloud svg {
+.cloud svg {
     height: 120px;
-  }
+}
 
-  .weather-card .main-text {
+.weather-card .main-text {
     font-size: 48px;
     text-align: left;
-    font-weight: 700;
+    font-weight: 400;
     margin-top: 16px;
     margin-left: 8px;
     z-index: 2;
-  }
+}
 
-  .weather-card .info {
+.weather-card .info {
     display: flex;
     justify-content: space-between;
-  }
+}
 
-  .weather-card .info .text-gray {
+.weather-card .info .text-gray {
     color: rgba(235, 235, 245, 0.60);
-  }
+}
 
-  .weather-card .info .info-left {
+.weather-card .info .info-left {
     text-align: left;
-  }
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 0;
+}
 
-  .weather-card .info .info-right {
-    align-self: flex-end;
-  }
+.weather-card .info .info-right {
+    align-self: center;
+    text-align: right;
+    font-size: 13px;
+}
+
+.weather-city-input {
+    border: none;
+    border-bottom: 1px solid #bde5f5;
+    background: transparent;
+    color: white;
+    font-weight: 500;
+    width: 127px;
+    font-size: 1em;
+    outline: none;
+    margin-right: 4;
+    padding: 2px;
+}
