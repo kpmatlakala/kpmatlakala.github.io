@@ -207,7 +207,7 @@ const projectWithIFrame = [
       'Managing state of cards and match detection.',
       'Synchronizing time limit and game over condition.',
     ],
-    iframeLink: 'src/components/portfolio/Projects/memory-game/index.html',
+    iframeLink: '/memory-game/index.html',
   },
   {
     title: 'Base Apparel',
@@ -216,7 +216,7 @@ const projectWithIFrame = [
     duration: 'August 2024',
     previewImage: 'projects/base-apparel/preview.png',
     screenshots: [
-      'projects/base-apparel/screenshot/584shots_so.png',
+      '/base-apparel/screenshot/584shots_so.png',
     ],
     livePreviewLink: '',
     keyFeatures: [
@@ -227,7 +227,7 @@ const projectWithIFrame = [
       'Ensuring cross-browser compatibility.',
       'Mobile-first responsive design.',
     ],
-    iframeLink: 'src/components/portfolio/Projects/base-apparel/index.html',
+    iframeLink: '/base-apparel/index.html',
   },
 ];
 
