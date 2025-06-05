@@ -113,9 +113,11 @@ function renderProjects() {
   console.log('Getting Started section:', gettingStartedSection);
   if (gettingStartedSection) {
     gettingStartedSection.innerHTML = '';
-    projectsData['Getting Started'].forEach(project => {
-      gettingStartedSection.appendChild(createProjectCard(project));
-    });
+    projectsData['Getting Started']
+      .filter(project => project.render !== false)
+      .forEach(project => {
+        gettingStartedSection.appendChild(createProjectCard(project));
+      });
   }
 
   // Render Responsive Design Fundamentals projects
@@ -123,9 +125,11 @@ function renderProjects() {
   console.log('Responsive section:', responsiveSection);
   if (responsiveSection) {
     responsiveSection.innerHTML = '';
-    projectsData['Responsive Design Fundamentals'].forEach(project => {
-      responsiveSection.appendChild(createProjectCard(project));
-    });
+    projectsData['Responsive Design Fundamentals']
+      .filter(project => project.render !== false)
+      .forEach(project => {
+        responsiveSection.appendChild(createProjectCard(project));
+      });
   }
 
   // Render Challenges projects
@@ -133,9 +137,11 @@ function renderProjects() {
   console.log('Challenges section:', challengesSection);
   if (challengesSection) {
     challengesSection.innerHTML = '';
-    projectsData['Challenges'].forEach(project => {
-      challengesSection.appendChild(createProjectCard(project));
-    });
+    projectsData['Challenges']
+      .filter(project => project.render !== false)
+      .forEach(project => {
+        challengesSection.appendChild(createProjectCard(project));
+      });
   }
 }
 

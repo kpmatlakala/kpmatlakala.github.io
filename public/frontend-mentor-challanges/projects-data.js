@@ -3,7 +3,7 @@ const projectsData = {
     {
       title: 'QR Code Component',
       imageUrl: '/assets/previews/getting-started/qr-preview.jpg',
-      demoUrl: '/Getting_Started/qr-code-component/index.html',
+      demoUrl: '/frontend-mentor-challenges/getting_started/qr-code-component/',
       description: 'A clean QR code component focusing on basic HTML structure and CSS styling techniques.',
       technologies: ['HTML', 'CSS'],
       feLink:"",
@@ -13,30 +13,30 @@ const projectsData = {
     {
       title: 'Blog Preview Card',
       imageUrl: '/assets/previews/getting-started/blog-preview.jpg',
-      demoUrl: '/Getting_Started/blog-preview-card/index.html',
+      demoUrl: '/frontend-mentor-challenges/getting_started/blog-preview-card/',
       description: 'An interactive blog card showcasing post previews with images and author information.',
       technologies: ['HTML', 'CSS'],
       feLink:"",
       level: 1,
-      render: true,
+      render: false,
     },
     {
       title: 'Social Links Profile',
       imageUrl: '/assets/previews/getting-started/social-preview.jpg',
-      demoUrl: '/Getting_Started/social-links-profile/index.html',
+      demoUrl: '/getting_started/social-links-profile/index.html',
       description: 'A clean profile page displaying social media links with hover effects.',
       technologies: ['HTML', 'CSS'],
       level: 1,
-      render: true,
+      render: false,
     },
     {
       title: 'Recipe Page',
       imageUrl: '/assets/previews/getting-started/recipe-preview.jpg',
-      demoUrl: '/Getting_Started/recipe-page/index.html',
+      demoUrl: '/getting_started/recipe-page/index.html',
       description: 'A structured recipe page with ingredients, instructions, and preparation details.',
       technologies: ['HTML', 'CSS'],
       level: 1,
-      render: true,
+      render: false,
     }
   ],
   'Responsive Design Fundamentals': [
@@ -47,7 +47,7 @@ const projectsData = {
       description: 'A responsive product card showcasing items with images and pricing.',
       technologies: ['HTML', 'CSS'],
       level: 2,
-      render: true,
+      render: false,
     },
     {
       title: 'Four Card Feature Section',
@@ -56,7 +56,7 @@ const projectsData = {
       description: 'A responsive grid layout displaying four feature cards.',
       technologies: ['HTML', 'CSS'],
       level: 2,
-      render: true,
+      render: false,
     },
     {
       title: 'Testimonials Grid Section',
@@ -66,7 +66,7 @@ const projectsData = {
       technologies: ['HTML', 'CSS'],
       femLink:"",
       level: 2,
-      render: true,
+      render: false,
     },
     {
       title: 'Meet landing page',
@@ -75,7 +75,7 @@ const projectsData = {
       description: 'A modern landing page for a meeting platform with responsive design.',
       technologies: ['HTML', 'CSS'],
       level: 2,
-      render: true,
+      render: false,
       isGhost: true,
       comingSoon: true,
     }
@@ -88,7 +88,7 @@ const projectsData = {
       description: '',
       technologies: ['HTML', 'CSS'],
       level: 1,
-      render: true,
+      render: false,
       comingSoon: true,
       isVisible: true,
     },
@@ -99,7 +99,7 @@ const projectsData = {
       description: '',
       technologies: ['HTML', 'CSS', "JavaScript"],
       level: 1,
-      render: true,
+      render: false,
       isGhost: true,
       comingSoon: true
     },
@@ -110,7 +110,7 @@ const projectsData = {
       description: 'Modern landing page with hero section and feature highlights.',
       technologies: ['HTML', 'CSS'],
       level: 2,
-      render: true,
+      render: false,
     },
     {
       title: 'FAQ Accordion',
@@ -119,7 +119,7 @@ const projectsData = {
       description: 'Interactive FAQ component with expandable answers and smooth animations.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       level: 1,
-      render: true,
+      render: false,
     },    
     {
       title: 'Ping Coming Soon Page',
@@ -128,7 +128,7 @@ const projectsData = {
       description: 'Dynamic coming soon page with countdown timer and email signup.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       level: 1,  
-      render: true,
+      render: false,
     },
     {
       title: 'Intro Component with Signup Page',
@@ -137,7 +137,7 @@ const projectsData = {
       description: 'Responsive signup form with real-time validation and error handling.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       level: 1, 
-      render: true,
+      render: false,
       isGhost: true,
       comingSoon: true, 
     },
@@ -148,7 +148,7 @@ const projectsData = {
       description: 'More challenging projects coming soon!',
       technologies: [],
       level: 1,
-      render: true,
+      render: false,
       isGhost: true,
       comingSoon: true
     }
