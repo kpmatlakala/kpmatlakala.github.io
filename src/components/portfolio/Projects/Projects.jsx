@@ -9,25 +9,25 @@ import GroupProjectCard from "./GroupProjectCard";
 
 // Data for the projects
 const projects = [
-  {
-    title: 'E-Commerce App ',
-    description: '',
-    challenge: 'React UI/UX Challenge',
-    technologies: ['React', 'CSS'],
-    duration: 'July 2024 – October 2024',
-    previewImage: 'assets/ecommerce_x_shots_so.png',
-    screenshots: [
-      'assets/ecommerce_x_shots_so.png',
-    ],
-    githubLink: 'https://github.com/DeLightPlus/',
-    livePreviewLink: '',
-    keyFeatures: [
+  // {
+  //   title: 'E-Commerce App ',
+  //   description: '',
+  //   challenge: 'React UI/UX Challenge',
+  //   technologies: ['React', 'CSS'],
+  //   duration: 'July 2024 – October 2024',
+  //   previewImage: 'assets/ecommerce_x_shots_so.png',
+  //   screenshots: [
+  //     'assets/ecommerce_x_shots_so.png',
+  //   ],
+  //   githubLink: 'https://github.com/DeLightPlus/',
+  //   livePreviewLink: '',
+  //   keyFeatures: [
 
-    ],
-    challenges: [
+  //   ],
+  //   challenges: [
 
-    ],
-  },
+  //   ],
+  // },
   {
     title: 'ShoppingList App',
     description: 'A shopping list app that allows users to add, remove, and manage items, using Redux Toolkit for state management.',
@@ -193,6 +193,7 @@ const projectWithIFrame = [
     ],
     iframeLink: '/weather-app/index.html',
   },
+  // Mini Games
   {
     title: 'Mini Games',
     description:
@@ -219,7 +220,7 @@ const projectWithIFrame = [
       'Handling keyboard controls for Tetris and Snake.',
     ],
     iframeLink: '/mini-games/game-manager.html',
-  },
+  },   
   {
     title: 'Frontend Mentor Challenges',
     description: 'A collection of frontend challenges from Frontend Mentor, showcasing various skills and techniques in web development.',
@@ -275,28 +276,7 @@ const projectWithIFrame = [
       'Creating a smooth scrolling effect for navigation links.',
     ],
     iframeLink: '/portfolio-challenge/index.html',
-  },
-  {
-    title: 'Base Apparel',
-    description: 'A modern landing page for a fictional apparel brand. Responsive and stylish, built with HTML and CSS.',
-    technologies: ['HTML', 'CSS'],
-    duration: 'August 2024',
-    previewImage: 'base-apparel/preview.png',
-    screenshots: [
-      '/base-apparel/screenshot/584shots_so.png',
-    ],
-    livePreviewLink: 'https://delightplus-portfolio.vercel.app/base-apparel/index.html',
-    githubLink: 'https://github.com/DeLightPlus',
-    keyFeatures: [
-      'Responsive design',
-      'Modern layout and branding',
-    ],
-    challenges: [
-      'Ensuring cross-browser compatibility.',
-      'Mobile-first responsive design.',
-    ],
-    iframeLink: '/base-apparel/index.html',
-  },
+  }
 
 
 ];

@@ -30,7 +30,7 @@
   color: white;
 }
   
-#about 
+#home 
 {
   background-color: transparent;
   margin-top: 16px;
@@ -76,84 +76,15 @@
   animation: img_appears 2s linear ease-in
 }
 
-#education
+#about
 {
-  background-color: transparent;
+  background-color: transparent;  
 
 }
-
-#education #additional-training p
-{
-  text-align: end;
-}
-
-@keyframes edu_appears {
-  from {
-    opacity: 0;
-    scale: 0.5;
-    transform: translate(-800px);
-    /* box-shadow: 2px 2px 8px cyan, -2px -2px 8px magenta; */
-  }
-  to {
-    opacity: 1;
-    scale: 1;
-    transform: translate(0);
-    /* box-shadow: 2px 2px 8px magenta, -2px -2px 8px cyan; */
-  }
-}
-
-@keyframes shakeEdu {
-  0% {     
-    box-shadow: 1px 2px magenta, -1px -1px cyan;
-    transform: translateX(-1);
-  } 
-  50% {
-    box-shadow: 2px 2px black, -1px -1px whitesmoke;
-    transform: translateX(1);
-
-  }
-  100% { 
-    box-shadow: 1px 1px cyan, -1px -1px magenta;
-    transform: translateX(0);
-
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-    transform: translate(0);
-    scale: 1;
-  }
-  to {
-    opacity: 0;
-    transform: translate(-400px, -100px);
-    scale: 0.5;
-  }
-}
-
-.description-container {  
-  animation: edu_appears 5s ease-in-out, fadeOut 5s ease-in-out; 
-  animation-timeline: view();
-  animation-range: entry 0, exit 0;
-}
-
-.description-container:hover 
-{
-  animation: shakeEdu 0.05s infinite ease-in-out;  
-}
-
-/* .description-container {  
-  animation: fadeOut 1s ease-out; 
-  animation-timeline: view();
-  animation-range: exit 0;
-} */
-
-
 
 #work 
 {
-  background-color: #00000000;
+  background-color: transparent;
 }
 
 #contacts
@@ -210,13 +141,13 @@
 
   }
 
-  #about .intro-layer
+  #home .intro-layer
   {
     width: 100%;
   }
 
-  #about .about-me-layer,
-  #about .about-me-layer .about-me-container
+  #home .about-me-layer,
+  #home .about-me-layer .about-me-container
   {
     height: max-content;
     text-align: center;
@@ -242,66 +173,66 @@
     margin-right: -8px;
   }
 
-  .content-section#about
+  .content-section#home
   {    
     padding: 32px;
     display: flex;  
     min-height: 100vh;
   }
 
-  .about-info
+  .intro-info
   {
     width: 86%;
   }
 
-  .about-info h1, 
-  .about-info h2, 
-  .about-info .name, 
-  .about-info .smry
+  .intro-info h1, 
+  .intro-info h2, 
+  .intro-info .name, 
+  .intro-info .smry
   {
     width: 100%;
     text-align: right;
     z-index: 1;
   }
   
-  .about-info h1 span
+  .intro-info h1 span
   {
    
     font-size: 3rem;
     text-align: right;
   }
 
-  .about-info h2
+  .intro-info h2
   {
     font-size: 28px;
   }
-  .about-info h3
+  .intro-info h3
   {
     font-size: 20px;
   }
 
-  #about .about-info .name, .smry
+  #home .intro-info .name, .smry
   {
     /* background: rgba(0, 0, 0, 0.753); */
     text-shadow: black 0 0 16px;
     padding: 0 8px;
   }
-  #about .about-info .smry
+  #home .intro-info .smry
   {
     border-radius: 16px;
     background: rgba(0, 0, 0, 0.226);
     text-shadow: rgb(8, 0, 78) 0 0 16px;
     padding: 0 8px;
   }
-  #about .about-info h1
+  #home .intro-info h1
   {
     font-size: 32px;
   }
 
-  #about .about-me-layer,
-  #about .about-me-container  
+  #home .about-me-layer,
+  #home .about-me-container  
   { width: 100%;}
-  #about .about-me-layer p
+  #home .about-me-layer p
   {
     font-size: small;
   }
@@ -323,12 +254,12 @@
     justify-content:center;
   }
 
-  #education .edu-bg-container
+  #education .about-me-container
   {
     width: 100%;
   }
 
-  #education .edu-bg-container .timeline-content
+  #education .about-me-container .timeline-content
   {
     padding: 0;
     margin-bottom: 8px;
@@ -336,7 +267,7 @@
     width: 100%;
   }
 
-  #education .edu-bg-container .timeline-content#additional-training 
+  #education .about-me-container .timeline-content#additional-training 
   {
     max-width: 97%;
     margin-bottom: 132px;

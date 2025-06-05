@@ -1,7 +1,8 @@
-
 #skills 
 {
   background: #00000000;
+  min-height: max-content;
+  padding-bottom: 1rem;
 }
 
 #skills h3 
@@ -9,7 +10,6 @@
   color: #e0e0e0;
   font-size: 1.5rem;
   font-weight: bold;
-  margin: 8px;  
 }
 
 .github-matrix {
@@ -17,28 +17,168 @@
   justify-content: center;
   align-items: center;
   
-  padding: 8px;
+  padding: 4px;
   background: #2321367a;
   border-radius: 10px;
   box-shadow: 0 2px 12px #0002;
 }
 
-.skills-matrix 
-{
-    width: 100%;
-    max-width: 900px;
-    height: 50vh;  
-    margin-top: 0.75rem;
-    padding: 0.2rem;
-    color: #333;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    overflow-y: auto;   
-    scrollbar-width: none;
-    scroll-behavior: smooth;
-}  
- 
+.skills-matrix {
+  height: 74%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem;
+  height: 100%;
+}
+
+.skill-card {
+  flex: 1 1 240px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  animation: cardAppear 0.5s ease forwards;
+  animation-delay: calc(var(--index) * 0.1s);
+}
+
+/* Make the last card (GitHub Activity) take up more space */
+.skill-card:last-child {
+  flex: 2 1 100%; /* This makes it take up more space and ensures it wraps to a new line */
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-card:last-child .github-matrix {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.skill-card:last-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.skill-header h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.skill-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.skill-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.proficiency-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.proficiency-label {
+  color: #fff;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.proficiency-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.bar.beginner {
+  background: linear-gradient(90deg, #ffd700, #ffa500);
+}
+
+.bar.intermediate {
+  background: linear-gradient(90deg, #00ffff, #008b8b);
+}
+
+.bar.advanced {
+  background: linear-gradient(90deg, #ff00ff, #800080);
+}
+
+.skill-notes {
+  color: #fff;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .skill-card {
+    padding: 1rem;
+  }
+
+  .skill-header h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .skills-table 
 {
   width: 100%;
@@ -79,40 +219,6 @@
   gap: 8px;
 }
 
-.skill-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.proficiency-bar 
-{
-  width: 100%;
-  height: 10px;
-  background-color: #e0e0e0;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.bar
-{
-  height: 100%;
-  border-radius: 4px;
-}
-
-.bar.beginner 
-{
-  background-color: rgb(255, 208, 0);
-}
-
-.bar.intermediate 
-{
-  background-color: cyan;
-}
-
-.bar.advanced 
-{
-  background-color: magenta;
-}  
 .skills-table tr:hover 
 {
   background-color: #f1f1f1;   

@@ -29,6 +29,18 @@ const skills = [
     icon: 'https://img.icons8.com/?size=100&id=bosfpvRzNOG8&format=png&color=000000' // Example URL
   },
   {
+    skill: 'PostgreSQL',
+    proficiency: 'Intermediate',
+    notes: 'Worked with relational databases, complex queries, and data modeling.',
+    icon: 'https://img.icons8.com/?size=100&id=38561&format=png&color=000000'
+  },
+  {
+    skill: 'Supabase',
+    proficiency: 'Intermediate',
+    notes: 'Implemented authentication, real-time databases, and storage solutions.',
+    icon: 'https://img.icons8.com/?size=100&id=38561&format=png&color=000000'
+  },
+  {
     skill: 'Express.js',
     proficiency: 'Intermediate',
     notes: 'Created server-side routes and middleware for APIs.',
@@ -137,26 +149,17 @@ const getProficiencyWidth = (proficiency) => {
 
 const SkillsMatrix = () => {
   return (
-    <>
     <div className="skills-matrix">
-      <table className="skills-table">
-        <thead>
-          <tr>
-            <th>Skill</th>
-            <th>Proficiency</th>
-            <th>Examples/Notes</th>
-          </tr>
-        </thead>
-        <tbody>
-          {skills.map((skill, index) => (
-            <tr key={index}>
-              <td>
-                <div className="skill-with-icon">
-                  <img src={skill.icon} alt={skill.skill} className="skill-icon" />
-                  {skill.skill}
-                </div>
-              </td>
-              <td>
+      <div className="skills-grid">
+        {skills.map((skill, index) => (
+          <div key={index} className="skill-card" style={{ '--index': index }}>
+            <div className="skill-header">
+              <img src={skill.icon} alt={skill.skill} className="skill-icon" />
+              <h3>{skill.skill}</h3>
+            </div>
+            <div className="skill-content">
+              <div className="proficiency-container">
+                <span className="proficiency-label">{skill.proficiency}</span>
                 <div className="proficiency-bar">
                   <div
                     className={`bar ${skill.proficiency.toLowerCase()}`}
@@ -165,15 +168,24 @@ const SkillsMatrix = () => {
                     }}
                   ></div>
                 </div>
-              </td>
-              <td>{skill.notes}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+              </div>
+              <p className="skill-notes">{skill.notes}</p>
+            </div>
+          </div>
+        ))}
+
+        <div classNamae="skill-card">
+          <h3>GitHub Activity</h3>
+          <div className="github-matrix">
+              <img
+                  src="https://ghchart.rshah.org/DeLightPlus"
+                  alt="GitHub Contribution Chart"
+                  style={{ width: "100%", maxWidth: 700, background: "#fff", borderRadius: 8, boxShadow: "0 2px 12px #0001" }}
+              />
+          </div> 
+        </div>
+      </div>      
     </div>
-    
-    </>
   );
 };
 

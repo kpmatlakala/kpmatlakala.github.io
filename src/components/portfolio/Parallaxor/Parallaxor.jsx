@@ -3,8 +3,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import SymbolCircle from '../../particles/SymbolCircle';
 // import RotatingCircles from '../../particles/RotatingCircles';
 
-import About from '../About';
-import Background from '../Background'; //Educational-Background
+
+import Background from './Background/Background'; //Educational-Background
 import SkillsMatrix from '../Skills/SkillsMatrix';
 import WorkExperience from '../WorkExperience/WorkExperience';
 import Projects from '../Projects/Projects';
@@ -15,8 +15,8 @@ import banner from "/assets/banner.png"
 
 const Parallaxor = () => {
 
-    const edu_Ref = useRef(null);
-    const [onEduPage, setEduPageVisible] = useState(false);
+    const about_Ref = useRef(null);
+    const [onAboutMe, setEduPageVisible] = useState(false);
 
     useEffect(() => {
         // console.log("Edu_Ref:", edu_Ref.current);
@@ -25,32 +25,37 @@ const Parallaxor = () => {
             setEduPageVisible(entry.isIntersecting); 
         })
         
-        if (edu_Ref.current) 
+        if (about_Ref.current) 
         {
-            observer.observe(edu_Ref.current);
+            observer.observe(about_Ref.current);
         }
       }, []);
 
-    console.log("onEduPage: ", onEduPage);
+    console.log("onEduPage: ", onAboutMe);
 
     return (
         <div className="app">    
             <div className="container"> {/* plx-wrp */}
                 {/* <RotatingCircles onEduPage={onEduPage}/> */}
 
-                <section className="content-section" id="about"> {/* plx-grp */}
-                    
+                <section className="content-section" id="home"> {/* plx-grp */}                    
                     <div className="intro-layer">
                         <p className="tags">{'< >'} </p>
-                            <div className="about-info">
+                            <div className="intro-info">
                                 <h1><span>Hello</span></h1>
-                                <h2 className="name">I'm
+                                <h2 className="name">I'm 
+                                    <span className="shadow-text">K</span>
+                                    <span className="highlight-text">K</span>abelo
                                     <span className="shadow-text">P</span>
-                                    <span className="highlight-text">P</span>eter,
+                                    <span className="highlight-text">P</span>eter 
+                                    Matlakala
                                 </h2>
                                 <div className="smry">
-                                    <h3>Junior Web Developer</h3>
-                                    <p>Specializing in Front-End & Back-End Development</p>
+                                    <h3>Junior Full Stack Developer</h3>
+                                    <p>
+                                        Passionate about creating innovative web solutions 
+                                        <br/>with modern technologies and elegant design.
+                                    </p>
                                 </div>
                                 
                                 {/* <button className="contact-btn">Contact Me</button> */}
@@ -58,25 +63,25 @@ const Parallaxor = () => {
                         <p className="tags">{'< / >'}</p>
                     </div>                
 
-                    <div className="about-me-layer" id='about-me'>
+                    {/* <div className="about-me-layer" id='about-me'>
                         <About />
-                    </div>                      
+                    </div>                       */}
 
                 </section>
 
-                <div className={`mid-layer ${onEduPage ? "onEduPage": ""}`}>                    
+                <div className={`mid-layer ${onAboutMe ? "onAboutPage": ""}`}>                    
                     <img src={banner} />                   
                 </div>  
 
-                <div className={`base-layer ${onEduPage ? "onEduPage": ""}`}>
+                <div className={`base-layer ${onAboutMe ? "onAboutPage": ""}`}>
                     <SymbolCircle />
                 </div> 
 
-                <section className="content-section" id="education">                
-                    <div ref={edu_Ref} className="top-layer">
-                        <h1 className="section-title">Educational Background</h1>
+                <section className="content-section" id="about">                
+                    <div ref={about_Ref} className="top-layer">
+                        <h1 className="section-title">About Me</h1>
                         <p className="subtitle">
-                            Explore the foundation that has shaped my expertise and knowledge.
+                        Passionate about creating exceptional digital experiences through code and design
                         </p>
                         <hr/>                    
                     </div>
@@ -91,29 +96,9 @@ const Parallaxor = () => {
                         </p>
                         <hr/>
                     </div>
-                    <SkillsMatrix />  
-                    <h3>GitHub Activity</h3>
-                    <div className="github-matrix">
-                        <img
-                            src="https://ghchart.rshah.org/DeLightPlus"
-                            alt="GitHub Contribution Chart"
-                            style={{ width: "100%", maxWidth: 700, background: "#fff", borderRadius: 8, boxShadow: "0 2px 12px #0001" }}
-                        />
-                    </div>                  
+                    <SkillsMatrix /> 
                 </section>
-
-                <section className="content-section" id="experience">
-                    <div className="top-layer">
-                        <h1 className="section-title">Professional Work Experience</h1>
-                        <p className="subtitle">
-                            Insights into my professional journey and the impact I've made in various roles.
-                        </p>
-                        <hr/>
-                    </div>   
-
-                    <WorkExperience />
-                </section>
-
+                
                 <section className="content-section" id="projects">
                     <div className="top-layer">
                         <h1 className="section-title">Projects</h1>
