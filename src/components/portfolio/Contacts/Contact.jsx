@@ -3,11 +3,13 @@ import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
 import { FaGithub, FaGlobe } from 'react-icons/fa';
 import { IoMdSend } from 'react-icons/io';
 import { AiOutlineLoading3Quarters, AiOutlineCheckCircle, AiOutlineCloseCircle } from 'react-icons/ai';
+
+import  profile_pic from "../../../../public/assets/kpm-profile-pic.png";
 import './Contact.css';
 
 // Constants
 const PERSONAL_INFO = {
-  email: 'matlakalakable1@gmail.com',
+  email: 'matlakalakabela1@gmail.com',
   phone: '+27 72 713 8367',
   location: 'Polokwane, South Africa',
   github: 'https://github.com/DeLightPlus',
@@ -56,7 +58,13 @@ const FORM_FIELDS = [
 // Contact Information Component
 const ContactInfo = ({ personalInfo }) => (
   <div className="contact-info-card">
-    <h3>Get In Touch</h3>
+    <div className="profile-section">
+      <div className="profile-image">
+        <img src={profile_pic} alt="DeLightPlus Profile" />
+      </div>
+      <h3>Kabelo P Matlakala</h3>
+      <p className="profile-title">Full Stack Developer</p>
+    </div>
     <div className="contact-info-content">
       <ContactInfoItem
         icon={<MdEmail size={24} />}
@@ -105,7 +113,7 @@ const ContactInfoItem = ({ icon, label, value, href, type }) => (
 // Social Links Component
 const SocialLinks = ({ personalInfo }) => (
   <div className="social-links">
-    <h4>Follow Me</h4>
+    {/* <h4>Follow Me</h4> */}
     <div className="social-icons">
       <SocialIcon
         href={personalInfo.github}

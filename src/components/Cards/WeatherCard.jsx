@@ -123,7 +123,8 @@ const WeatherCard = () => {
           </svg>
         )}
       </div>
-      <p className="main-text">{Math.round(weather.main.temp)}°C</p>
+      <p className="main-text">{Math.round(weather.main.temp)}<small>℃</small></p>
+
       <div className="info">
         <div className="info-left">
           <p className="text-gray">
@@ -173,7 +174,7 @@ const WeatherCard = () => {
             </button>
           </form>
         </div>
-        <p className="info-right">{weather.weather[0].description}</p>
+        {/* <p className="info-right">{weather.weather[0].description}</p> */}
       </div>
     </div>
   );

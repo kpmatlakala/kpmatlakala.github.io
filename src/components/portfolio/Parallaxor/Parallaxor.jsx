@@ -4,7 +4,7 @@ import SymbolCircle from '../../particles/SymbolCircle';
 // import RotatingCircles from '../../particles/RotatingCircles';
 
 
-import Background from './Background/Background'; //Educational-Background
+import Background from '../Background/Background'; //Educational-Background
 import SkillsMatrix from '../Skills/SkillsMatrix';
 import WorkExperience from '../WorkExperience/WorkExperience';
 import Projects from '../Projects/Projects';
@@ -98,7 +98,7 @@ const Parallaxor = () => {
                     </div>
                     <SkillsMatrix /> 
                 </section>
-                
+
                 <section className="content-section" id="projects">
                     <div className="top-layer">
                         <h1 className="section-title">Projects</h1>

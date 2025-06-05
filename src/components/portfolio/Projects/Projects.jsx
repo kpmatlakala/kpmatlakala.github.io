@@ -283,8 +283,10 @@ const projectWithIFrame = [
 
 
 const Projects = () => {
-
-  const [modalSource, setModalSource] = useState("individual"); // "individual" or "group"
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState(null);
+  const [selectedProjectSource, setSelectedProjectSource] = useState(null);
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const [showGitHubProjects, setShowGitHubProjects] = useState(false);
 
   const [isIFrameModalOpen, setIsIFrameModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -333,34 +335,44 @@ const Projects = () => {
     };
   }, [isModalOpen, isIFrameModalOpen]);
 
+  const displayedProjects = showAllProjects 
+    ? [...projectWithIFrame, ...projects]
+    : projectWithIFrame;
+
   return (
     <div className="projects-groups">
 
       <h1>Individual Projects </h1>
 
       <div className="projects-container">
-        {/* Local Projects (Memory Game, Base Apparel, etc.) */}
-        {projectWithIFrame.map((project, index) => (
-          <IFrameProjectCard
-            key={index}
-            project={project}
-            isWeatherApp={project.title.trim() === "Weather App"}
-            onPreview={() => {/* Optional: handle preview */ }}
-            onMore={() => openIFraneModal(index)}
-          />
-        ))}
+        <div className="projects-grid">
+          {displayedProjects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              project={project}
+              onMore={() => openModal(index)}
+              isWeatherApp={project.title === "Weather App"}
+            />
+          ))}
+        </div>
 
-        {/* Individual Projects */}
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            project={project}
-            isWeatherApp={project.title === "Weather App "}
-            onMore={() => openModal(index, "individual")}
-          />
-        ))}
+        {!showAllProjects && (
+          <div className="show-more-container">
+            <button 
+              className="show-more-btn"
+              onClick={() => setShowAllProjects(true)}
+            >
+              Show More Projects
+            </button>
+            <button 
+              className="show-more-btn github"
+              onClick={() => setShowGitHubProjects(true)}
+            >
+             View All Projects on GitHub
+            </button>
+          </div>
+        )}
 
-        {/* Modals */}
         {isModalOpen && currentProjectIndex !== null && (
           <ProjectModal
             project={projects[currentProjectIndex]}
@@ -380,25 +392,27 @@ const Projects = () => {
 
       <h1>Group Projects </h1>
       <div className="projects-container">
-        {group_projects.map((project, index) => (
-          <GroupProjectCard
-            key={index}
-            project={project}
-            onMore={() => openModal(index, "group")}
-          />
-        ))}
+        <div className="projects-grid">
+          {group_projects.map((project, index) => (
+            <GroupProjectCard
+              key={index}
+              project={project}
+              onMore={() => openModal(index, "group")}
+            />
+          ))}
+        </div>
 
         {isModalOpen && currentProjectIndex !== null && (
           <ProjectModal
             project={
-              modalSource === "individual"
+              selectedProjectSource === "individual"
                 ? projects[currentProjectIndex]
                 : group_projects[currentProjectIndex]
             }
             isModalOpen={isModalOpen}
             onClose={closeModal}
           />
-        )}
+        )}        
       </div>
     </div>
   );

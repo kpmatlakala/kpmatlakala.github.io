@@ -3,7 +3,7 @@ import WeatherCard from "../../Cards/WeatherCard";
 import NotFoundDiv from "../../Cards/NotFound/notfounddiv";
 // import NotFoundDiv from "../../Cards/notfounddiv";
 const ProjectCard = ({ project, onMore, isWeatherApp }) => (
-    <div className="project-card">
+    <div className={`project-card ${project.iframeLink ? 'has-iframe' : ''}`}>
         <div className="project-header">
             <p className="project-subtitle">{project.technologies.join(", ")}</p>
             <h4 className="project-title">{project.title}</h4>
