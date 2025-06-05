@@ -3,7 +3,7 @@ const projectsData = {
     {
       title: 'QR Code Component',
       imageUrl: '/assets/previews/getting-started/qr-preview.jpg',
-      demoUrl: '/frontend-mentor-challenges/getting_started/qr-code-component/index.html',
+      demoUrl: '/frontend-mentor-challenges/getting_started/qr-code-component',
       description: 'A clean QR code component focusing on basic HTML structure and CSS styling techniques.',
       technologies: ['HTML', 'CSS'],
       feLink:"",
@@ -13,7 +13,7 @@ const projectsData = {
     {
       title: 'Blog Preview Card',
       imageUrl: '/assets/previews/getting-started/blog-preview.jpg',
-      demoUrl: '/frontend-mentor-challenges/getting_started/blog-preview-card/index.html',
+      demoUrl: '/frontend-mentor-challenges/getting_started/blog-preview-card',
       description: 'An interactive blog card showcasing post previews with images and author information.',
       technologies: ['HTML', 'CSS'],
       feLink:"",
@@ -23,7 +23,7 @@ const projectsData = {
     {
       title: 'Social Links Profile',
       imageUrl: '/assets/previews/getting-started/social-preview.jpg',
-      demoUrl: '/frontend-mentor-challenges/getting_started/social-links-profile/index.html',
+      demoUrl: '/frontend-mentor-challenges/getting_started/social-links-profile',
       description: 'A clean profile page displaying social media links with hover effects.',
       technologies: ['HTML', 'CSS'],
       level: 1,
@@ -32,7 +32,7 @@ const projectsData = {
     {
       title: 'Recipe Page',
       imageUrl: '/assets/previews/getting-started/recipe-preview.jpg',
-      demoUrl: '/frontend-mentor-challenges/getting_started/recipe-page/index.html',
+      demoUrl: '/frontend-mentor-challenges/getting_started/recipe-page',
       description: 'A structured recipe page with ingredients, instructions, and preparation details.',
       technologies: ['HTML', 'CSS'],
       level: 1,
@@ -43,7 +43,7 @@ const projectsData = {
     {
       title: 'Product Preview Card Component',
       imageUrl: '/assets/previews/responsive-designs/product-card-preview.jpg',
-      demoUrl: '/Responsive_Designs/product-preview-card-component/',
+      demoUrl: '/frontend-mentor-challenges/responsive_designs/product-preview-card-component',
       description: 'A responsive product card showcasing items with images and pricing.',
       technologies: ['HTML', 'CSS'],
       level: 2,
@@ -52,7 +52,7 @@ const projectsData = {
     {
       title: 'Four Card Feature Section',
       imageUrl: '/assets/previews/responsive-designs/four-cards-preview.jpg',
-      demoUrl: '/Responsive_Designs/four-card-feature-section/',
+      demoUrl: '/frontend-mentor-challenges/responsive_designs/four-card-feature-section',
       description: 'A responsive grid layout displaying four feature cards.',
       technologies: ['HTML', 'CSS'],
       level: 2,
@@ -61,7 +61,7 @@ const projectsData = {
     {
       title: 'Testimonials Grid Section',
       imageUrl: '/assets/previews/responsive-designs/testimonials-preview.jpg',
-      demoUrl: '/Responsive_Designs/testimonials-grid-section/',
+      demoUrl: '/frontend-mentor-challenges/responsive_designs/testimonials-grid-section',
       description: 'A responsive grid showcasing customer testimonials.',
       technologies: ['HTML', 'CSS'],
       femLink:"",
@@ -84,7 +84,7 @@ const projectsData = {
     {
       title: 'Order Summary Component',
       imageUrl: '/assets/previews/challenges/order-summary-preview',
-      demoUrl: '/Challenges/order-summary-component/',
+      demoUrl: '/frontend-mentor-challenges/challenges/order-summary-component',
       description: '',
       technologies: ['HTML', 'CSS'],
       level: 1,
@@ -95,7 +95,7 @@ const projectsData = {
     {
       title: 'Newsletter Signup-up form',
       imageUrl: '/assets/previews/challenges/order-summary-preview',
-      demoUrl: '/Challenges/order-summary-component/',
+      demoUrl: '/frontend-mentor-challenges/challenges/order-summary-component',
       description: '',
       technologies: ['HTML', 'CSS', "JavaScript"],
       level: 1,
@@ -106,7 +106,7 @@ const projectsData = {
     {
       title: 'Huddle Landing Page',
       imageUrl: '/assets/previews/challenges/huddle-preview.jpg',
-      demoUrl: '/Challenges/huddle-landing-page-with-single-introductory-section/',
+      demoUrl: '/frontend-mentor-challenges/challenges/huddle-landing-page-with-single-introductory-section',
       description: 'Modern landing page with hero section and feature highlights.',
       technologies: ['HTML', 'CSS'],
       level: 2,
@@ -115,7 +115,7 @@ const projectsData = {
     {
       title: 'FAQ Accordion',
       imageUrl: '/assets/previews/challenges/faq-preview.jpg',
-      demoUrl: '/Challenges/faq-accordion/',
+      demoUrl: '/frontend-mentor-challenges/challenges/faq-accordion',
       description: 'Interactive FAQ component with expandable answers and smooth animations.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       level: 1,
@@ -124,7 +124,7 @@ const projectsData = {
     {
       title: 'Ping Coming Soon Page',
       imageUrl: '/assets/previews/challenges/ping-preview.jpg',
-      demoUrl: '/Challenges/ping-coming-soon-page/',
+      demoUrl: '/frontend-mentor-challenges/challenges/ping-coming-soon-page',
       description: 'Dynamic coming soon page with countdown timer and email signup.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       level: 1,  
@@ -133,7 +133,7 @@ const projectsData = {
     {
       title: 'Intro Component with Signup Page',
       imageUrl: '/assets/previews/challenges/signup-intro-preview',
-      demoUrl: '/Challenges/intro-component-with-signup-form/',
+      demoUrl: '/frontend-mentor-challenges/challenges/intro-component-with-signup-form',
       description: 'Responsive signup form with real-time validation and error handling.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       level: 1, 
