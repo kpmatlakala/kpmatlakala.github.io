@@ -3,7 +3,7 @@ const projectsData = {
     {
       title: 'QR Code Component',
       imageUrl: '/assets/previews/getting-started/qr-preview.jpg',
-      demoUrl: '/frontend-mentor-challenges/getting_started/qr-code-component/',
+      demoUrl: '/frontend-mentor-challenges/getting_started/qr-code-component/index.html',
       description: 'A clean QR code component focusing on basic HTML structure and CSS styling techniques.',
       technologies: ['HTML', 'CSS'],
       feLink:"",
@@ -13,7 +13,7 @@ const projectsData = {
     {
       title: 'Blog Preview Card',
       imageUrl: '/assets/previews/getting-started/blog-preview.jpg',
-      demoUrl: '/frontend-mentor-challenges/getting_started/blog-preview-card/',
+      demoUrl: '/frontend-mentor-challenges/getting_started/blog-preview-card/index.html',
       description: 'An interactive blog card showcasing post previews with images and author information.',
       technologies: ['HTML', 'CSS'],
       feLink:"",
@@ -23,7 +23,7 @@ const projectsData = {
     {
       title: 'Social Links Profile',
       imageUrl: '/assets/previews/getting-started/social-preview.jpg',
-      demoUrl: '/getting_started/social-links-profile/index.html',
+      demoUrl: '/frontend-mentor-challenges/getting_started/social-links-profile/index.html',
       description: 'A clean profile page displaying social media links with hover effects.',
       technologies: ['HTML', 'CSS'],
       level: 1,
@@ -32,7 +32,7 @@ const projectsData = {
     {
       title: 'Recipe Page',
       imageUrl: '/assets/previews/getting-started/recipe-preview.jpg',
-      demoUrl: '/getting_started/recipe-page/index.html',
+      demoUrl: '/frontend-mentor-challenges/getting_started/recipe-page/index.html',
       description: 'A structured recipe page with ingredients, instructions, and preparation details.',
       technologies: ['HTML', 'CSS'],
       level: 1,

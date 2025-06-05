@@ -233,7 +233,7 @@ const projectWithIFrame = [
       'frontend-mentor-challanges/assets/previews/getting-started/social-preview.jpg',
       'frontend-mentor-challanges/assets/previews/getting-started/recipe-preview.jpg',
     ],
-    livePreviewLink: 'https://delightplus-portfolio.vercel.app/frontend-mentor-challanges/index.html',
+    livePreviewLink: 'https://delightplus-portfolio.vercel.app/frontend-mentor-challenges/index.html',
     githubLink: 'https://github.com/DeLightPlus',
     keyFeatures: [
       'Responsive design',
