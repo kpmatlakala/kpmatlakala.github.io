@@ -228,10 +228,10 @@ const projectWithIFrame = [
     duration: 'May 2025',
     previewImage: 'https://th.bing.com/th/id/OIP.IbDTC4_LJDzbVrj-stJIoQHaEK?w=262&h=180&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3',
     screenshots: [
-      'frontend-mentor-challanges/assets/previews/getting-started/qr-preview.jpg',
-      'frontend-mentor-challanges/assets/previews/getting-started/blog-preview.jpg',
-      'frontend-mentor-challanges/assets/previews/getting-started/social-preview.jpg',
-      'frontend-mentor-challanges/assets/previews/getting-started/recipe-preview.jpg',
+      'frontend-mentor-challenges/assets/previews/getting-started/qr-preview.jpg',
+      'frontend-mentor-challenges/assets/previews/getting-started/blog-preview.jpg',
+      'frontend-mentor-challenges/assets/previews/getting-started/social-preview.jpg',
+      'frontend-mentor-challenges/assets/previews/getting-started/recipe-preview.jpg',
     ],
     livePreviewLink: 'https://delightplus-portfolio.vercel.app/frontend-mentor-challenges/index.html',
     githubLink: 'https://github.com/DeLightPlus',
@@ -246,7 +246,7 @@ const projectWithIFrame = [
       'Mobile-first responsive design.',
       'Implementing various design patterns and techniques.',
     ],
-    iframeLink: '/frontend-mentor-challanges/index.html',
+    iframeLink: '/frontend-mentor-challenges/index.html',
   },
   {
     title: 'Web Portfolio Challenge',
