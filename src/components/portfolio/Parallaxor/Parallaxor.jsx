@@ -1,6 +1,6 @@
 import "./Parallaxor.css";
 import React, { useEffect, useRef, useState } from 'react';
-import SymbolCircle from '../../particles/SymbolCircle';
+import SymbolCircle from '../../Particles/SymbolCircle';
 // import RotatingCircles from '../../particles/RotatingCircles';
 
 

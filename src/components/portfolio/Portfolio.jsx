@@ -1,12 +1,12 @@
 // Portfolio.jsx
 import './Portfolio.css';
 
-import Parallaxor from './Parallaxor/Parallaxor';
+import Parallaxor from './Parallaxor/Parallaxor.jsx';
 
-import SideBar from './Sidebar/sidebar.jsx';
-import UserBlock from './userBlock/UserBlock';
+import UserBlock from './userBlock/UserBlock.jsx';
 import TechStack from "./Skills/TechStacks/TechStack.jsx";
 import { useEffect, useState } from 'react';
+import SideBar from './Sidebar/Sidebar.jsx';
 
 
 const Portfolio = () => {
