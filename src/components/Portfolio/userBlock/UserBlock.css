@@ -1,0 +1,80 @@
+.userProfile
+{
+  position: fixed;
+  top: 36px;
+  right: 16px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+
+  background: rgba(0, 0, 0, 0.856);
+  /* border: #c9c9c9 solid 1px; */
+  box-shadow: #2ef8ff6e 0 0 4px 1px;
+
+  padding: 2px;
+  padding-right: 8px;
+
+  border-top-left-radius: 32px;
+  border-bottom-left-radius: 32px;
+  /* border-bottom-right-radius: 16px; */
+
+  z-index: 1;
+}
+
+.job-avail-status
+{
+  position: absolute;
+  top: 64px;
+  right: 0;
+  /* width: max-content; */  
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.86);
+  /* border: #c9c9c9 solid 1px; */
+  border-radius: 2px;
+  box-shadow: #17f7ff49 0 0 4px 1px;
+}
+
+.userIcon
+{
+  /* background-color: black; */
+  /* margin-right: 50%;
+  margin-top: 10%; */
+  border: rgba(83, 255, 246, 0.178) solid 1px;
+
+  border-radius: 25px;
+  width: 45px;
+  height: 45px;
+}
+.userIcon .icn
+{
+  background: #9e9e9e42;
+  border-radius: 25px;
+  border: solid black 1px;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  padding-top: 4px;
+  
+}
+.userIcon img
+{
+  border-radius: 50%;
+  width: 43px;
+  height:43px; 
+}
+
+.userProfile .nameNemail
+{
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.userProfile small
+{
+    font-size: 10px;
+    color: rgb(161, 161, 161);
+    font-weight: normal;
+}
