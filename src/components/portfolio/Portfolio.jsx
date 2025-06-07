@@ -3,10 +3,11 @@ import './Portfolio.css';
 
 import Parallaxor from './Parallaxor/Parallaxor';
 
-import SideBar from './sidebar/sidebar';
+import SideBar from './Sidebar/sidebar.jsx';
 import UserBlock from './userBlock/UserBlock';
 import TechStack from "./Skills/TechStacks/TechStack.jsx";
 import { useEffect, useState } from 'react';
+
 
 const Portfolio = () => {
 
@@ -45,6 +46,7 @@ const Portfolio = () => {
     <>
       {/* Profile Icon @top-right-corner */}
       {/* <UserBlock /> */}
+      
       {/* Fixed Aside Menu */}
       <SideBar activeSection={activeSection} onScrollToSection={onScrollToSection} />
 

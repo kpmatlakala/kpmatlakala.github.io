@@ -77,7 +77,7 @@ const Parallaxor = () => {
                     <SymbolCircle />
                 </div> 
 
-                <section className="content-section" id="about">                
+                <section className="content-section" id="about-me">                
                     <div ref={about_Ref} className="top-layer">
                         <h1 className="section-title">About Me</h1>
                         <p className="subtitle">

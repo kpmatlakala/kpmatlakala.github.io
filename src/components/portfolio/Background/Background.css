@@ -1,5 +1,5 @@
 
-#about .about-me-container
+#about-me .about-me-container
 {
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
   justify-self: flex-end;
 }
 
-#my-journey
+.my-journey#about
 {
   background: rgba(11, 12, 17, 0.75); 
   backdrop-filter: blur(50px); 
@@ -43,18 +43,18 @@
 
 }
 
-#my-journey:hover 
+.my-journey:hover 
 {
     animation: shakeEdu 0.5s infinite ease-in-out;  
 }
 
-#my-journey h2{
+.my-journey h2{
     font-size:1.5rem;
     margin: 0.5rem 0 ;
     border-bottom: 1px solid white;
 }
 
-#my-journey p{
+.my-journey p{
     font-size: 1rem;
     margin-top: 0.5rem;
 }

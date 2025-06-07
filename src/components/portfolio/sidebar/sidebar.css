@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
 
-  width:6.5%;
+  width:6rem;
   height: 100vh;
   background-color: #111111;
   color: white;
@@ -16,26 +16,106 @@
   /* transform: rotate(90deg) translateY(-100vh); */
   /* padding: 20px; */
   z-index: 10;
+  transition: all 0.3s ease;
 }  
 .fixed-menu.open 
 {
-  left: 0; /* Slide in the sidebar */ 
+  left: 1%;
+  top: 4%;
+  height: 86%;
+  width: 40px;
+  background-color: rgba(17, 17, 17, 0.95);
+  border-radius: 0 20px 20px 0;
+}
+
+.fixed-menu.open .nameNstack,
+.fixed-menu.open .menu-label,
+.fixed-menu.open .social-icons,
+.fixed-menu.open .resume-btn span {
+  display: none;
+}
+
+.fixed-menu.open .logo {
+  height: 40px;
+  margin-top: 10px;
+}
+
+.fixed-menu.open .logo-actual {
+  transform: scale(0.5);
+}
+
+.fixed-menu.open .menu li 
+.fixed-menu
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width:6.5%;
+  height: 100vh;
+  margin-left:4px;
+  background-color: #111111;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* transform-origin: top left; */
+  /* transform: rotate(90deg) translateY(-100vh); */
+  /* padding: 20px; */
+  z-index: 10;
+  transition: all 0.3s ease;
+}  
+.fixed-menu.open 
+{
+  left: 1%;
+  top: 16%;
+  height: 70%;
+  width: 45px;
+  background-color: rgba(17, 17, 17, 0.95);
+  border-radius:  20px ;
+}
+
+.fixed-menu.open .nameNstack,
+.fixed-menu.open .menu-label,
+.fixed-menu.open .social-icons,
+.fixed-menu.open .resume-btn span {
+  display: none;
+}
+
+.fixed-menu.open .logo {
+  height: 40px;
+  margin-top: 10px;
+}
+
+.fixed-menu.open .logo-actual {
+  transform: scale(0.5);
+}
+
+.fixed-menu.open .menu li {
+  padding: 8px 0;
+
+  justify-content: center;
+}
+
+.fixed-menu.open .menu li.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
 .hamburger-icon 
 {
-  display: none; /* Initially hide the hamburger icon */
+  display: block; /* Initially hide the hamburger icon */
   font-size: 30px;
   cursor: pointer;
   padding: 0 8px;
   background-color: #0a0a0a;
   color: rgb(255, 255, 255);
-  position: fixed;
-  top: 32px;
-  left: 10px;
-  z-index: 150; /* Make sure it stays above other elements */
+  /* position: absolute;
+  top: 20px;
+  right: 0; */
+  z-index: 150;
 }
-
 
 .fixed-menu .logo 
 {
@@ -48,6 +128,7 @@
   background: black; 
   width: 100%;
   height: 158px;
+  cursor: pointer;
 }
 .logo .logo-actual
 {
@@ -110,12 +191,13 @@
   
 .fixed-menu .menu li 
 {
-  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
   margin: 8px 0;
   cursor: pointer;
   font-size: 12px;
-  /* background: #000000; */
-  /* width: 100%; */
   border-bottom: #666 solid 1px;
   text-align: center;
 }
@@ -127,7 +209,6 @@
   /* border-bottom: cyan solid 1px; */
   box-shadow: rgba(0, 255, 255, 0.075) -4px 10px 16px 1px;
   animation: shakeTxt 0.1s infinite ease;
-
 }
 
 .fixed-menu .menu li:hover
@@ -207,44 +288,70 @@
   font-size: 21px;    
 }
 
+.menu-label {
+  transition: opacity 0.3s ease;
+}
+
+.fixed-menu.open .menu-label {
+  opacity: 0;
+  width: 0;
+}
+
 /* Media Query for Tablet and Mobile (max-width: 1024px) */
 @media (max-width: 1024px) 
 {
   .hamburger-icon 
   {
-    display: block; /* Show hamburger icon on mobile/tablet */
+    display: block;
     background-color: transparent;
   }
 
   .hamburger-icon.open
   {
-    top:40px
+    top: 40px;
   }
 
   .fixed-menu
   {      
-    width: 86px;
-    /* background: transparent; */
-    left: -250px; /* Sidebar starts off-screen */
-  }
-  .fixed-menu.open
-  {
+    width: 6rem;
     left: 0;
   }
 
-  .fixed-menu.open > .hamburger-icon 
+  .fixed-menu.open
   {
-    top: 86px;
-  } 
-
-  .menu li
-  {
-    /* background: #131313c7; */
+    left: 1%;
+    top: 16%;
+    height: 450px;
+    width: 40px;
+    background-color: rgba(17, 17, 17, 0.95);
+    border-radius: 16px ;
   }
 
-  .social-icons
-  {
-    justify-self: flex-end;
+  .fixed-menu.open .nameNstack,
+  .fixed-menu.open .menu-label,
+  .fixed-menu.open .social-icons,
+  .fixed-menu.open .resume-btn span {
+    display: none;
+  }
+
+  .fixed-menu.open .logo {
+    height: 40px;
+    margin-top: 10px;
+  }
+
+  .fixed-menu.open .logo-actual {
+    transform: scale(0.5);
+  }
+
+  .fixed-menu.open .menu li {
+    padding: 8px 0;
+    margin: 4px 0;
+    justify-content: center;
+  }
+
+  .fixed-menu.open .menu li.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
   }
 }
 

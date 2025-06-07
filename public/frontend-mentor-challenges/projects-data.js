@@ -18,7 +18,7 @@ const projectsData = {
       technologies: ['HTML', 'CSS'],
       feLink:"",
       level: 1,
-      render: false,
+      render: true,
     },
     {
       title: 'Social Links Profile',

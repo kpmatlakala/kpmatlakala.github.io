@@ -11,7 +11,7 @@ import codetribe from "/assets/codetribe.png";
 const Background = () => {
     return (
         <div className='about-me-container' style={{ overflow: "auto" }}>
-            <div className="timeline-content" id="my-journey">
+            <div className="timeline-content my-journey" id="about">
                 <h2>My Journey</h2>
                 <p>
                     I'm a <span>Junior Full Stack Developer</span> with a background in
