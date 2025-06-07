@@ -174,7 +174,7 @@ const SkillsMatrix = () => {
           </div>
         ))}
 
-        <div classNamae="skill-card">
+        <div className="skill-card">
           <h3>GitHub Activity</h3>
           <div className="github-matrix">
               <img

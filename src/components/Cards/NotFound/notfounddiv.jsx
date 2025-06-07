@@ -1,11 +1,11 @@
 import React from 'react'
 import './notfounddiv.css'
 
-function NotFoundDiv() {
+const NotFoundDiv = () => {
   return (    
-    <div class="display_div">
-      <div class="screen">
-            <span class="notfound_text"> NOT FOUND</span>
+    <div className="display_div">
+      <div className="screen">
+            <span className="notfound_text"> NOT FOUND</span>
           </div>             
     </div>
   )
