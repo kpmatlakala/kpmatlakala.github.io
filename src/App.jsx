@@ -3,7 +3,7 @@ import "./index.css"
 import { useState, useEffect } from 'react';
 
 import SplashScreen from "./components/SplashScreen/SplashScreen";
-import Portfolio from "./components/portfolio/Portfolio"
+import Portfolio from "./components/Portfolio/Portfolio"
 import ChatModal from "./components/SplashScreen/ChatModal";
 import FloatingGameButton from "./components/Buttons/FloatingGameButton/FloatingGameButton";
 
