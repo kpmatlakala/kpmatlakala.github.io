@@ -1,6 +1,6 @@
 import "./Parallaxor.css";
 import React, { useEffect, useRef, useState } from 'react';
-// import SymbolCircle from '../../Particles/SymbolCircle';
+import SymbolCircle from '../../Particles/SymbolCircle';
 // import RotatingCircles from '../../particles/RotatingCircles';
 
 
@@ -74,7 +74,7 @@ const Parallaxor = () => {
                 </div>  
 
                 <div className={`base-layer ${onAboutMe ? "onAboutPage": ""}`}>
-                    {/* <SymbolCircle /> */}
+                    <SymbolCircle />
                 </div> 
 
                 <section className="content-section" id="about-me">                
