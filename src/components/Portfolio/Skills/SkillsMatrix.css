@@ -29,20 +29,24 @@
   max-width: 1200px;
   margin: 1rem auto;
   padding: 0 1rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.skills-matrix::-webkit-scrollbar {
+  display: none;
 }
 
 .skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
   padding: 1rem;
   height: 100%;
 }
 
 .skill-card {
-  flex: 1 1 240px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 1rem;
@@ -51,15 +55,15 @@
   backdrop-filter: blur(10px);
   animation: cardAppear 0.5s ease forwards;
   animation-delay: calc(var(--index) * 0.1s);
+  display: flex;
+  flex-direction: column;
 }
 
 /* Make the last card (GitHub Activity) take up more space */
 .skill-card:last-child {
-  flex: 2 1 100%; /* This makes it take up more space and ensures it wraps to a new line */
-  max-width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  grid-column: 1 / -1;
+  height: auto;
+  min-height: 200px;
 }
 
 .skill-card:last-child .github-matrix {
@@ -68,18 +72,21 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  overflow: hidden;
 }
 
 .skill-card:last-child img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 200px;
   object-fit: contain;
 }
 
 .skill-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(14, 255, 255, 0.3);
+  animation: shakeCard 0.025s infinite ease;
 }
 
 .skill-header {
@@ -90,9 +97,10 @@
 }
 
 .skill-header h3 {
-  color: #fff;
+  color: #0ef;
   margin: 0;
   font-size: 1.1rem;
+  text-shadow: 0 0 10px rgba(14, 255, 255, 0.3);
 }
 
 .skill-icon {
@@ -105,6 +113,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  flex: 1;
 }
 
 .proficiency-container {
@@ -134,15 +143,15 @@
 }
 
 .bar.beginner {
-  background: linear-gradient(90deg, #ffd700, #ffa500);
+  background: linear-gradient(90deg, rgba(14, 255, 255, 0.5), rgba(14, 255, 255, 0.8));
 }
 
 .bar.intermediate {
-  background: linear-gradient(90deg, #00ffff, #008b8b);
+  background: linear-gradient(90deg, rgba(255, 0, 255, 0.5), rgba(255, 0, 255, 0.8));
 }
 
 .bar.advanced {
-  background: linear-gradient(90deg, #ff00ff, #800080);
+  background: linear-gradient(90deg, rgba(14, 255, 255, 0.8), rgba(255, 0, 255, 0.8));
 }
 
 .skill-notes {
@@ -155,16 +164,38 @@
 
 @media (max-width: 768px) {
   .skills-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 0.5rem;
   }
 
   .skill-card {
-    padding: 1rem;
+    padding: 0.75rem;
   }
 
   .skill-header h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .skill-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .skill-notes {
+    font-size: 0.8rem;
+  }
+
+  .proficiency-label {
+    font-size: 0.8rem;
+  }
+
+  .skill-card:last-child {
+    min-height: 150px;
+  }
+
+  .skill-card:last-child img {
+    max-height: 150px;
   }
 }
 
@@ -196,10 +227,10 @@
 
 .skills-table th 
 {
-  background-color: black;
-  color: cyan;
-  border: rgba(0, 255, 255, 0.144) 1px solid;
-  box-shadow: cyan 0 2px 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #0ef;
+  border: 1px solid rgba(14, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(14, 255, 255, 0.2);
   font-weight: 600;
   position: sticky;
   top: -14px; /* Sticks to the top when scrolling */
@@ -221,14 +252,13 @@
 
 .skills-table tr:hover 
 {
-  background-color: #f1f1f1;   
-  font-weight: bold;
-  animation: shakeRow 0.05s infinite ease-in-out;
+  background-color: rgba(14, 255, 255, 0.1);
+  animation: shakeRow 0.025s infinite ease;
 }
 .skills-table tr:hover td
 {
-  color: black;
-  animation: shakeTxt 0.05s infinite ease;
+  color: #0ef;
+  animation: shakeTxt 0.025s infinite ease;
 }
 
 .skills-table tr:hover .proficiency-bar
@@ -279,37 +309,32 @@
 
 @keyframes shakeRow {
   0% {     
-    box-shadow: 1px 0px magenta, -1px -1px cyan;
+    box-shadow: 1px 0px rgba(255, 0, 255, 0.3), -1px -1px rgba(14, 255, 255, 0.3);
     transform: translateX(-1);
   } 
   50% {
-    box-shadow: 0px 1px rgb(199, 186, 0), -1px -1px whitesmoke;
+    box-shadow: 0px 1px rgba(14, 255, 255, 0.3), -1px -1px rgba(255, 0, 255, 0.3);
     transform: translateX(1);
-
   }
   100% { 
-    box-shadow: 1px 1px cyan, -1px -1px magenta;
+    box-shadow: 1px 1px rgba(255, 0, 255, 0.3), -1px -1px rgba(14, 255, 255, 0.3);
     transform: translateX(0);
-
   }
 }
 
 @keyframes shakeTxt {
-  0% 
-  {     
-    text-shadow: 1px 0px magenta, -1px -1px cyan;
+  0% {     
+    text-shadow: 1px 0px rgba(255, 0, 255, 0.3), -1px -1px rgba(14, 255, 255, 0.3);
     transform: translateX(-1);
   } 
-  50% 
-  {
-    text-shadow: 0px 1px rgb(0, 0, 0), -1px -1px whitesmoke;
+  50% {
+    text-shadow: 0px 1px rgba(14, 255, 255, 0.3), -1px -1px rgba(255, 0, 255, 0.3);
     transform: translateX(1);
   }
-  100% 
-  { 
-    text-shadow: 1px 1px cyan, -1px -1px magenta;
+  100% { 
+    text-shadow: 1px 1px rgba(255, 0, 255, 0.3), -1px -1px rgba(14, 255, 255, 0.3);
     transform: translateX(0);
-  } 
+  }
 }
 
 @media (max-width: 768px) 
@@ -330,6 +355,106 @@
     font-size: 12px;
   }
 
+}
+
+/* Mobile View */
+.mobile-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0.5rem;
+}
+
+.mobile-category {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.mobile-category h3 {
+  color: #fff;
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.mobile-skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.mobile-skill-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.mobile-skill-item .skill-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.mobile-skill-item .skill-name {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.mobile-skill-item .proficiency-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.mobile-github {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.mobile-github h3 {
+  color: #fff;
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .mobile-skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .mobile-skill-item {
+    padding: 0.4rem;
+  }
+
+  .mobile-skill-item .skill-name {
+    font-size: 0.8rem;
+  }
+
+  .mobile-category h3,
+  .mobile-github h3 {
+    font-size: 1.1rem;
+  }
 }
 
 

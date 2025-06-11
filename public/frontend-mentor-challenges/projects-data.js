@@ -16,7 +16,7 @@ const projectsData = {
       demoUrl: '/frontend-mentor-challenges/getting_started/blog-preview-card',
       description: 'An interactive blog card showcasing post previews with images and author information.',
       technologies: ['HTML', 'CSS'],
-      feLink:"",
+      feLink:"https://www.frontendmentor.io/solutions/blog-preview-card-with-html-and-css-9mMBITX0-a",
       level: 1,
       render: true,
     },
@@ -27,7 +27,7 @@ const projectsData = {
       description: 'A clean profile page displaying social media links with hover effects.',
       technologies: ['HTML', 'CSS'],
       level: 1,
-      render: false,
+      render: true,
     },
     {
       title: 'Recipe Page',
@@ -36,9 +36,13 @@ const projectsData = {
       description: 'A structured recipe page with ingredients, instructions, and preparation details.',
       technologies: ['HTML', 'CSS'],
       level: 1,
-      render: false,
+      render: true,
+      comingSoon: true,
+      isVisible: true,
     }
   ],
+
+  
   'Responsive Design Fundamentals': [
     {
       title: 'Product Preview Card Component',

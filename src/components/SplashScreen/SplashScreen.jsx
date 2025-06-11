@@ -5,7 +5,7 @@ import "./SplashScreen.css";
 
 const SplashScreen  = ({ onFinish }) => {
 
-  const tableOfContentsRef = useRef(null); // Reference to Table of Contents
+  
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState("");
   const [isComplete, setIsComplete] = useState(false);
@@ -17,34 +17,17 @@ const SplashScreen  = ({ onFinish }) => {
   const [showConversation, setShowConversation] = useState(false); // Control conversation display
   const [showModal, setShowModal] = useState(false); // State to control showing the modal
 
-  // Define questions and Table of Contents
+  // Define questions 
   const questions = [
     "Hello, I'm De-Light-Plus, but you can call me DLP! What's your name?",
     "How are you feeling today?",
     "What brings you here to my creator's portfolio?",
   ];
 
-  const tableOfContents = [
-    "1. Personal Introduction",
-    "2. Resume",
-    "3. Skills Matrix",
-    "4. Individual Projects",
-    "5. Group Projects",
-    "6. Assessments",
-    "7. Feedback and Reflections",
-    "8. Post-Program Goals",
-  ];
-
-  // Scroll event listener to detect when user has scrolled to the Table of Contents
+    // Scroll event listener to detect
   useEffect(() => {
     const handleScroll = () => {
-      if (tableOfContentsRef.current) 
-      {
-        const tablePosition = tableOfContentsRef.current.getBoundingClientRect();
-        if (tablePosition.bottom <= window.innerHeight) {
-          setShowConversation(true); // Start conversation when Table of Contents is in view
-        }
-      }
+     
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -228,16 +211,6 @@ const SplashScreen  = ({ onFinish }) => {
                 </button>
               </a>
             </li>
-          </ul>
-        </div>
-
-        {/* Table of Contents */}
-        <div className="table-of-contents" ref={tableOfContentsRef}>
-          <h3>Table of Contents</h3>
-          <ul>
-            {tableOfContents.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
           </ul>
         </div>
       </div>

@@ -1,5 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './SkillsMatrix.css';
+
+// Define skill categories
+const skillCategories = {
+  frontend: {
+    name: 'Frontend',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React.js', 'React Native', 'Tailwind CSS', 'Next.js']
+  },
+  backend: {
+    name: 'Backend',
+    skills: ['Node.js', 'Express.js', 'MongoDB', 'PostgreSQL', 'MySQL', 'SQLite3', 'Supabase']
+  },
+  tools: {
+    name: 'Tools & Others',
+    skills: ['Git', 'GitHub', 'Firebase', 'Redux', 'Figma', 'Canva', 'Scrum']
+  }
+};
 
 // Define the skills array with icons (replace these URLs with actual icon URLs)
 const skills = [
@@ -148,8 +164,59 @@ const getProficiencyWidth = (proficiency) => {
 };
 
 const SkillsMatrix = () => {
-  return (
-    <div className="skills-matrix">
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const renderMobileView = () => {
+    return (
+      <div className="mobile-skills">
+        {Object.entries(skillCategories).map(([key, category]) => (
+          <div key={key} className="mobile-category">
+            <h3>{category.name}</h3>
+            <div className="mobile-skills-grid">
+              {category.skills.map(skillName => {
+                const skill = skills.find(s => s.skill === skillName);
+                if (!skill) return null;
+                return (
+                  <div key={skillName} className="mobile-skill-item">
+                    <img src={skill.icon} alt={skill.skill} className="skill-icon" />
+                    <span className="skill-name">{skill.skill}</span>
+                    <div className="proficiency-bar">
+                      <div
+                        className={`bar ${skill.proficiency.toLowerCase()}`}
+                        style={{ width: `${getProficiencyWidth(skill.proficiency)}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+        <div className="mobile-github">
+          <h3>GitHub Activity</h3>
+          <div className="github-matrix">
+            <img
+              src="https://ghchart.rshah.org/DeLightPlus"
+              alt="GitHub Contribution Chart"
+              style={{ width: "100%", maxWidth: 700, background: "#fff", borderRadius: 8, boxShadow: "0 2px 12px #0001" }}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const renderDesktopView = () => {
+    return (
       <div className="skills-grid">
         {skills.map((skill, index) => (
           <div key={index} className="skill-card" style={{ '--index': index }}>
@@ -163,9 +230,7 @@ const SkillsMatrix = () => {
                 <div className="proficiency-bar">
                   <div
                     className={`bar ${skill.proficiency.toLowerCase()}`}
-                    style={{
-                      width: `${getProficiencyWidth(skill.proficiency)}%`
-                    }}
+                    style={{ width: `${getProficiencyWidth(skill.proficiency)}%` }}
                   ></div>
                 </div>
               </div>
@@ -173,18 +238,23 @@ const SkillsMatrix = () => {
             </div>
           </div>
         ))}
-
         <div className="skill-card">
           <h3>GitHub Activity</h3>
           <div className="github-matrix">
-              <img
-                  src="https://ghchart.rshah.org/DeLightPlus"
-                  alt="GitHub Contribution Chart"
-                  style={{ width: "100%", maxWidth: 700, background: "#fff", borderRadius: 8, boxShadow: "0 2px 12px #0001" }}
-              />
-          </div> 
+            <img
+              src="https://ghchart.rshah.org/DeLightPlus"
+              alt="GitHub Contribution Chart"
+              style={{ width: "100%", maxWidth: 700, background: "#fff", borderRadius: 8, boxShadow: "0 2px 12px #0001" }}
+            />
+          </div>
         </div>
-      </div>      
+      </div>
+    );
+  };
+
+  return (
+    <div className="skills-matrix">
+      {isMobile ? renderMobileView() : renderDesktopView()}
     </div>
   );
 };

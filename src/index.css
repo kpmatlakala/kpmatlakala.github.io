@@ -177,3 +177,13 @@ button:focus-visible {
 
 
 
+@media (max-width: 1024px) {
+  .chat-modal.restored{
+    top: 3.5rem;
+    left: 1rem;
+    width: 90%;
+    height: 90%;
+  }
+
+
+}
