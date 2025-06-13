@@ -51,8 +51,6 @@ const projectsData = {
       feLink:"https://www.frontendmentor.io/solutions/product-preview-card-component-with-html-and-css-_27T-Genie",
       level: 1,
       render: true,
-      comingSoon: true,
-      isVisible: true,
     }, 
     {
       title: 'Four Card Feature Section',
@@ -60,7 +58,7 @@ const projectsData = {
       demoUrl: '/frontend-mentor-challenges/responsive_designs/four-card-feature-section',
       description: 'A responsive grid layout displaying four feature cards.',
       technologies: ['HTML', 'CSS'],
-      level: 2,
+      level: 1,
       render: true,
       isGhost: true,
       comingSoon: true
