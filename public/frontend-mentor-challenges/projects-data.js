@@ -26,6 +26,7 @@ const projectsData = {
       demoUrl: '/frontend-mentor-challenges/getting_started/social-links-profile',
       description: 'A clean profile page displaying social media links with hover effects.',
       technologies: ['HTML', 'CSS'],
+      feLink:"https://www.frontendmentor.io/solutions/recipe-page-with-html-and-css-UtBRAZAWdk",
       level: 1,
       render: true,
     },
@@ -37,11 +38,8 @@ const projectsData = {
       technologies: ['HTML', 'CSS'],
       level: 1,
       render: true,
-      comingSoon: true,
-      isVisible: true,
     }
   ],
-
   
   'Responsive Design Fundamentals': [
     {
@@ -50,8 +48,21 @@ const projectsData = {
       demoUrl: '/frontend-mentor-challenges/responsive_designs/product-preview-card-component',
       description: 'A responsive product card showcasing items with images and pricing.',
       technologies: ['HTML', 'CSS'],
-      level: 2,
-      render: false,
+      level: 1,
+      render: true,
+      comingSoon: true,
+      isVisible: true,
+    },    
+    {
+      title: 'Coming Soon',
+      imageUrl: '',
+      demoUrl: '',
+      description: 'More challenging projects coming soon!',
+      technologies: [],
+      level: 1,
+      render: true,
+      isGhost: true,
+      comingSoon: true
     },
     {
       title: 'Four Card Feature Section',
