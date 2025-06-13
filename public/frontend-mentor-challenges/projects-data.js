@@ -48,22 +48,12 @@ const projectsData = {
       demoUrl: '/frontend-mentor-challenges/responsive_designs/product-preview-card-component',
       description: 'A responsive product card showcasing items with images and pricing.',
       technologies: ['HTML', 'CSS'],
+      feLink:"https://www.frontendmentor.io/solutions/product-preview-card-component-with-html-and-css-_27T-Genie",
       level: 1,
       render: true,
       comingSoon: true,
       isVisible: true,
-    },    
-    {
-      title: 'Coming Soon',
-      imageUrl: '',
-      demoUrl: '',
-      description: 'More challenging projects coming soon!',
-      technologies: [],
-      level: 1,
-      render: true,
-      isGhost: true,
-      comingSoon: true
-    },
+    }, 
     {
       title: 'Four Card Feature Section',
       imageUrl: '/assets/previews/responsive-designs/four-cards-preview.jpg',
@@ -71,7 +61,9 @@ const projectsData = {
       description: 'A responsive grid layout displaying four feature cards.',
       technologies: ['HTML', 'CSS'],
       level: 2,
-      render: false,
+      render: true,
+      isGhost: true,
+      comingSoon: true
     },
     {
       title: 'Testimonials Grid Section',
@@ -93,7 +85,18 @@ const projectsData = {
       render: false,
       isGhost: true,
       comingSoon: true,
-    }
+    },
+    {
+      title: 'Coming Soon',
+      imageUrl: '',
+      demoUrl: '',
+      description: 'More challenging projects coming soon!',
+      technologies: [],
+      level: 1,
+      render: false,
+      isGhost: true,
+      comingSoon: true,
+    },
   ],
   'Challenges': [
     {
