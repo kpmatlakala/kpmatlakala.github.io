@@ -118,6 +118,17 @@ const projectsData = {
       render: true,     
     },
     {
+      title: 'Profile Card Component',
+      imageUrl: '/assets/previews/challenges/profle-card-preview.jpg',
+      demoUrl: '/frontend-mentor-challenges/challenges/profle-card-component/index.html',
+      description: '',
+      technologies: ['React', 'HTML', 'CSS'],
+      level: 1,  
+      render: true,
+      comingSoon: true,
+      isVisible: true,
+    },
+    {
       title: 'Ping Coming Soon Page',
       imageUrl: '/assets/previews/challenges/ping-preview.jpg',
       demoUrl: '/frontend-mentor-challenges/challenges/ping-coming-soon-page',
@@ -177,7 +188,7 @@ const projectsData = {
       description: 'More challenging projects coming soon!',
       technologies: [],
       level: 1,
-      render: true,
+      render: false,
       isGhost: true,
       comingSoon: true
     },
