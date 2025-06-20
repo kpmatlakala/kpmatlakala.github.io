@@ -161,66 +161,47 @@
 
 /* Social Links */
 .social-links {
-  margin-top: var(--spacing-sm);
-  padding-top: var(--spacing-sm);
-  border-top: 1px solid var(--border-color);
-}
-
-.social-links h4 {
-  font-size: var(--font-size-base);
-  color: var(--text-secondary);
-  margin-bottom: var(--spacing-sm);
-}
-
-.social-icons {
   display: flex;
-  gap: var(--spacing-md);
+  gap: 1rem;
+  margin-top: 1.5rem;
   justify-content: center;
 }
 
-.social-icon {
-  width: 40px;
-  height: 40px;
+.social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(14, 255, 255, 0.3);
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  color: #0ef;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-.social-icon:hover {
-  transform: translateY(-2px);
-  background: rgba(14, 255, 255, 0.1);
-  border-color: rgba(14, 255, 255, 0.5);
-  color: #0ef;
+.social-link:hover {
+  transform: translateY(-3px);
+  border-color: #0ef;
   box-shadow: 0 0 15px rgba(14, 255, 255, 0.3);
-  animation: shakeCard 0.025s infinite ease;
 }
 
-.social-icon:nth-child(even):hover {
-  background: rgba(255, 0, 255, 0.1);
-  border-color: rgba(255, 0, 255, 0.5);
+.social-link.github:hover {
+  color: #0ef;
+  border-color: #0ef;
+  box-shadow: 0 0 15px rgba(14, 255, 255, 0.3);
+}
+
+.social-link.portfolio:hover {
   color: #ff00ff;
+  border-color: #ff00ff;
   box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
 }
 
-@keyframes shakeCard {
-  0% {     
-    box-shadow: 1px 0px rgba(255, 0, 255, 0.3), -1px -1px rgba(14, 255, 255, 0.3);
-    transform: translateX(-1);
-  } 
-  50% {
-    box-shadow: 0px 1px rgba(14, 255, 255, 0.3), -1px -1px rgba(255, 0, 255, 0.3);
-    transform: translateX(1);
-  }
-  100% { 
-    box-shadow: 1px 1px rgba(255, 0, 255, 0.3), -1px -1px rgba(14, 255, 255, 0.3);
-    transform: translateX(0);
-  }
+.social-link.linkedin:hover {
+  color: #0077b5;
+  border-color: #0077b5;
+  box-shadow: 0 0 15px rgba(0, 119, 181, 0.3);
 }
 
 /* Contact Form */

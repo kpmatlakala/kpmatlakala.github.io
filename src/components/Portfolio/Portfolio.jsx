@@ -44,7 +44,7 @@ const Portfolio = () => {
   return (
     <>
       {/* Profile Icon @top-right-corner */}
-      {/* <UserBlock /> */}
+      <UserBlock />
       
       {/* Fixed Aside Menu */}
       <SideBar activeSection={activeSection} onScrollToSection={onScrollToSection} />

@@ -2,9 +2,9 @@ import "./App.css";
 import "./index.css"
 import { useState, useEffect } from 'react';
 
-import SplashScreen from "./components/SplashScreen/SplashScreen";
+// import SplashScreen from "./components/Chat/SplashScreen";
 import Portfolio from "./components/Portfolio/Portfolio"
-import ChatModal from "./components/SplashScreen/ChatModal";
+import ChatModal from "./components/Chat/ChatModal";
 import FloatingGameButton from "./components/Buttons/FloatingGameButton/FloatingGameButton";
 
 function App() 
@@ -58,10 +58,12 @@ function App()
       {
         chatMinimized ? (
           <>
-            <button className="minimized-chat"
-              onClick={handleChatToggle}> Chat 🤖
-            </button>
-            <FloatingGameButton />
+            <div className="floating-buttons-container">
+              <button className="minimized-chat"
+                onClick={handleChatToggle}> Chat 🤖
+              </button>
+              <FloatingGameButton />
+            </div>
           </>
         ):(
           <ChatModal  

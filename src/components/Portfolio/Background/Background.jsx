@@ -1,12 +1,21 @@
 import React from 'react';
 import "./Background.css"
+import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
+import { FaGithub, FaGlobe, FaLinkedin } from 'react-icons/fa';
 
 // import hs from "/assets/HwitiHS.png";
 import ul from "/assets/UL-Green-alpha.png";
 // import unisa from "/assets/unisa-logo.png";
 import codetribe from "/assets/codetribe.png";
 
-
+const PERSONAL_INFO = {
+  email: 'matlakalakabela1@gmail.com',
+  phone: '+27 72 713 8367',
+  location: 'Polokwane, South Africa',
+  github: 'https://github.com/DeLightPlus',
+  portfolio: 'https://delightplus-portfolio.vercel.app',
+  linkedin: 'https://www.linkedin.com/in/kabelo-matlakala-1a2b3c4d5e6f/'
+};
 
 const Background = () => {
     return (
@@ -29,6 +38,28 @@ const Background = () => {
                 <p>
                     My goal is to build intuitive, user-friendly applications that address real-world challenges.
                 </p>
+
+                <div className="about-contacts">
+                    <h3>Get in Touch</h3>
+                    <div className="contact-info-grid">
+                        <a href={`mailto:${PERSONAL_INFO.email}`} className="contact-info-item">
+                            <MdEmail size={24} />
+                            <span>Email</span>
+                        </a>
+                        <a href={`tel:${PERSONAL_INFO.phone}`} className="contact-info-item">
+                            <MdPhone size={24} />
+                            <span>Phone</span>
+                        </a>
+                        <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" className="contact-info-item">
+                            <FaGithub size={24} />
+                            <span>GitHub</span>
+                        </a>
+                        <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="contact-info-item">
+                            <FaLinkedin size={24} />
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div className="timeline-content" id="education">

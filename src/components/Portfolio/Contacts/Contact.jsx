@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
-import { FaGithub, FaGlobe } from 'react-icons/fa';
+import { FaGithub, FaGlobe, FaLinkedin } from 'react-icons/fa';
 import { IoMdSend } from 'react-icons/io';
 import { AiOutlineLoading3Quarters, AiOutlineCheckCircle, AiOutlineCloseCircle } from 'react-icons/ai';
 
@@ -14,7 +14,7 @@ const PERSONAL_INFO = {
   location: 'Polokwane, South Africa',
   github: 'https://github.com/DeLightPlus',
   portfolio: 'https://delightplus-portfolio.vercel.app',
-  // portfolio: 'https://delightplus.github.io'
+  linkedin: 'https://www.linkedin.com/in/kabelo-matlakala-1a2b3c4d5e6f/'
 };
 
 const INITIAL_FORM_STATE = {
@@ -113,38 +113,16 @@ const ContactInfoItem = ({ icon, label, value, href, type }) => (
 // Social Links Component
 const SocialLinks = ({ personalInfo }) => (
   <div className="social-links">
-    {/* <h4>Follow Me</h4> */}
-    <div className="social-icons">
-      <SocialIcon
-        href={personalInfo.github}
-        icon={<FaGithub size={20} />}
-        label="GitHub Profile"
-      />
-      <SocialIcon
-        href={personalInfo.portfolio}
-        icon={<FaGlobe size={20} />}
-        label="Portfolio Website"
-      />
-      <SocialIcon
-        href={`mailto:${personalInfo.email}`}
-        icon={<MdEmail size={20} />}
-        label="Email"
-      />
-    </div>
+    <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="social-link github">
+      <FaGithub size={24} />
+    </a>
+    <a href={personalInfo.portfolio} target="_blank" rel="noopener noreferrer" className="social-link portfolio">
+      <FaGlobe size={24} />
+    </a>
+    <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="social-link linkedin">
+      <FaLinkedin size={24} />
+    </a>
   </div>
-);
-
-// Social Icon Component
-const SocialIcon = ({ href, icon, label }) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="social-icon"
-    aria-label={label}
-  >
-    {icon}
-  </a>
 );
 
 // Contact Form Component
