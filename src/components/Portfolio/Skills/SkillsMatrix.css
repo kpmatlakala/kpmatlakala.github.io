@@ -53,8 +53,6 @@
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  animation: cardAppear 0.5s ease forwards;
-  animation-delay: calc(var(--index) * 0.1s);
   display: flex;
   flex-direction: column;
 }
@@ -86,7 +84,6 @@
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   border-color: rgba(14, 255, 255, 0.3);
-  animation: shakeCard 0.025s infinite ease;
 }
 
 .skill-header {
@@ -199,17 +196,6 @@
   }
 }
 
-@keyframes cardAppear {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .skills-table 
 {
   width: 100%;
@@ -253,39 +239,39 @@
 .skills-table tr:hover 
 {
   background-color: rgba(14, 255, 255, 0.1);
-  animation: shakeRow 0.025s infinite ease;
+  /* animation: shakeRow 0.025s infinite ease; */
 }
 .skills-table tr:hover td
 {
   color: #0ef;
-  animation: shakeTxt 0.025s infinite ease;
+  /* animation: shakeTxt 0.025s infinite ease; */
 }
 
 .skills-table tr:hover .proficiency-bar
 {
-  animation: shakeRow 0.025s infinite ease-in-out;  
+  /* animation: shakeRow 0.025s infinite ease-in-out;   */
 }
 .skills-table tbody tr
 {
-  animation: skill_appears 5s linear, skill_fadeout linear;
-  animation-timeline: view();
-  animation-range: entry 50% cover 17%, exit 0% cover 100%;
+  /* animation: skill_appears 5s linear, skill_fadeout linear; */
+  /* animation-timeline: view(); */
+  /* animation-range: entry 50% cover 17%, exit 0% cover 100%; */
 }
 
 @keyframes skill_appears
 {
   from 
   {
-    opacity: 0;
-    scale: 0.25;    
-    transform: translate(0px, 64px);    
-    box-shadow: #f1f1f1 0 -16px 48px 16px;
+    /* opacity: 0; */
+    /* scale: 0.25;     */
+    /* transform: translate(0px, 64px);     */
+    /* box-shadow: #f1f1f1 0 -16px 48px 16px; */
   }
   to
   {
-    opacity: 1;
-    scale: 1;
-    transform: translate(0);
+    /* opacity: 1; */
+    /* scale: 1; */
+    /* transform: translate(0); */
   }
 }
 
@@ -293,47 +279,47 @@
 {
   from 
   {
-    opacity: 1;
-    scale: 1;    
-    transform: translate(0);
+    /* opacity: 1; */
+    /* scale: 1;     */
+    /* transform: translate(0); */
   }
   to
   {
-    opacity: 0;
-    scale: 0;
-    transform: translate(0px, 50px);    
-    box-shadow: magenta 0 -16px 32px 8px;
+    /* opacity: 0; */
+    /* scale: 0; */
+    /* transform: translate(0px, 50px);     */
+    /* box-shadow: magenta 0 -16px 32px 8px; */
   
   }
 }
 
 @keyframes shakeRow {
   0% {     
-    box-shadow: 1px 0px rgba(255, 0, 255, 0.3), -1px -1px rgba(14, 255, 255, 0.3);
-    transform: translateX(-1);
+    /* box-shadow: 1px 0px rgba(255, 0, 255, 0.3), -1px -1px rgba(14, 255, 255, 0.3); */
+    /* transform: translateX(-1); */
   } 
   50% {
-    box-shadow: 0px 1px rgba(14, 255, 255, 0.3), -1px -1px rgba(255, 0, 255, 0.3);
-    transform: translateX(1);
+    /* box-shadow: 0px 1px rgba(14, 255, 255, 0.3), -1px -1px rgba(255, 0, 255, 0.3); */
+    /* transform: translateX(1); */
   }
   100% { 
-    box-shadow: 1px 1px rgba(255, 0, 255, 0.3), -1px -1px rgba(14, 255, 255, 0.3);
-    transform: translateX(0);
+    /* box-shadow: 1px 1px rgba(255, 0, 255, 0.3), -1px -1px rgba(14, 255, 255, 0.3); */
+    /* transform: translateX(0); */
   }
 }
 
 @keyframes shakeTxt {
   0% {     
-    text-shadow: 1px 0px rgba(255, 0, 255, 0.3), -1px -1px rgba(14, 255, 255, 0.3);
-    transform: translateX(-1);
+    /* text-shadow: 1px 0px rgba(255, 0, 255, 0.3), -1px -1px rgba(14, 255, 255, 0.3); */
+    /* transform: translateX(-1); */
   } 
   50% {
-    text-shadow: 0px 1px rgba(14, 255, 255, 0.3), -1px -1px rgba(255, 0, 255, 0.3);
-    transform: translateX(1);
+    /* text-shadow: 0px 1px rgba(14, 255, 255, 0.3), -1px -1px rgba(255, 0, 255, 0.3); */
+    /* transform: translateX(1); */
   }
   100% { 
-    text-shadow: 1px 1px rgba(255, 0, 255, 0.3), -1px -1px rgba(14, 255, 255, 0.3);
-    transform: translateX(0);
+    /* text-shadow: 1px 1px rgba(255, 0, 255, 0.3), -1px -1px rgba(14, 255, 255, 0.3); */
+    /* transform: translateX(0); */
   }
 }
 

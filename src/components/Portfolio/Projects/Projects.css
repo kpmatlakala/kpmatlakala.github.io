@@ -231,16 +231,21 @@
 /* Base Styles */
 .project-card {
   background: rgba(255, 255, 255, 0.05);
-  border-radius: var(--border-radius);
-  padding: var(--spacing-sm);
-  transition: var(--transition-base);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px #0002;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .project-card:hover {
-  animation: colorCycle 3s infinite;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-color: rgba(14, 255, 255, 0.3);
 }
 
 /* Collapse non-iframe projects */
@@ -265,11 +270,13 @@
   padding: 0.5rem;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  border-color: rgba(14, 255, 255, 0.3);
-  animation: shakeCard 0.025s infinite ease;
+.project-card:hover .project-image {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.project-card:hover .footer-text {
+  /* color: rgba(255, 0, 255, 0.7); */
 }
 
 /* Card Header */
@@ -344,7 +351,7 @@
 }
 
 .project-card:hover .footer-text {
-  color: rgba(255, 0, 255, 0.7);
+  /* color: rgba(255, 0, 255, 0.7); */
 }
 
 /* Project Footer */
@@ -1135,7 +1142,7 @@
 
 
 .project-card:hover .footer-text {
-  color: rgba(255, 0, 255, 0.7);
+  /* color: rgba(255, 0, 255, 0.7); */
 }
 
 @keyframes shakeCard {

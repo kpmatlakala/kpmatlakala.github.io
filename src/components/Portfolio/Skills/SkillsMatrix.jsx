@@ -150,6 +150,28 @@ const skills = [
   },
 ];
 
+// Add these to the skills array
+const currentlyLearningSkills = [
+  {
+    skill: 'PHP',
+    proficiency: 'Currently Learning',
+    notes: 'Exploring backend development and web applications.',
+    icon: 'https://img.icons8.com/?size=100&id=13441&format=png&color=000000'
+  },
+  {
+    skill: 'Laravel',
+    proficiency: 'Currently Learning',
+    notes: 'Learning modern PHP frameworks for robust web apps.',
+    icon: 'https://img.icons8.com/?size=100&id=123603&format=png&color=000000' // Replace with Laravel icon if available
+  },
+  {
+    skill: 'Python',
+    proficiency: 'Currently Learning',
+    notes: 'Focusing on scripting, automation, and data science.',
+    icon: 'https://img.icons8.com/?size=100&id=13441&format=png&color=000000'
+  }
+];
+
 const getProficiencyWidth = (proficiency) => {
   switch (proficiency.toLowerCase()) {
     case 'beginner':
@@ -201,6 +223,25 @@ const SkillsMatrix = () => {
             </div>
           </div>
         ))}
+        {/* Currently Learning Cards for Mobile */}
+        <div className="mobile-category">
+          <h3>Currently Learning</h3>
+          <div className="mobile-skills-grid">
+            {currentlyLearningSkills.map((skill, index) => (
+              <div key={"learning-mobile-" + index} className="mobile-skill-item">
+                <img src={skill.icon} alt={skill.skill} className="skill-icon" />
+                <span className="skill-name">{skill.skill}</span>
+                <div className="proficiency-bar">
+                  <div
+                    className={`bar currently-learning`}
+                    style={{ width: `33%`, background: 'linear-gradient(90deg, #ffb347, #ffcc33)' }}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* GitHub Card */}
         <div className="mobile-github">
           <h3>GitHub Activity</h3>
           <div className="github-matrix">
@@ -238,6 +279,28 @@ const SkillsMatrix = () => {
             </div>
           </div>
         ))}
+        {/* Currently Learning Cards */}
+        {currentlyLearningSkills.map((skill, index) => (
+          <div key={"learning-" + index} className="skill-card currently-learning-card" style={{ '--index': skills.length + index }}>
+            <div className="skill-header">
+              <img src={skill.icon} alt={skill.skill} className="skill-icon" />
+              <h3>{skill.skill}</h3>
+            </div>
+            <div className="skill-content">
+              <div className="proficiency-container">
+                <span className="proficiency-label">{skill.proficiency}</span>
+                <div className="proficiency-bar">
+                  <div
+                    className={`bar currently-learning`}
+                    style={{ width: `33%`, background: 'linear-gradient(90deg, #ffb347, #ffcc33)' }}
+                  ></div>
+                </div>
+              </div>
+              <p className="skill-notes">{skill.notes}</p>
+            </div>
+          </div>
+        ))}
+        {/* GitHub Card */}
         <div className="skill-card">
           <h3>GitHub Activity</h3>
           <div className="github-matrix">
@@ -255,6 +318,7 @@ const SkillsMatrix = () => {
   return (
     <div className="skills-matrix">
       {isMobile ? renderMobileView() : renderDesktopView()}
+      
     </div>
   );
 };

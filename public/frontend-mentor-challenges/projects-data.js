@@ -1,3 +1,11 @@
+const projectLevels = {
+  1: { name: 'Newbie' },
+  2: { name: 'Junior' },
+  3: { name: 'Intermediate' },
+  4: { name: 'Advanced' },
+  5: { name: 'Guru' }
+};
+
 const projectsData = {
   'Getting Started': [
     {
@@ -89,7 +97,7 @@ const projectsData = {
   'Challenges': [
     {
       title: 'NFT preview card component',
-      imageUrl: '/assets/previews/challenges/nft-preview',
+      imageUrl: '/assets/previews/challenges/nft-preview.jpg',
       demoUrl: '/frontend-mentor-challenges/challenges/nft-preview-card-component',
       description: 'nft-preview-card-component',
       technologies: ['React, HTML', 'CSS'],
@@ -111,7 +119,7 @@ const projectsData = {
       title: 'Single Price Grid Component',
       imageUrl: '/assets/previews/challenges/price-preview.jpg',
       demoUrl: '/frontend-mentor-challenges/challenges/single-price-grid-component/index.html',
-      description: '',
+      description: 'A clean and modern pricing component with clear call-to-action and responsive layout.',
       technologies: ['React', 'HTML', 'CSS Grid'],
       feSolution:'https://www.frontendmentor.io/solutions/single-price-grid-component-using-css-grid-h3OqLsHAiZ',
       level: 1,  
@@ -119,14 +127,22 @@ const projectsData = {
     },
     {
       title: 'Profile Card Component',
-      imageUrl: '/assets/previews/challenges/profle-card-preview.jpg',
-      demoUrl: '/frontend-mentor-challenges/challenges/profle-card-component/index.html',
-      description: '',
+      imageUrl: '/assets/previews/challenges/profile-card-preview.jpg',
+      demoUrl: '/frontend-mentor-challenges/challenges/profile-card-component/index.html',
+      description: 'A stylish profile card featuring user details, avatar, and social links.',
       technologies: ['React', 'HTML', 'CSS'],
+      feSolution: 'https://www.frontendmentor.io/solutions/profile-card-component-with-html-and-css-IJBSNuzpJY',
       level: 1,  
       render: true,
-      comingSoon: true,
-      isVisible: true,
+    },
+    {
+      title: 'Order Summary Component',
+      imageUrl: '/assets/previews/challenges/order-summary-preview.jpg',
+      demoUrl: '/frontend-mentor-challenges/challenges/order-summary-component',
+      description: 'A concise order summary card with plan details, pricing, and action buttons.',
+      technologies: ['React','HTML', 'CSS'],
+      level: 1,
+      render: true,   
     },
     {
       title: 'Ping Coming Soon Page',
@@ -140,21 +156,10 @@ const projectsData = {
       isVisible: true,
     },
     {
-      title: 'Order Summary Component',
-      imageUrl: '/assets/previews/challenges/order-summary-preview',
-      demoUrl: '/frontend-mentor-challenges/challenges/order-summary-component',
-      description: '',
-      technologies: ['HTML', 'CSS'],
-      level: 1,
-      render: false,
-      comingSoon: true,
-      isVisible: true,
-    },
-    {
       title: 'Newsletter Signup-up form',
       imageUrl: '/assets/previews/challenges/order-summary-preview',
       demoUrl: '/frontend-mentor-challenges/challenges/order-summary-component',
-      description: '',
+      description: 'A simple and effective newsletter signup form with validation and feedback.',
       technologies: ['HTML', 'CSS', "JavaScript"],
       level: 1,
       render: false,
@@ -188,7 +193,7 @@ const projectsData = {
       description: 'More challenging projects coming soon!',
       technologies: [],
       level: 1,
-      render: false,
+      render: true,
       isGhost: true,
       comingSoon: true
     },
@@ -199,7 +204,7 @@ const projectsData = {
       description: 'More challenging projects coming soon!',
       technologies: [],
       level: 2,
-      render: false,
+      render: true,
       isGhost: true,
       comingSoon: true,
     },
