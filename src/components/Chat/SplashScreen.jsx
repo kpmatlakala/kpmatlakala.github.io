@@ -155,8 +155,16 @@ const SplashScreen = ({ onFinish }) => {
     <div className="chat-container">
       {/* Contacts Sidebar */}
       <div className={`contacts-sidebar ${showContacts ? 'show' : 'hide'}`}>
-        <div className="contacts-header">
-          
+        <div className="contacts-header">          
+          {
+            showContacts && 
+            <button className="toggle-contacts" onClick={() =>{ console.log("toggle chats vs games");
+            }}>
+              🎮 
+              {/* or 💬 | toggle between games and chat*/}
+            </button>
+          }
+
           <button className="toggle-contacts" onClick={() => setShowContacts(!showContacts)}>
             {showContacts ? '←' : '→'}
           </button>
@@ -183,7 +191,7 @@ const SplashScreen = ({ onFinish }) => {
 
       {/* Chat Area */}
       <div className="chat-area">
-        <div className="chat-header">
+        <div className="chat-header" >
           <div className="chat-contact-info">
             <span className="contact-avatar">{contacts.find(c => c.id === activeContact)?.avatar}</span>
             <span className="contact-name">{contacts.find(c => c.id === activeContact)?.name}</span>

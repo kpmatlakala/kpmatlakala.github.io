@@ -141,6 +141,7 @@ const projectsData = {
       demoUrl: '/frontend-mentor-challenges/challenges/order-summary-component/index.html',
       description: 'A concise order summary card with plan details, pricing, and action buttons.',
       technologies: ['React','HTML', 'CSS'],
+      
       level: 1,
       render: true,   
     },

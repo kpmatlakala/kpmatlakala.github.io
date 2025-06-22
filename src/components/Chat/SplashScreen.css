@@ -28,15 +28,6 @@
   z-index:1001;
 }
 
-/* .chat-modal.maximized 
-{
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-
-}*/
-
 .chat-modal.restored 
 {
   justify-content: flex-end;
@@ -53,6 +44,12 @@
   flex-direction: column;
 }
 
+.chat-modal.maximized .chat-modal-content 
+{
+  flex:1;
+  padding-top: 4px;
+}
+
 /* Chat Header */
 .chat-header 
 {
@@ -67,11 +64,12 @@
   background: rgba(0, 21, 4, 0.8);
   backdrop-filter: blur(10px);
   color: #00ff00;
-  padding: 4px 8px; 
+  padding: 14px; 
   border-bottom: 1px solid rgba(0, 236, 59, 0.3);
    
   z-index: 2;
 }
+
 
 .chat-controls 
 {
@@ -495,7 +493,7 @@ input:disabled, .continue-btn:disabled {
 }
 
 .contacts-header {
-  padding: 6px 16px;
+  padding: 9px 16px;
   border-bottom: 1px solid rgba(0, 236, 59, 0.125);
   display: flex;
   justify-content: space-between;
@@ -515,7 +513,7 @@ input:disabled, .continue-btn:disabled {
   background: rgba(0, 236, 59, 0.1);
   border: 1px solid rgba(0, 236, 59, 0.3);
   color: #00ec3b;
-  padding: 8px 12px;
+  padding:8px 16px;
   cursor: pointer;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -638,6 +636,11 @@ input:disabled, .continue-btn:disabled {
   background: rgba(0, 7, 1, 0.95);
   position: relative;
 }
+
+.chat-area .chat-header{
+  padding: 8px;
+}
+
 
 .chat-contact-info {
   display: flex;

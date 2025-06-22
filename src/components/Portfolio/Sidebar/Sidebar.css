@@ -1,21 +1,28 @@
-.resume-btn
-{
+.resume-btn {
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 4px;
-  background: whitesmoke;
-  color: black;
-  font-weight: 600;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
-.resume-btn:hover
-{
-  background: #000000;
-  color: white;
-  border: none;
-  padding: 6px;
 
+.resume-btn:hover {
+  background: rgba(14, 255, 255, 0.1);
+  color: #0ef;
+  border-color: rgba(14, 255, 255, 0.3);
+  transform: scale(1.05);
+  box-shadow: rgba(14, 255, 255, 0.075) -4px 10px 16px 1px;
+  animation: shake_Btn 0.25s infinite ease;
 }
+
 
 .menu 
 {
@@ -124,7 +131,7 @@
 
 .top-nav {
   position: fixed;
-  top: 20px;
+  top: 8px;
   left: 20px;
   display: flex;
   align-items: center;
@@ -154,30 +161,6 @@
   animation: shake_Btn 0.25s infinite ease, shakeTxt 0.1s infinite ease;
 }
 
-.resume-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
-  font-weight: 500;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.resume-btn:hover {
-  background: rgba(14, 255, 255, 0.1);
-  color: #0ef;
-  border-color: rgba(14, 255, 255, 0.3);
-  transform: scale(1.05);
-  box-shadow: rgba(14, 255, 255, 0.075) -4px 10px 16px 1px;
-  animation: shake_Btn 0.25s infinite ease;
-}
 
 .hamburger-icon {
   display: none;
@@ -249,7 +232,7 @@
 
 @media (max-width: 1024px) {
   .top-nav {
-    top: 10px;
+    top: 8px;
     left: 10px;
     gap: 8px;
     width: 97%;
