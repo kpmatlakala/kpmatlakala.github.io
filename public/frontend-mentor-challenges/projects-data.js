@@ -147,7 +147,7 @@ const projectsData = {
     {
       title: '3 Column Preview Card ',
       imageUrl: '/assets/previews/challenges/3-column-preview.jpg',
-      demoUrl: '/frontend-mentor-challenges/challenges/3-column-preview-card/index.html',
+      demoUrl: 'frontend-mentor-challenges/challenges/3-column-preview-card-component/index.html',
       description: '',
       technologies: ['React', 'HTML', 'CSS Grid'],
       feSolution: 'https://www.frontendmentor.io/solutions/3-column-preview-card-component-using-css-grid-WuGs-b_Fnc',
