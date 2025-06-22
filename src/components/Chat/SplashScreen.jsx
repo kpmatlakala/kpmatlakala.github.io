@@ -1,6 +1,30 @@
 import { useState, useEffect, useRef } from "react";
 import "./SplashScreen.css";
 
+const GAMES = [
+  {
+    id: 'memory',
+    name: 'Memory Game',
+    url: '/mini-games/memory-game/index.html',
+    thumbnail: '/mini-games/memory-game/thumbnail.jpg',
+    available: true
+  },
+  {
+    id: 'terminal-tower',
+    name: 'Terminal Tower',
+    url: '/mini-games/terminal-tower/index.html',
+    thumbnail: '/mini-games/terminal-tower/thumbnail.jpg',
+    available: true
+  },
+  {
+    id: 'snake',
+    name: 'Snake',
+    url: '/mini-games/snake/index.html',
+    thumbnail: '/mini-games/snake/thumbnail.jpg',
+    available: true
+  }
+];
+
 const SplashScreen = ({ onFinish }) => {
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState("");
@@ -13,6 +37,8 @@ const SplashScreen = ({ onFinish }) => {
   const inputRef = useRef(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [countdown, setCountdown] = useState(5);
+  const [showGames, setShowGames] = useState(false);
+  const [selectedGame, setSelectedGame] = useState(GAMES[0].id);
 
   const contacts = [
     {
@@ -97,22 +123,22 @@ const SplashScreen = ({ onFinish }) => {
         sender: 'user',
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
-      
+
       setMessages(prev => [...prev, newMessage]);
       setUserInput('');
-      
+
       // Get AI response based on current question
       const response = getResponse(userInput, currentQuestionIndex);
-      
+
       // Add AI response immediately
       const aiMessage = {
         text: response,
         sender: 'ai',
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
-      
+
       setMessages(prev => [...prev, aiMessage]);
-      
+
       // Move to next question after a short delay
       setTimeout(() => {
         if (currentQuestionIndex < questions.length - 1) {
@@ -133,7 +159,7 @@ const SplashScreen = ({ onFinish }) => {
 
   const getResponse = (input, index) => {
     const inputLower = input.toLowerCase();
-    
+
     if (inputLower.includes("hello") || inputLower.includes("hi")) {
       return "Hello! How can I assist you today?";
     } else if (inputLower.includes("portfolio") || inputLower.includes("projects")) {
@@ -155,121 +181,123 @@ const SplashScreen = ({ onFinish }) => {
     <div className="chat-container">
       {/* Contacts Sidebar */}
       <div className={`contacts-sidebar ${showContacts ? 'show' : 'hide'}`}>
-        <div className="contacts-header">          
-          {
-            showContacts && 
-            <button className="toggle-contacts" onClick={() =>{ console.log("toggle chats vs games");
-            }}>
-              🎮 
-              {/* or 💬 | toggle between games and chat*/}
-            </button>
-          }
-
+        <div className="contacts-header">
+          {showContacts &&
+            <button className="toggle-contacts" onClick={() => setShowGames(g => !g)}>
+              {showGames ? '💬' : '🎮'}
+            </button>}
           <button className="toggle-contacts" onClick={() => setShowContacts(!showContacts)}>
             {showContacts ? '←' : '→'}
           </button>
         </div>
         <div className="contacts-list">
-          {contacts.map(contact => (
-            <div
-              key={contact.id}
-              className={`contact-item ${activeContact === contact.id ? 'active' : ''}`}
-              onClick={() => setActiveContact(contact.id)}
-            >
-              <div className="contact-avatar">{contact.avatar}</div>
-              <div className="contact-info">
-                <div className="contact-name">{contact.name}</div>
-                <div className="contact-status">
-                  {contact.typing ? "typing..." : contact.status}
+          {showGames ? (
+            GAMES.map(game => (
+              <div
+                key={game.id}
+                className={`contact-item${selectedGame === game.id ? ' active' : ''}`}
+                onClick={() => setSelectedGame(game.id)}
+                style={{ cursor: 'pointer', opacity: game.available ? 1 : 0.5 }}
+              >
+                <div className="contact-avatar">
+                  <img src={game.thumbnail} alt={game.name} style={{ width: 32, height: 32, borderRadius: 8 }} />
+                </div>
+                <div className="contact-info">
+                  <div className="contact-name">{game.name}</div>
+                  <div className="contact-status">{game.available ? 'Available' : 'Coming Soon'}</div>
                 </div>
               </div>
-              {/* <div className="contact-last-message">{contact.lastMessage}</div> */}
-            </div>
-          ))}
+            ))
+          ) : (
+            contacts.map(contact => (
+              <div
+                key={contact.id}
+                className={`contact-item ${activeContact === contact.id ? 'active' : ''}`}
+                onClick={() => setActiveContact(contact.id)}
+              >
+                <div className="contact-avatar">{contact.avatar}</div>
+                <div className="contact-info">
+                  <div className="contact-name">{contact.name}</div>
+                  <div className="contact-status">
+                    {contact.typing ? "typing..." : contact.status}
+                  </div>
+                </div>
+              </div>
+            ))
+          )}
         </div>
       </div>
 
-      {/* Chat Area */}
+      {/* Chat/Game Area */}
       <div className="chat-area">
-        <div className="chat-header" >
-          <div className="chat-contact-info">
-            <span className="contact-avatar">{contacts.find(c => c.id === activeContact)?.avatar}</span>
-            <span className="contact-name">{contacts.find(c => c.id === activeContact)?.name}</span>
-          </div>
-        </div>
-
-        <div className="messages-container">
-          {messages.map((msg, index) => (
-            <div
-              key={index}
-              className={`message ${msg.from === "User" ? "user-message" : "contact-message"}`}
-            >
-              {msg.from !== "User" && (
-                <span className="message-avatar">
-                  {contacts.find(c => c.id === msg.from)?.avatar}
-                </span>
-              )}
-              <div className="message-content">
-                <div className="message-text">{msg.text}</div>
-                <div className="message-time">
-                  {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                </div>
-              </div>
-            </div>
-          ))}
-          {isTyping && (
-            <div className="message contact-message typing">
-              <span className="message-avatar">🤖</span>
-              <div className="message-content">
-                <div className="typing-indicator">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-            </div>
-          )}
-          <div ref={messagesEndRef} />
-        </div>
-
-        <div className="chat-input-container">
-          {/* <button 
-            className="emoji-button"
-            onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-          >
-            😊
-          </button>
-          {showEmojiPicker && (
-            <div className="emoji-picker">
-              {emojis.map((emoji, index) => (
-                <button
-                  key={index}
-                  className="emoji-item"
-                  onClick={() => addEmoji(emoji)}
-                >
-                  {emoji}
-                </button>
-              ))}
-            </div>
-          )}
-           */}
-          <input
-            ref={inputRef}
-            type="text"
-            className="chat-input"
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            onKeyPress={handleUserInput}
-            placeholder="Type a message..."
+        {showGames ? (
+          <iframe
+            title={GAMES.find(g => g.id === selectedGame)?.name}
+            src={GAMES.find(g => g.id === selectedGame)?.url}
+            style={{ width: '100%', height: '100%', border: 'none', borderRadius: 12, background: '#000' }}
+            allowFullScreen
           />
-          <button 
-            className="send-button"
-            onClick={handleUserInput}
-            disabled={!userInput.trim() || isTyping}
-          >
-            Send
-          </button>
-        </div>
+        ) : (
+          <>
+            <div className="chat-header" >
+              <div className="chat-contact-info">
+                <span className="contact-avatar">{contacts.find(c => c.id === activeContact)?.avatar}</span>
+                <span className="contact-name">{contacts.find(c => c.id === activeContact)?.name}</span>
+              </div>
+            </div>
+            <div className="messages-container">
+              {messages.map((msg, index) => (
+                <div
+                  key={index}
+                  className={`message ${msg.from === "User" ? "user-message" : "contact-message"}`}
+                >
+                  {msg.from !== "User" && (
+                    <span className="message-avatar">
+                      {contacts.find(c => c.id === msg.from)?.avatar}
+                    </span>
+                  )}
+                  <div className="message-content">
+                    <div className="message-text">{msg.text}</div>
+                    <div className="message-time">
+                      {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    </div>
+                  </div>
+                </div>
+              ))}
+              {isTyping && (
+                <div className="message contact-message typing">
+                  <span className="message-avatar">🤖</span>
+                  <div className="message-content">
+                    <div className="typing-indicator">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                </div>
+              )}
+              <div ref={messagesEndRef} />
+            </div>
+            <div className="chat-input-container">
+              <input
+                ref={inputRef}
+                type="text"
+                className="chat-input"
+                value={userInput}
+                onChange={(e) => setUserInput(e.target.value)}
+                onKeyPress={handleUserInput}
+                placeholder="Type a message..."
+              />
+              <button
+                className="send-button"
+                onClick={handleUserInput}
+                disabled={!userInput.trim() || isTyping}
+              >
+                Send
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
