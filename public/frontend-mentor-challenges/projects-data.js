@@ -141,7 +141,6 @@ const projectsData = {
       demoUrl: '/frontend-mentor-challenges/challenges/order-summary-component/index.html',
       description: 'A concise order summary card with plan details, pricing, and action buttons.',
       technologies: ['React','HTML', 'CSS'],
-      
       level: 1,
       render: true,   
     },
@@ -151,10 +150,9 @@ const projectsData = {
       demoUrl: '/frontend-mentor-challenges/challenges/3-column-preview-card/index.html',
       description: '',
       technologies: ['React', 'HTML', 'CSS Grid'],
+      feSolution: 'https://www.frontendmentor.io/solutions/3-column-preview-card-component-using-css-grid-WuGs-b_Fnc',
       level: 1,  
-      render: true,
-      comingSoon: true,
-      isVisible: true,
+      render: true  
     },
     {
       title: 'Ping Coming Soon Page',
