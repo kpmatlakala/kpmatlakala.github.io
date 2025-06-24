@@ -29,8 +29,7 @@ function App()
             <div className="floating-buttons-container">
               <button className="minimized-chat"
                 onClick={handleChatToggle}> Chat 🤖
-              </button>
-              <FloatingGameButton />
+              </button>            
             </div>
           </>
         ):(
@@ -43,7 +42,7 @@ function App()
         )
       }
       
-      <Portfolio />
+      <Portfolio chatModalOpen={!chatMinimized} />
     </>
   )
     

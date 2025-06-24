@@ -8,7 +8,7 @@ import SideBar from './Sidebar/Sidebar.jsx';
 import UserBlock from './userBlock/UserBlock.jsx';
 import TechStack from "./Skills/TechStacks/TechStack.jsx";
 
-const Portfolio = () => {
+const Portfolio = ({ chatModalOpen }) => {
 
   const [activeSection, setActiveSection] = useState("about");
 
@@ -47,7 +47,7 @@ const Portfolio = () => {
       {/* <UserBlock /> */}
       
       {/* Fixed Aside Menu */}
-      <SideBar activeSection={activeSection} onScrollToSection={onScrollToSection} />
+      <SideBar activeSection={activeSection} onScrollToSection={onScrollToSection} chatModalOpen={chatModalOpen} />
 
       <Parallaxor />
       <TechStack />

@@ -15,12 +15,15 @@
     --brown-800: hsl(14, 45%, 36%);
     --rose-800: hsl(332, 51%, 32%);
     --rose-50: hsl(330, 100%, 98%);
+    --font-family-base: 'Outfit', sans-serif;
+    --font-family-heading: 'Young Serif', serif;
+    --font-size-base: 16px;
 }
 
 /* Base styles */
 body {
-    font-family: 'Outfit', sans-serif;
-    font-size: 16px;
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
     background-color: var(--stone-100);
     color: var(--stone-600);
     padding: 2rem;
@@ -49,10 +52,13 @@ body {
 }
 
 h1 {
-    font-family: 'Young Serif', serif;
+    font-family: var(--font-family-heading);
     font-size: 2.5rem;
     color: var(--stone-900);
     margin-bottom: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .description {
@@ -76,6 +82,7 @@ h1 {
 
 .prep-time ul {
     list-style: disc inside;
+    padding-left: 0;
 }
 
 .section {
@@ -83,7 +90,7 @@ h1 {
 }
 
 .section h2 {
-    font-family: 'Young Serif', serif;
+    font-family: var(--font-family-heading);
     color: var(--brown-800);
     font-size: 1.75rem;
     margin-bottom: 1rem;
@@ -113,7 +120,7 @@ td:first-child {
 td:last-child {
     color: var(--brown-800);
     font-weight: 700;
-    text-align: right;
+    /* text-align: right; */
 }
 
 /* Responsive Layout */
@@ -127,7 +134,10 @@ td:last-child {
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 1.55rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .section h2,

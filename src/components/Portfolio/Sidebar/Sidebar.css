@@ -139,6 +139,12 @@
   z-index: 1001;
 }
 
+#m_chat-open{
+  width: max-content;
+  left: 1rem;
+  top: 0.75rem;
+}
+
 .logo {
   cursor: pointer;
   transition: all 0.3s ease;

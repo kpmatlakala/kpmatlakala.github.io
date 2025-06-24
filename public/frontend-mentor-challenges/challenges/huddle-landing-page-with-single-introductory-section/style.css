@@ -1,6 +1,13 @@
 :root {
     --violet: hsl(257, 40%, 49%);
     --soft-magenta: hsl(300, 69%, 71%);
+    --white: #fff;
+    --black: #000;
+    --font-family-base: 'Open Sans', sans-serif;
+    --font-family-heading: 'Poppins', sans-serif;
+    --font-weight-heading: 600;
+    --border-radius-btn: 50px;
+    --btn-padding: 1rem 5rem;
 }
 
 * {
@@ -10,9 +17,9 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-family-base);
     background: var(--violet) url('./images/bg-desktop.svg') no-repeat center top/cover;
-    color: white;
+    color: var(--white);
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -30,7 +37,6 @@ main {
     flex-wrap: wrap;
     gap: 2rem;
     max-width: 1200px;
-    
     margin: 2rem auto;
 }
 
@@ -44,8 +50,8 @@ main {
 }
 
 h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    font-family: var(--font-family-heading);
+    font-weight: var(--font-weight-heading);
     margin-bottom: 1rem;
 }
 
@@ -55,21 +61,21 @@ p {
 }
 
 .btn {
-    background: white;
+    background: var(--white);
     color: var(--violet);
     border: none;
-    border-radius: 50px;
-    padding: 1rem 5rem;
+    border-radius: var(--border-radius-btn);
+    padding: var(--btn-padding);
     cursor: pointer;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
+    font-weight: var(--font-weight-heading);
+    font-family: var(--font-family-heading);
     transition: background 0.3s, color 0.3s;
 }
 
 .btn:hover,
 .btn:focus {
     background: var(--soft-magenta);
-    color: white;
+    color: var(--white);
 }
 
 footer {
@@ -99,16 +105,16 @@ footer {
     justify-content: center;
     width: 40px;
     height: 40px;
-    border: 1px solid white;
+    border: 1px solid var(--white);
     border-radius: 50%;
-    color: white;
+    color: var(--white);
     text-decoration: none;
     transition: background 0.3s, color 0.3s;
 }
 
 .socials a:hover,
 .socials a:focus {
-    background: white;
+    background: var(--white);
     color: var(--violet);
 }
 
@@ -118,9 +124,9 @@ footer {
 }
 
 .socials svg {
-width: 20px;
-height: 20px;
-fill: white;
+    width: 20px;
+    height: 20px;
+    fill: var(--white);
 }
 
 .attribution {

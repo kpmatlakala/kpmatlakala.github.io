@@ -17,6 +17,7 @@ const projectsData = {
       feSolution:"",
       level: 1,
       render: true,
+      feedbacks: [],
     },
     {
       title: 'Blog Preview Card',
@@ -27,6 +28,7 @@ const projectsData = {
       feSolution:"https://www.frontendmentor.io/solutions/blog-preview-card-with-html-and-css-9mMBITX0-a",
       level: 1,
       render: true,
+      feedbacks: [],
     },
     {
       title: 'Social Links Profile',
@@ -37,6 +39,7 @@ const projectsData = {
       feSolution:"https://www.frontendmentor.io/solutions/recipe-page-with-html-and-css-UtBRAZAWdk",
       level: 1,
       render: true,
+      feedbacks: [],
     },
     {
       title: 'Recipe Page',
@@ -47,6 +50,7 @@ const projectsData = {
       feSolution:"",
       level: 1,
       render: true,
+      feedbacks: [],
     }
   ],
   
@@ -60,6 +64,16 @@ const projectsData = {
       feSolution:"https://www.frontendmentor.io/solutions/product-preview-card-component-with-html-and-css-_27T-Genie",
       level: 1,
       render: true,
+      feedbacks: [
+        {
+          reviewer: "Marzia Jalili",
+          text: "Looking clean and neat — amazing work! 🎉 A tiny pro tip? Instead of using two <img> elements and then toggling them using css, you could use the <picture> element, buddy. The <picture> element is super handy cuz it lets you show different images depending on the screen size or device. Example: <picture> <source srcset=\"images/image-product-desktop.jpg\" media=\"(min-width: 768px)\"> <img src=\"images/image-product-mobile.jpg\" alt=\"A beautiful perfume\"> </picture> This ensures to display the image put in the <source> as long as the page is larger than 768px otherwise it goes to the default path set in the img, which will be for mobile. Hope my feedback brings you peace. 😌😁😅"
+        },
+        {
+          reviewer: "Hansel",
+          text: "For the images, you could use the <picture> HTML element and supply the two images, it'll detect which one to use based on the screen size you specified for each image. I know this isn't part of where you want feedback in but I also noticed it seems like you prioritized the desktop-first approach over a mobile-first approach, not that this is anything bad, it's just generally recommended to use that."
+        }
+      ]
     }, 
     {
       title: 'Four Card Feature Section',
@@ -69,7 +83,8 @@ const projectsData = {
       technologies: ['React','HTML', 'CSS'],
       feSolution:"https://www.frontendmentor.io/solutions/four-card-feature-section-with-html-and-css-_KykA9uQJG",
       level: 1,
-      render: true,      
+      render: true,
+      feedbacks: [],
     },
     {
       title: 'Testimonials Grid Section',

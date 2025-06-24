@@ -5,11 +5,23 @@
     box-sizing: border-box;
   }
   
+  :root {
+    --bg-dark: hsl(0, 0%, 8%);
+    --bg-card: hsl(0, 0%, 12%);
+    --text-light: hsl(0, 0%, 100%);
+    --accent-green: hsl(75, 94%, 57%);
+    --btn-bg: hsl(0, 0%, 20%);
+    --btn-hover-bg: hsl(75, 94%, 57%);
+    --btn-hover-text: hsl(0, 0%, 8%);
+    --font-family: 'Inter', sans-serif;
+    --font-size: 14px;
+  }
+  
   body {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    background-color: hsl(0, 0%, 8%);
-    color: hsl(0, 0%, 100%);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -19,7 +31,7 @@
   
   /* Card */
   .card {
-    background-color: hsl(0, 0%, 12%);
+    background-color: var(--bg-card);
     padding: 1.5rem;
     border-radius: 1rem;
     text-align: center;
@@ -44,7 +56,7 @@
   }
   
   .location {
-    color: hsl(75, 94%, 57%);
+    color: var(--accent-green);
     font-weight: 600;
     margin-bottom: 1rem;
   }
@@ -52,7 +64,7 @@
   /* Role */
   .role {
     margin-bottom: 1.5rem;
-    color: hsl(0, 0%, 100%);
+    color: var(--text-light);
     opacity: 0.8;
   }
   
@@ -73,8 +85,8 @@
 .btn {
   display: block; /* make <a> behave like block */
   width: 100%; /* stretch full width */
-  background-color: hsl(0, 0%, 20%);
-  color: hsl(0, 0%, 100%);
+  background-color: var(--btn-bg);
+  color: var(--text-light);
   text-decoration: none;
   font-weight: 600;
   padding: 0.75rem;
@@ -85,8 +97,8 @@
 
 .btn:hover,
 .btn:focus {
-  background-color: hsl(75, 94%, 57%);
-  color: hsl(0, 0%, 8%);
+  background-color: var(--btn-hover-bg);
+  color: var(--btn-hover-text);
 }
   
   /* Responsive (optional) */
