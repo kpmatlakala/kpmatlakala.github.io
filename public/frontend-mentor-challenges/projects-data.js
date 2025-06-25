@@ -170,6 +170,17 @@ const projectsData = {
       render: true  
     },
     {
+      title: 'Results summary component',
+      imageUrl: '/assets/previews/challenges/results-summary-preview.jpg',
+      demoUrl: '/frontend-mentor-challenges/challenges/results-summary-component/index.html',
+      description: '',
+      technologies: ['React', 'HTML', 'CSS'],
+      level: 1,  
+      render: true,
+      comingSoon: true,
+      isVisible: true,
+    },
+    {
       title: 'Ping Coming Soon Page',
       imageUrl: '/assets/previews/challenges/ping-preview.jpg',
       demoUrl: '/frontend-mentor-challenges/challenges/ping-coming-soon-page',
@@ -218,7 +229,7 @@ const projectsData = {
       description: 'More challenging projects coming soon!',
       technologies: [],
       level: 1,
-      render: false,
+      render: true,
       isGhost: true,
       comingSoon: true
     },

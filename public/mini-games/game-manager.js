@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     {
       name: 'Terminal Tower',
       description: 'Stack blocks and reach new heights in this Tetris-inspired game.',
-      url: 'Terminal-Tower/index.html',
+      url: 'terminal-tower/index.html',
       thumbnail: 'terminal-tower/thumbnail.jpg',
       available: true
     },
@@ -19,6 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
       description: 'Classic Snake game. Eat, grow, and avoid your own tail!',
       url: 'snake/index.html',
       thumbnail: 'snake/thumbnail.jpg',
+      available: true
+    },    
+    {
+      name: 'Block Puzzle',
+      description: 'Place blocks, clear lines, and try Classic or Survival mode!',
+      url: 'block-puzzle/index.html',
+      thumbnail: 'block-puzzle/thumbnail.jpg',
       available: true
     },
     {
