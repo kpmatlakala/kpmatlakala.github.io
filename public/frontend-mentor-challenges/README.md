@@ -67,7 +67,65 @@ Feedbacks
     },
     Hansel(Product preview card component){
         For the images, you could use the <picture> HTML element and supply the two images, it'll detect which one to use based on the screen size you specified for each image. I know this isn't part of where you want feedback in but I also noticed it seems like you prioritized the desktop-first approach over a mobile-first approach, not that this is anything bad, it's just generally recommended to use that.
+    },
+
+    Elmar Chavez(testimonials-grid-section){
+        1. "I would love some feedback on my use of CSS Grid—specifically whether there are best practices or more efficient ways to achieve the layout I’ve built."
+
+        Yes there is Kabelo! Try using grid-area property in your grids so that it will be easier to code complex grid layouts like this challenge. You could do something like this:
+        .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "card1  card1   card2   card5"
+            "card3  card4   card4   card5";
+        }
+
+        .card:nth-child(1) {
+        grid-area: card1;
+        }
+
+        .card:nth-child(2) {
+        grid-area: card2;
+        }
+
+        .card:nth-child(3) {
+        grid-area: card3;
+        }
+
+        .card:nth-child(4) {
+        grid-area: card4;
+        }
+
+        .card:nth-child(5) {
+        grid-area: card5;
+        }
+        This technique is much more scalable than manually adding spans for each grid items.
+
+        I also noticed that some of your cards appear too tall at breakpoints 768px up to 1025px so you might as well check up on that.
+
+        2. "I’m also curious about accessibility improvements: are there any semantic or ARIA roles I could add to make this more accessible?"
+
+        For each card container you can add aria-labelledby and aria-describedby attributes which greatly improves accessibility for screen readers. There are other ARIA attributes I used in my solution if you want to take a look.
+
+        Also, to check your site accessibility, you can use Google Lighthouse in the Chrome dev tools. You can see my performance report for this challenge here as an example.
+
+        3. "Lastly, if there are any suggestions for making the text or card components even more visually appealing across various screen sizes, I’d love to hear them."
+
+        I can't help but notice that some of your margins are off compared to the intended design so I recommend first using PerfectPixel which can help you compare the design image to your live site. This helped a lot even without a Figma file.
+
+        I've also noted that you use CSS variables which is good practice. You can upgrade your site by adding a media query for dark themes like this example below:
+
+        @media (prefers-color-scheme: dark) {
+        :root {
+            --BGCOLOR: #121212;
+            --FONT-COLOR: hsl(0, 0%, 90%);
+            /* AND OTHER CODES */
+        }
+        }
+        I love that you have an organized CSS code and I believe you can improve it much more. Keep on practicing! I hope my feedback helps.
     }
+
 
 
 
