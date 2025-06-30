@@ -178,8 +178,6 @@ const projectsData = {
       feSolution:'https://www.frontendmentor.io/solutions/results-summary-component-with-html-and-css-yXK2Wt-yNA',
       level: 1,  
       render: true,
-      comingSoon: true,
-      isVisible: true,
     },
     {
       title: 'Stats preview card component',
