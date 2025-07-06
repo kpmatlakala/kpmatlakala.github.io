@@ -171,7 +171,8 @@
     }
 
     .stats {
-      flex-direction: column;
+      /* flex-direction: column; */
+      margin-top: 8px;
       align-items: center;
       gap: 1.5rem;
     }

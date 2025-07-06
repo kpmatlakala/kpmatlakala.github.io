@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jigsaw Puzzle</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="mini-games-header">
+    <h1>Jigsaw Puzzle</h1>
+    <p class="subtitle">Piece together the puzzle!<span class="blinking-cursor"></span></p>
+  </header>
+  <div class="game-container">
+    <button id="resetBtn" class="jigsaw-btn">Shuffle</button>
+    <input type="file" id="imgInput" accept="image/*" class="jigsaw-btn" />
+    <div id="puzzle" class="puzzle-grid"></div>
+    <div id="winMsg" class="win-message" style="display:none;">🎉 You solved it! 🎉</div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

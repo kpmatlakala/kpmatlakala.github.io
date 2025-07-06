@@ -3,14 +3,14 @@
     --bg-container: #18181b;
     --bg-accent: hwb(212 88% 6%);
     --text-main: #fff;
-    --primary: #10b981;
+    --primary: #39ff14;
     --radius: 16px;
 }
 
 body {
     background: var(--bg-main);
     color: var(--text-main);
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif, 'Fira Mono', 'Source Code Pro', 'Courier New', monospace;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -45,7 +45,7 @@ body {
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
-    border-bottom: #10b981 solid 2px;
+    border-bottom: var(--primary) solid 2px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
     position: sticky;    top: 0;
     z-index: 100; 
@@ -205,20 +205,20 @@ footer {
 
 /* Footer link styles */
 footer a {
-    color: #10b981;
+    color: var(--primary);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s, text-shadow 0.2s;
-    text-shadow: 0 1px 8px #10b98133;
-    border-bottom: 1px dashed #10b98155;
+    text-shadow: 0 1px 8px var(--primary);
+    border-bottom: 1px dashed var(--primary);
     padding: 0 2px;    
 }
 
 footer a:hover,
 footer a:focus {
     color: #fff;
-    text-shadow: 0 2px 12px #10b98199;
-    border-bottom: 1px solid #10b981;
+    text-shadow: 0 2px 12px var(--primary);
+    border-bottom: 1px solid var(--primary);
     background: #10b98122;
     border-radius: 3px;
 }

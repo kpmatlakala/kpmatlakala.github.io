@@ -185,7 +185,7 @@ const projectsData = {
       demoUrl: '/frontend-mentor-challenges/challenges/stats-preview-card-component/index.html',
       description: '',
       technologies: ['React', 'HTML', 'CSS'],
-      feSolution:'',
+      feSolution:'https://www.frontendmentor.io/solutions/stats-preview-card-component-with-html-and-css-2x5vuY4ZdU',
       level: 1,  
       render: true,
     },    
