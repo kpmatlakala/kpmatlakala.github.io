@@ -201,7 +201,7 @@ const projectsData = {
     {
       title: 'Fylo data storage component',
       imageUrl: '/assets/previews/challenges/fylo-preview.jpg',
-      demoUrl: '/frontend-mentor-challenges/challenges/fylo-data-storage-component/inndex.html',
+      demoUrl: '/frontend-mentor-challenges/challenges/fylo-data-storage-component/index.html',
       description: 'A data storage component with a modern design and responsive layout.',
       technologies: ['React', 'HTML', 'CSS'],
       feSolution: "https://www.frontendmentor.io/solutions/fylo-data-storage-component-with-html-and-css-F2sTzHvWcX",
