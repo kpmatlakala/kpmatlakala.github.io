@@ -205,7 +205,7 @@ const projectWithIFrame = [
       '/mini-games/banner.jpg',
       'https://img.freepik.com/premium-vector/colorful-block-puzzle-game-vector_972395-1215.jpg?w=826',
     ],
-    livePreviewLink: 'https://delightplus-portfolio.vercel.app/mini-games/game-manager.html',
+    livePreviewLink: 'https://delightplus-portfolio.vercel.app/mini-games/index.html',
     githubLink: 'https://github.com/DeLightPlus/',
     keyFeatures: [
       'Multiple games: Card-matching, Tetris, and Snake',
