@@ -1,91 +1,146 @@
-# Kabelo Peter Matlakala – Portfolio
+# Portfolio
 
-Welcome to my developer portfolio!  
-I'm **Kabelo Peter Matlakala**, a Junior Web Developer with a background in Mathematical Sciences, specializing in modern web and mobile technologies.
+Welcome! I'm **Kabelo Peter Matlakala**, 
 
----
-
-## 👤 About Me
-
-- **Full Name:** Kabelo Peter Matlakala  
-- **Location:** Limpopo, Polokwane, South Africa  
-- **Program:** Web and Mobile Development (CodeTribe Academy)  
-- **Education:**  
-  - BSc (Mathematical Science), University of Limpopo (2016–2024)  
-  - Additional training at CodeTribe Academy (2024/2025, in progress)  
-- **Contact:**  
-  - Email: [matlakalakabelo1@gmail.com](mailto:matlakalakabelo1@gmail.com)  
-  - LinkedIn: [kabelo-matlakala](https://linkedin.com/in/kabelo-matlakala)  
-  - GitHub: [@DeLightPlus](https://github.com/DeLightPlus)  
-  - Phone: [+27 72 713 8367](tel:+27727138367)
+a Junior Web Developer with a strong foundation in **Mathematical Sciences** and hands-on experience in modern **web and mobile development**.
 
 ---
 
-## 🛠️ Skills
+## 👨‍💻 About Me
 
-- **Languages:** HTML, CSS, JavaScript, TypeScript, SQL
-- **Frameworks/Libraries:** React.js, Node.js, Express.js, Redux, Firebase, Tailwind CSS
-- **Databases:** MongoDB, MySQL, SQLite3
-- **Tools:** Git, GitHub, Figma, Canva, Agile/Scrum
+- **Name:** Kabelo Peter Matlakala  
+- **Location:** Polokwane, Limpopo, South Africa  
+- **Email:** [matlakalakabelo1@gmail.com](mailto:matlakalakabelo1@gmail.com)  
+- **Phone:** [+27 72 713 8367](tel:+27727138367)  
+- **LinkedIn:** [linkedin.com/in/kabelo-matlakala](https://linkedin.com/in/kabelo-matlakala)  
+- **GitHub:** [github.com/DeLightPlus](https://github.com/DeLightPlus)  
 
-See the [Skills Matrix](src/components/portfolio/Skills/SkillsMatrix.jsx) for a detailed breakdown.
+### 🎓 Education & Training
+- **BSc in Mathematical Sciences**, University of Limpopo  
+  _2016 – 2024 (Final Year)_  
+- **Web & Mobile Development**, CodeTribe Academy  
+  _2024 – 2025 (Completed)_
 
 ---
 
-## 🚀 Projects
+I'm currently expanding my expertise in:
 
-### Individual Projects
+- **Web & Mobile Development** (React, Node.js, Firebase)
+- **Desktop Application Development** (Electron.js)
+- **Backend & APIs** (Express.js, Laravel)
+- **AI & Data Science** (Python, Machine Learning)
+- **Cloud-Native Tools** and DevOps fundamentals
 
+### Currently Learning
+- `Next.js` – Server-side rendering & full-stack React apps  
+- `Electron` – Cross-platform desktop applications  
+- `Laravel` – PHP framework for modern backend development  
+- `Python for AI & Data Science` – Focus on automation, ML models, and analysis  
+- `AI for Software Engineering` – Using AI tools to write, review, and improve code  
+
+## Skills & Tools
+
+### **Frameworks & Libraries**
+React.js · Node.js · Express.js · Redux · Tailwind CSS · Firebase  
+**Next.js** · **Electron.js** · **Laravel**
+
+### **Languages**
+HTML · CSS · JavaScript · TypeScript · SQL · **Python** · PHP (basic)
+
+### **Tools & Concepts**
+Git · GitHub · Figma · Canva · Agile / Scrum  
+**AI Coding Assistants** (e.g. GitHub Copilot) · **Data Analysis** (Pandas, NumPy)  
+
+-> View my [Skills Matrix](src/components/portfolio/Skills/SkillsMatrix.jsx)
+
+---
+
+## Projects
+
+### 🔹 **Individual Projects**
 - **Weather App**  
-  Real-time weather data using OpenWeatherMap API.  
-  [Source](https://github.com/DeLightPlus/)  
+  Real-time weather updates using OpenWeatherMap API  
+  [GitHub](https://github.com/DeLightPlus/weather-app)
+
 - **ShoppingList App**  
-  State management with Redux Toolkit, persistent storage.  
+  Redux Toolkit for state management, with persistent local storage  
+
 - **TodoList App**  
-  CRUD with SQLite3, task filtering.
-- **E-Commerce App**  
-  Modern UI/UX with React.
-- **Online Recipe App**  
-  Manage recipes with local storage.
+  Full CRUD functionality using SQLite3, task filtering UI  
 
-### Group Projects
+- **E-Commerce Storefront**  
+  Fully responsive front-end built with React and Tailwind CSS  
 
-- **Restaurant Reservation App**  
-  Collaborative project using React, Redux, Firebase, Node.js.
-
-### Mini Projects
-
-- **Memory Game**  
-  Interactive card-matching game using DOM manipulation.  
-  [Memory Game Source](src/components/portfolio/Projects/memory-game/index.html)
-- **Base Apparel Landing Page**  
-  Responsive landing page challenge.  
-  [Base Apparel Source](src/components/portfolio/Projects/base-apparel/index.html)
+- **Online Recipe Manager**  
+  Local storage integration, dynamic recipe filters and management  
 
 ---
 
-## 📈 Work Experience
+### 🔸 **Group Projects**
+- **Restaurant Reservation System**  
+  Built collaboratively using React, Redux, Firebase, and Node.js  
 
-- **Computer Laboratory Student Assistant**  
-  University of Limpopo, ICT (2022)
-- **Mentorship Program**  
-  Eskom Expo for Young Scientists (2019)
-- **Web & Mobile Development**  
-  CodeTribe Academy (2024–Ongoing)
+---
+
+## Mini Projects
+
+### 🎮 Mini Games Collection  
+A set of classic and casual games developed using **HTML**, **CSS**, and **JavaScript**.  
+Emphasis on DOM manipulation, game logic, and responsive UI.
+
+**Games Included:**
+- Memory Game
+- Rock-Paper-Scissors
+- Number Guessing Game
+- Tic-Tac-Toe
+
+📁 [Source Code](https://delightplus-portfolio.vercel.app/mini-games/game-manager.html)
+
+---
+
+### 💻 Frontend Mentor Challenges  
+A compilation of completed UI challenges based on real-world layouts and user stories.  
+Focused on **pixel-perfect design**, **responsiveness**, and **accessibility**.
+
+**Challenges Include:**
+- Results Summary Component
+- Stats Preview Card
+- Interactive Rating Component
+
+📁 [View Challenge Code](https://delightplus-portfolio.vercel.app/frontend-mentor-challenges/index.html)
+
+
+---
+
+## Work Experience
+
+- **Student Assistant – Computer Lab**  
+  *University of Limpopo, ICT Department*  
+  *2022*  
+  Supported fellow students in using academic software and troubleshooting basic IT issues.
+
+- **Mentor – Eskom Expo for Young Scientists**  
+  *2019*  
+  Assisted learners in developing STEM research projects and presenting findings.
+
+- **Trainee Developer – CodeTribe Academy**  
+  *2024 – 2025*  
+  Working on real-world projects using Agile methodologies and collaborative version control.
 
 ---
 
 ## 📄 Resume
 
-Download my latest resume [here](src/assets/Mr-Kabelo-Peter-Matlakala-Resume-20241024.pdf).
+📥 [Download My Latest Resume (PDF)](src/assets/Mr-Kabelo-Peter-Matlakala-Resume-20241024.pdf)
 
 ---
 
-## 📝 License
+## 📜 License
 
-This portfolio is for personal and educational purposes.
+This portfolio is created for educational and professional development purposes.
 
 ---
 
-Thank you for visiting my portfolio!  
-Feel free to connect or reach out for collaboration opportunities.
+### Thank You for Visiting!
+
+Feel free to reach out via [email](mailto:matlakalakabelo1@gmail.com) or connect on [LinkedIn](https://linkedin.com/in/kabelo-matlakala). I'm open to internships, freelance opportunities, and junior dev roles!
