@@ -540,7 +540,7 @@ footer.light {
 }
 
 .accordion-item.active .accordion-content {
-  max-height: 2000px; /* Adjust based on your content */
+  max-height: fit-content; /
 }
 
 .accordion-content .projects {

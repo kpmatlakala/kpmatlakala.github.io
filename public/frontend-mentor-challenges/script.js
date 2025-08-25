@@ -28,7 +28,7 @@ function createProjectCard(project) {
   const description = document.createElement('p');
   description.className = 'project-description';
   description.textContent = project.description;
-  card.appendChild(description);
+  // card.appendChild(description);
 
   const techStack = document.createElement('div');
   techStack.className = 'tech-stack';
