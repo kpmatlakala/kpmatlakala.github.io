@@ -4,20 +4,20 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, 
-  // Settings, ArrowRight, Download, Box 
+  Settings, ArrowRight, Download, Box 
 } from "lucide-react";
 
 import {
   Button,
-  // Drawer,
-  // DrawerTrigger,
-  // DrawerContent,
-  // DrawerHeader,
-  // DrawerTitle,
-  // DrawerFooter,
+  Drawer,
+  DrawerTrigger,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerFooter,
 } from "delightplus-ui";
 
-// import { ThemeToggle } from "../ToggleTheme";
+import { ThemeToggle } from "../ui/ToggleTheme";
 
 interface NavbarProps {
   activeSection: string; // Make non-optional for simplicity
@@ -108,7 +108,7 @@ export default function FloatingHeader({ activeSection }: NavbarProps) {
 
         {/* Mobile (Drawer) */}
         <div className="flex items-center gap-3">
-          {/* <Drawer>
+          <Drawer>
             <DrawerTrigger asChild>
               <Button
                 variant="ghost"
@@ -122,20 +122,24 @@ export default function FloatingHeader({ activeSection }: NavbarProps) {
 
             <DrawerContent className="h-full w-80 ml-auto flex flex-col">
               <DrawerHeader className="border-b border-border/20 mb-3">
-                <DrawerTitle className="text-base text-muted-foreground">Quick Access</DrawerTitle>
+                {/* <DrawerTitle className="text-base text-muted-foreground">Quick Access</DrawerTitle> */}
                 <div className="grid grid-cols-3 gap-2 pt-4">
                   <div className="flex flex-col items-center gap-1 text-xs text-muted-foreground">
                     Theme
                     <ThemeToggle />
                   </div>
+
                   <div className="flex flex-col items-center gap-1 text-xs text-muted-foreground">
                     3D
                     <Box className="w-4 h-4 opacity-50" />
                   </div>
+
                   <div className="flex flex-col items-center gap-1 text-xs text-muted-foreground">
-                    <Settings className="w-4 h-4" />
                     <Link href="/settings" className="hover:underline">Settings</Link>
+                    <Settings className="w-4 h-4" />
+                   
                   </div>
+
                 </div>
               </DrawerHeader>
 
@@ -179,15 +183,15 @@ export default function FloatingHeader({ activeSection }: NavbarProps) {
                 </Button>
               </DrawerFooter>
             </DrawerContent>
-          </Drawer> */}
-          <Button
+          </Drawer>
+          {/* <Button
             variant="ghost"
             size="icon"
             className="text-foreground bg-background/40 backdrop-blur-md rounded-full border border-border/20 shadow-lg hover:bg-background/60"
             aria-label="Open menu"
           >
             <Menu size={20} />
-          </Button>
+          </Button> */}
         </div>
       </div>
     </nav>
