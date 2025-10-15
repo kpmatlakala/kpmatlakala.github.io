@@ -5,6 +5,7 @@ import { ArrowRight, Download, ChevronDown, Mail } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/lib/constants";
 import { getSocialIcon } from "@/lib/utils";
 import Image from "next/image";
+import { Button } from "delightplus-ui";
 
 export function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -136,39 +137,37 @@ export function HeroSection() {
         className={`flex flex-wrap gap-4 ${
           layout === "vertical" ? "justify-center" : ""
         }`}
-      >
-        <button className="group flex items-center gap-3 bg-foreground text-primary-foreground px-4 py-3 hover:bg-muted-foreground transition-all duration-300 rounded-md">
-          <span className="font-medium">View My Work</span>
-          <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-        </button>
+      >    
 
-        <button className="group flex items-center gap-3 border border-border px-4 py-3 hover:bg-accent transition-all duration-300 rounded-md">
+        <Button 
+          variant="outline"
+
+        >
           <Download className="h-5 w-5" />
           <span className="font-medium">Download CV</span>
-        </button>
-      </div>
+        </Button>
 
-      <div
-        className={`flex flex-col sm:flex-row items-center gap-6 pt-4 ${
-          layout === "vertical" ? "justify-center" : ""
-        }`}
-      >
+        <div className="hidden sm:block h-6 w-[1px] bg-border"></div>
+
         <div className="flex gap-4">
           {profile.socialLinks.map((social, index) => {
             const Icon = getSocialIcon(social.platform);
             return (
-              <button
-                key={index}
-                className="w-10 h-10 border border-border flex items-center justify-center hover:bg-accent hover:border-foreground transition-all duration-300 rounded-md"
+              <Button
+                variant="icon"
+                className="rounded-md"
+                key={index}                
                 onClick={() => window.open(social.url, "_blank")}
               >
                 <Icon className="h-4 w-4" />
-              </button>
+              </Button>
             );
           })}
         </div>
-        <div className="hidden sm:block h-6 w-[1px] bg-border"></div>
-        <div className="text-sm text-muted-foreground text-center sm:text-left">
+
+      </div>
+
+      <div className="text-sm text-muted-foreground text-center sm:text-left">
           <p>Open for freelance & remote/onsite work</p>
           <p className="text-foreground font-medium inline-flex items-center justify-center gap-1">
             <a
@@ -179,8 +178,7 @@ export function HeroSection() {
               {profile.email}              
             </a>
           </p>
-        </div>
-      </div>
+        </div>    
     </div>
   );
 
@@ -189,7 +187,7 @@ export function HeroSection() {
     return (
       <section
         id="home"
-        className="scroll-mt-24 relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+        className="desktop scroll-mt-24 relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
       >
         <BackgroundPattern />
         <div className="container mx-auto max-w-8xl relative z-10">
@@ -220,13 +218,13 @@ export function HeroSection() {
     return (
       <section
         id="home"
-        className="scroll-mt-24 relative min-h-screen flex items-center justify-center overflow-hidden p-4"
+        className="tablet scroll-mt-24 relative min-h-screen flex items-center justify-center overflow-hidden p-4"
       >
         <BackgroundPattern />
-        <div className="container mx-auto max-w-4xl relative z-10">
+        <div className="container max-w-4xl relative z-10">
           <div className="flex flex-col lg:flex-row items-start gap-10">
             <div className="flex-1">
-              <div className="flex flex-col md:flex-row md:items-start gap-8">
+              <div className="flex flex-row md:flex-row md:items-start gap-8">
                 {/* Text content */}
                 <div className="flex-1">
                   <div className="space-y-4">
@@ -312,10 +310,10 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="scroll-mt-24 relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-4"
+      className="mobile scroll-mt-24 relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-10"
     >
       <BackgroundPattern />
-      <div className="container mx-auto max-w-md relative z-10 space-y-8">
+      <div className="container max-w-md relative z-10 space-y-8">
         {/* Image first on mobile */}
         <div
           className={`${isLoaded ? "animate-fade-in" : "opacity-0"}`}

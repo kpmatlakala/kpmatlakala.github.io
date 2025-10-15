@@ -215,12 +215,26 @@ export const PORTFOLIO_DATA = {
       year: "2025",
       tech: ["HTML", "CSS", "Javascript"],
       status: "Live",
-      liveUrl:"https://kpm-frontendmentor.vercel.app/",
+      liveUrl: "https://kpm-frontendmentor.vercel.app/",
       githubUrl: "https://github.com/kpmatlakala/Frontend-Mentor",
       featured: true,
     },
     {
       id: 4,
+      title: "Solar System Simulation",
+      category: "Creative Coding",
+      description:
+        "A 3D interactive solar system built with React and Three.js. Includes orbit controls, animations, and planet info cards. Supports embedded and fullscreen modes.",
+      image: "https://plus.unsplash.com/premium_photo-1717620945061-fdb31301a205?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c29sYXIlMjBzeXN0ZW18ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=500https://images.unsplash.com/photo-1589691202964-2034707c216d", // optional, fallback only
+      year: "2025",
+      tech: ["React", "Three.js", "WebGL", "CSS"],
+      status: "Live",
+      liveUrl: "https://solar-system-sim.onrender.com/embed",
+      githubUrl: "https://github.com/DeLightPlus/solar-system",
+      featured: false,
+    },
+    {
+      id: 5,
       title: "Todo List App",
       category: "Productivity",
       description:
@@ -234,7 +248,7 @@ export const PORTFOLIO_DATA = {
       featured: false,
     },
     {
-      id: 5,
+      id: 6,
       title: "Shopping List App",
       category: "Productivity",
       description:
@@ -249,7 +263,7 @@ export const PORTFOLIO_DATA = {
       featured: false,
     },
     {
-      id: 6,
+      id: 7,
       title: "Online Recipe App",
       category: "Web Development",
       description:
@@ -264,7 +278,7 @@ export const PORTFOLIO_DATA = {
       featured: false,
     },
     {
-      id: 7,
+      id: 8,
       title: "Restaurant Reservation App",
       category: "Full-Stack Development",
       description:
@@ -278,7 +292,7 @@ export const PORTFOLIO_DATA = {
       featured: true,
     },
     {
-      id: 8,
+      id: 9,
       title: "Hotel Booking App",
       category: "Full-Stack Development",
       description:
@@ -292,7 +306,7 @@ export const PORTFOLIO_DATA = {
       featured: false,
     },
     {
-      id: 9,
+      id: 10,
       title: "Travel Planner App",
       category: "Full-Stack Development",
       description:
@@ -306,7 +320,7 @@ export const PORTFOLIO_DATA = {
       githubUrl: "https://github.com/DeLightPlus/travel-planner",
       featured: false,
     },
-    
+
     // {
     //   id: 10,
     //   title: "Web Portfolio Challenge",

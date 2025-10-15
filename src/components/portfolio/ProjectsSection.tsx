@@ -3,40 +3,37 @@
 import React, { useState } from "react";
 import { PORTFOLIO_DATA } from "@/lib/constants";
 import { ProjectCard } from "delightplus-ui/cards";
-
-export interface ProjectCardProps {
-  project: {
-    id: number;
-    title: string;
-    category: string;
-    description: string;
-    image: string;
-    year: string;
-    tech: string[];
-    status: string;
-    liveUrl?: string | null;
-    githubUrl?: string | null;
-    featured: boolean;
-  };
-}
+import IframeProjectCard from "../ui/IFrameProjectCard";
+import { Button } from "delightplus-ui";
 
 export function ProjectsSection() {
   const [showAll, setShowAll] = useState(false);
   const { projects } = PORTFOLIO_DATA;
 
+  // Sort projects by featured and year
   const sortedProjects = [...projects].sort((a, b) => {
     if (a.featured && !b.featured) return -1;
     if (!a.featured && b.featured) return 1;
     return parseInt(b.year) - parseInt(a.year);
   });
 
-  const displayedProjects = showAll
-    ? sortedProjects
-    : sortedProjects.slice(0, 3);
+  // Pull out the iframe project explicitly
+  const iframeProject = sortedProjects.find((p) => p.id === 4);
+
+  // Show top 3 regular (non-iframe) projects
+  const firstThree = sortedProjects
+    .filter((p) => p.id !== 4)
+    .slice(0, 3);
+
+  // Show remaining (excluding iframe and top 3)
+  const remainingProjects = sortedProjects.filter(
+    (p) => !firstThree.includes(p) && p.id !== 4
+  );
 
   return (
     <section id="projects" className="scroll-mt-0 py-16 md:py-24 px-6">
       <div className="container mx-auto max-w-7xl">
+        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-audiowide mb-6">
             Featured Projects
@@ -47,20 +44,36 @@ export function ProjectsSection() {
           </p>
         </div>
 
+        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayedProjects.map((project) => (
+          {firstThree.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
+
+          {/* Iframe project full-width */}
+          {iframeProject && (
+            <div className="col-span-full">
+              <IframeProjectCard project={iframeProject} />
+            </div>
+          )}
+
+          {/* Show remaining projects on toggle */}
+          {showAll &&
+            remainingProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
         </div>
 
-        {sortedProjects.length > 3 && (
+        {/* Toggle Button */}
+        {remainingProjects.length > 0 && (
           <div className="text-center mt-10">
-            <button
+            <Button
+              variant="outline"
               onClick={() => setShowAll(!showAll)}
-              className="px-6 py-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/80 transition"
+              className="hover:bg-primary/80 transition"
             >
-              {showAll ? "Show Less" : "Show More"}
-            </button>
+              {showAll ? "-- Show Less --" : "-- Show More --"}
+            </Button>
           </div>
         )}
       </div>
