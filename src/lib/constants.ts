@@ -229,7 +229,7 @@ export const PORTFOLIO_DATA = {
       year: "2025",
       tech: ["React", "Three.js", "WebGL", "CSS"],
       status: "Live",
-      liveUrl: "https://solar-system-sim.onrender.com/embed",
+      liveUrl: "https://solar-system-sim.onrender.com/#/embed",
       githubUrl: "https://github.com/DeLightPlus/solar-system",
       featured: false,
     },
