@@ -2,9 +2,9 @@
 export const PORTFOLIO_DATA = {
   profile: {
     name: "Kabelo P. Matlakala",
-    title: "Designer & Full-Stack Developer exploring data and AI",
+    title: "Technical Project Coordinator & Full-Stack Developer",
     shortBio: "Digital Designer & Developer",
-    bio: "I'm a junior software engineer and designer with over 5 years of combined experience in full-stack development and UI/UX. I thrive on solving complex problems, exploring emerging technologies, and crafting intuitive digital experiences. I'm especially passionate about thoughtful design, clean code, and building with tools like AI. Outside of work, I stay curious through side projects, collaboration, and continuous learning.",
+    bio: "I'm a Software Engineer and Agile practitioner with experience bridging process and code. I facilitate Scrum workflows, coordinate technical projects from backlog to deployment, and build production-ready solutions with React, Node.js, and Python. My background in Mathematical Sciences informs my approach to data-driven decisions and systems thinking. I'm passionate about clean architecture, empathetic leadership, and tools that empower teams. Outside of work, I explore embedded systems (ESP32/AWS), contribute to open source, and mentor emerging developers in Limpopo.",
     profileImage: "/uploads/profile1.png",
     bannerImage: "/uploads/banner1-enh.png",
     email: "matlakalakabelo1@gmail.com",
@@ -43,8 +43,8 @@ export const PORTFOLIO_DATA = {
             "Figma",
             "Canva",
             "MS-PowerPoint",
-            "CorelDRAW",
-            "Photoshop",
+            // "CorelDRAW",
+            // "Photoshop",
             "Blender",
             "Unity",
           ],
@@ -104,7 +104,7 @@ export const PORTFOLIO_DATA = {
             "Python",
             "SQL",
             "SQL Server",
-            "SSMS",
+            // "SSMS",
           ],
         },
       ],
@@ -225,7 +225,8 @@ export const PORTFOLIO_DATA = {
       category: "Creative Coding",
       description:
         "A 3D interactive solar system built with React and Three.js. Includes orbit controls, animations, and planet info cards. Supports embedded and fullscreen modes.",
-      image: "https://plus.unsplash.com/premium_photo-1717620945061-fdb31301a205?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c29sYXIlMjBzeXN0ZW18ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=500https://images.unsplash.com/photo-1589691202964-2034707c216d", // optional, fallback only
+      image:
+        "https://plus.unsplash.com/premium_photo-1717620945061-fdb31301a205?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c29sYXIlMjBzeXN0ZW18ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=500https://images.unsplash.com/photo-1589691202964-2034707c216d", // optional, fallback only
       year: "2025",
       tech: ["React", "Three.js", "WebGL", "CSS"],
       status: "Live",
@@ -355,17 +356,18 @@ export const PORTFOLIO_DATA = {
   experience: [
     {
       id: 1,
-      company: "University of Limpopo - ICT Department",
+      company: "The Data Science Academy",
       location: "Polokwane, South Africa",
-      position: "Computer Lab Student Assistant",
-      duration: "July 2022 – December 2022",
-      type: "Part-time / Academic",
+      position: "Project Coordinator | Scrum Master",
+      duration: "October 2025 – Current",
+      type: "Internship or Contract",
       description:
-        "Supported students in the computer lab with coursework, programming, and basic troubleshooting. Provided technical assistance for academic software and helped maintain lab functionality.",
+        "Coordinate Agile delivery of 4IR digital skills initiatives aligned with MICT SETA and QCTO standards. Facilitate sprint rituals, manage stakeholder communication, and ensure technical outputs meet compliance and impact goals.",
       achievements: [
-        "Assisted 100+ students with practical programming exercises",
-        "Supported C++, Java, and Python debugging during labs",
-        "Improved student performance by offering one-on-one help",
+        "Facilitated sprint planning and retrospectives for cross-functional teams delivering learner management tools and training dashboards",
+        "Managed Jira backlogs and tracked velocity across 3+ concurrent capacity-building projects",
+        "Translated MICT SETA/QCTO requirements into actionable user stories and acceptance criteria",
+        "Mentored junior developers on Git workflows, code reviews, and Agile documentation practices",
       ],
     },
     {
@@ -403,7 +405,7 @@ export const PORTFOLIO_DATA = {
       company: "Eskom Expo for Young Scientists",
       location: "Polokwane, South Africa",
       position: "Volunteer Mentor",
-      duration: "2019",
+      duration: "2019 - Current",
       type: "Volunteer",
       description:
         "Guided high school students in preparing science and technology projects for competition. Supported research, presentation skills, and scientific method understanding.",
