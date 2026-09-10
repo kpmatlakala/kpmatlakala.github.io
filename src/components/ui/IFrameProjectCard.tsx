@@ -1,8 +1,13 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import type { Project } from '@/lib/types';
 
-export default function IframeProjectCard({ project }) {
+interface IframeProjectCardProps {
+  project: Project;
+}
+
+export default function IframeProjectCard({ project }: IframeProjectCardProps) {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
