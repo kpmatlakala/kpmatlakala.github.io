@@ -1,90 +1,71 @@
-import { Play, ExternalLink, ArrowRight } from 'lucide-react';
-
-interface Project {
-  id: number;
-  title: string;
-  category: string;
-  description: string;
-  image: string;
-  year: string;
-  tech: string[];
-  status: string;
-  link?: string;
-}
+import Image from "next/image";
+import type { Project } from "@/lib/types";
 
 interface ProjectCardProps {
   project: Project;
-  onHover: (id: number | null) => void;
-  isActive: boolean;
 }
 
-export function ProjectCard({ project, onHover }: ProjectCardProps) {
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'Live': return 'bg-green-100 text-green-800';
-      case 'In Progress': return 'bg-yellow-100 text-yellow-800';
-      case 'Beta': return 'bg-blue-100 text-blue-800';
-      default: return 'bg-gray-100 text-gray-800';
-    }
-  };
-
+export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div
-      className="group relative bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
-      onMouseEnter={() => onHover(project.id)}
-      onMouseLeave={() => onHover(null)}
-    >
-      <div className="aspect-[4/3] overflow-hidden">
-        <img
+    <article className="group overflow-hidden rounded-xl border border-border bg-card text-card-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+      <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+        <Image
           src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
+          alt={`${project.title} preview`}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          unoptimized
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <div className="flex gap-4">
-            <button className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
-              <Play className="h-6 w-6" />
-            </button>
-            <button className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
-              <ExternalLink className="h-6 w-6" />
-            </button>
-          </div>
-        </div>
       </div>
 
       <div className="p-6">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-sm text-muted-foreground">{project.category}</span>
-          <span className={`px-2 py-1 text-xs rounded-full ${getStatusColor(project.status)}`}>
-            {project.status}
-          </span>
-        </div>
-        
-        <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-        <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+        <h3 className="mb-3 text-xl font-bold">{project.title}</h3>
+        <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
           {project.description}
         </p>
-        
-        <div className="flex flex-wrap gap-2 mb-4">
+
+        <div className="mb-4 flex flex-wrap gap-2">
           {project.tech.map((tech) => (
             <span
               key={tech}
-              className="px-2 py-1 bg-accent text-accent-foreground text-xs rounded"
+              className="rounded bg-accent px-2 py-1 text-xs text-accent-foreground"
             >
               {tech}
             </span>
           ))}
         </div>
-        
-        <div className="flex items-center justify-between text-sm text-muted-foreground">
-          <span>{project.year}</span>
-          <button className="flex items-center gap-1 hover:text-foreground transition-colors">
-            <span>View Project</span>
-            <ArrowRight className="h-4 w-4" />
-          </button>
+
+        <div className="flex items-center justify-between gap-4 text-sm">
+          <span className="text-muted-foreground">{project.year}</span>
+          <div className="flex gap-4">
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground transition-colors hover:text-foreground"
+              >
+                Code
+              </a>
+            )}
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target={project.liveUrl.startsWith("/") ? undefined : "_blank"}
+                rel={
+                  project.liveUrl.startsWith("/")
+                    ? undefined
+                    : "noopener noreferrer"
+                }
+                className="text-muted-foreground transition-colors hover:text-foreground"
+              >
+                Live Demo
+              </a>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
