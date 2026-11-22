@@ -1,9 +1,27 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Mail } from 'lucide-react';
 
 export function CTASection() {
+  const [workAndWritingUrl, setWorkAndWritingUrl] = useState(
+    process.env.NODE_ENV === "development"
+      ? "http://blogs.localhost:3000"
+      : "https://blogs.kpmatlakala.co.za"
+  );
+
+  useEffect(() => {
+    const isLocalDevelopment =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1" ||
+      window.location.hostname === "[::1]";
+
+    if (isLocalDevelopment) {
+      const port = window.location.port ? `:${window.location.port}` : "";
+      setWorkAndWritingUrl(`http://blogs.localhost${port}`);
+    }
+  }, []);
+
   return (
     <section id="contact" className="scroll-mt-0 py-8 md:py-24 px-6 bw-gradient-bg">
       <div className="container mx-auto max-w-4xl text-center">
@@ -27,14 +45,12 @@ export function CTASection() {
             Get In Touch
           </a>
 
-          {/* View All Projects => GitHub */}
+          {/* Work & Writing */}
           <a
-            href="https://github.com/kpmatlakala"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={workAndWritingUrl}
             className="border border-border px-8 py-4 rounded-lg font-medium hover:bg-accent transition-colors text-foreground"
           >
-            View All Projects
+            View Work &amp; Writing
           </a>
         </div>
       </div>

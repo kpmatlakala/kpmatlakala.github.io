@@ -3,10 +3,7 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import "../styles/globals.css";
-import "delightplus-ui/dist/styles.css";
-import { ThemeProvider } from "delightplus-ui";
-import { cn } from "@/lib/utils";
-
+import { ThemeProvider } from "@/components/ui/ThemeProvider";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -30,8 +27,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/uploads/favicon.png?v=2" />
       </Head>
 
-      <div className={cn("font-montserrat", "theme-transition")}>
-        <ThemeProvider defaultTheme="system" storageKey="ui-theme">          
+      <div className="font-montserrat theme-transition">
+        <ThemeProvider defaultTheme="system" storageKey="ui-theme">
           <main>
             <Component {...pageProps} />
           </main>

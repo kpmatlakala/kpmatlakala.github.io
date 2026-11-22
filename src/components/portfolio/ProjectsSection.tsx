@@ -2,9 +2,8 @@
 
 import React, { useState } from "react";
 import { PORTFOLIO_DATA } from "@/lib/constants";
-import { ProjectCard } from "delightplus-ui/cards";
+import { ProjectCard } from "@/components/ui/ProjectCard";
 import IframeProjectCard from "../ui/IFrameProjectCard";
-import { Button } from "delightplus-ui";
 
 export function ProjectsSection() {
   const [showAll, setShowAll] = useState(false);
@@ -67,13 +66,13 @@ export function ProjectsSection() {
         {/* Toggle Button */}
         {remainingProjects.length > 0 && (
           <div className="text-center mt-10">
-            <Button
-              variant="outline"
+            <button
+              type="button"
               onClick={() => setShowAll(!showAll)}
-              className="hover:bg-primary/80 transition"
+              className="rounded-md border border-border px-6 py-3 transition hover:bg-accent"
             >
               {showAll ? "-- Show Less --" : "-- Show More --"}
-            </Button>
+            </button>
           </div>
         )}
       </div>

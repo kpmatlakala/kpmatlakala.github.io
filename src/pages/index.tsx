@@ -4,14 +4,29 @@ import React, { useEffect, useState } from "react";
 
 import { HeroSection } from "@/components/portfolio/HeroSection";
 import { AboutSection } from "@/components/portfolio/AboutSection";
-import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
 import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
 import { ServicesSection } from "@/components/portfolio/ServicesSection";
 import { CTASection } from "@/components/portfolio/CTASection";
 import { Footer } from "@/components/Footer";
 import FloatingHeader from "@/components/Header/FloatingHeader";
+import WorkAndWritingPage from "@/pages/work-and-writing";
+import type { GetServerSideProps } from "next";
 
-export default function HomePage() {
+interface HomePageProps {
+  isWorkAndWritingSubdomain: boolean;
+}
+
+export default function HomePage({
+  isWorkAndWritingSubdomain,
+}: HomePageProps) {
+  if (isWorkAndWritingSubdomain) {
+    return <WorkAndWritingPage />;
+  }
+
+  return <PortfolioLanding />;
+}
+
+function PortfolioLanding() {
   const [activeSection, setActiveSection] = useState<string>("home");
 
   useEffect(() => {
@@ -56,9 +71,24 @@ export default function HomePage() {
       <AboutSection />
       <ServicesSection />
       <ExperienceSection />
-      <ProjectsSection />
       <CTASection />
       <Footer />
     </div>
   );
 }
+
+export const getServerSideProps: GetServerSideProps<
+  HomePageProps
+> = async ({ req }) => {
+  const hostname =
+    req.headers.host?.split(":")[0].toLowerCase() ?? "";
+
+  return {
+    props: {
+      isWorkAndWritingSubdomain:
+        hostname === "blogs.localhost" ||
+        hostname === "blogs.kpmatlakala.co.za" ||
+        hostname === "www.blogs.kpmatlakala.co.za",
+    },
+  };
+};

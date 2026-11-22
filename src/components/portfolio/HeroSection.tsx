@@ -5,7 +5,6 @@ import { ArrowRight, Download, ChevronDown, Mail } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/lib/constants";
 import { getSocialIcon } from "@/lib/utils";
 import Image from "next/image";
-import { Button } from "delightplus-ui";
 
 export function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -139,13 +138,10 @@ export function HeroSection() {
         }`}
       >    
 
-        <Button 
-          variant="outline"
-
-        >
+        <button className="group flex items-center gap-3 rounded-md border border-border px-6 py-3 transition-all duration-300 hover:bg-accent">
           <Download className="h-5 w-5" />
           <span className="font-medium">Download CV</span>
-        </Button>
+        </button>
 
         <div className="hidden sm:block h-6 w-[1px] bg-border"></div>
 
@@ -153,14 +149,14 @@ export function HeroSection() {
           {profile.socialLinks.map((social, index) => {
             const Icon = getSocialIcon(social.platform);
             return (
-              <Button
-                variant="icon"
-                className="rounded-md"
+              <button
+                type="button"
+                className="flex h-10 w-10 items-center justify-center rounded-md border border-border transition-all duration-300 hover:border-foreground hover:bg-accent"
                 key={index}                
                 onClick={() => window.open(social.url, "_blank")}
               >
                 <Icon className="h-4 w-4" />
-              </Button>
+              </button>
             );
           })}
         </div>
